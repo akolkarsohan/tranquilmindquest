@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TranquilMindQuest - Your journey to mental wellness. Evidence-based resources for managing stress, anxiety, and depression. Free meditation guides, breathing exercises, and wellness tools.">
+    <meta name="keywords" content="mental health, wellness, meditation, anxiety, depression, stress management, mindfulness, breathing exercises, yoga, mental wellness">
+    <meta name="author" content="TranquilMindQuest">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tranquilmindquest.com/">
+    <meta property="og:title" content="TranquilMindQuest - Your Journey to Mental Wellness">
+    <meta property="og:description" content="Evidence-based resources for managing stress, anxiety, and depression. Free meditation guides, breathing exercises, and wellness tools.">
+    <meta property="og:image" content="https://tranquilmindquest.com/images/og-image.jpg">
+    <meta property="og:site_name" content="TranquilMindQuest">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://tranquilmindquest.com/">
+    <meta property="twitter:title" content="TranquilMindQuest - Your Journey to Mental Wellness">
+    <meta property="twitter:description" content="Evidence-based resources for managing stress, anxiety, and depression. Free meditation guides, breathing exercises, and wellness tools.">
+    <meta property="twitter:image" content="https://tranquilmindquest.com/images/twitter-card.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tranquilmindquest.com/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="manifest" href="./site.webmanifest">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/dark-theme.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    
+    <!-- Navigation Dropdown Styles -->
+    <style>
+        .nav-dropdown {
+            position: relative;
+        }
+        
+        .dropdown-toggle {
+            cursor: pointer;
+        }
+        
+        .dropdown-toggle::after {
+            content: '▼';
+            font-size: 10px;
+            margin-left: 5px;
+            transition: transform var(--transition-fast);
+        }
+        
+        .nav-dropdown:hover .dropdown-toggle::after {
+            transform: rotate(180deg);
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            min-width: 180px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all var(--transition-fast);
+            z-index: var(--z-dropdown);
+        }
+        
+        .nav-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-menu {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .dropdown-menu li {
+            margin: 0;
+            list-style: none;
+        }
+        
+        .dropdown-link {
+            display: block;
+            padding: var(--space-sm) var(--space-md);
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all var(--transition-fast);
+            border-radius: var(--radius-sm);
+            margin: var(--space-xs);
+        }
+        
+        .dropdown-link:hover {
+            background: var(--bg-tertiary);
+            color: var(--accent-primary);
+        }
+    </style>
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "TranquilMindQuest",
+        "url": "https://tranquilmindquest.com",
+        "logo": "https://tranquilmindquest.com/images/logo.png",
+        "description": "Evidence-based mental health and wellness resources",
+        "foundingDate": "2024",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-800-MIND-HELP",
+            "contactType": "crisis support",
+            "availableLanguage": "English"
+        },
+        "sameAs": [
+            "https://www.instagram.com/tranquilmindquest",
+            "https://www.youtube.com/tranquilmindquest",
+            "https://www.facebook.com/tranquilmindquest",
+            "https://twitter.com/tranquilmindquest"
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "TranquilMindQuest",
+        "url": "https://tranquilmindquest.com",
+        "description": "Your journey to mental wellness",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://tranquilmindquest.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+    <title>TranquilMindQuest - Your Journey to Mental Wellness</title>
+</head>
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav-brand">
+                <img src="images/placeholders/tmq-icon-mindfulness.jpg" alt="Tranquil Mind Quest Logo" class="nav-brand-icon">
+                Tranquil Mind Quest
+            </a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="wellness-dropdown">Wellness</a>
+                    <ul class="dropdown-menu" id="wellness-menu">
+                        <li><a href="meditation.html" class="dropdown-link">Meditation</a></li>
+                        <li><a href="breathing.html" class="dropdown-link">Breathing</a></li>
+                        <li><a href="yoga.html" class="dropdown-link">Yoga</a></li>
+                        <li><a href="mindfulness.html" class="dropdown-link">Mindfulness</a></li>
+                    </ul>
+                </li>
+                <li><a href="resources.html" class="nav-link">Resources</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="nav-search" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-background">
+                <div class="breathing-circle"></div>
+                <div class="particles"></div>
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-title">Your Journey to a Tranquil Mind Starts Here</h1>
+                <p class="hero-subtitle">Evidence-based resources for managing stress, anxiety, and depression. You're not alone.</p>
+                <div class="hero-cta">
+                    <a href="#coping-techniques" class="btn btn-primary btn-lg">Explore Free Resources</a>
+                    <a href="breathing.html" class="btn btn-secondary btn-lg">Take 5-Minute Calm Break</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M7 13l3 3 3-3M7 6l3 3 3-3"></path>
+                </svg>
+            </div>
+        </section>
+        
+        <!-- Mental Health Stats Section -->
+        <section class="stats section" id="mental-health-stats">
+            <div class="container">
+                <h2 class="text-center">You're Not Alone: Mental Health by the Numbers</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="20">0</div>
+                        <div class="stat-label">1 in 5 adults</div>
+                        <div class="stat-description">experience mental illness annually</div>
+                        <div class="stat-source">Source: NAMI 2024</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="970">0</div>
+                        <div class="stat-label">970 million people</div>
+                        <div class="stat-description">worldwide live with mental disorders</div>
+                        <div class="stat-source">Source: WHO 2024</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="19">0</div>
+                        <div class="stat-label">19.1% of adults</div>
+                        <div class="stat-description">experience anxiety disorders</div>
+                        <div class="stat-source">Source: NIMH</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="280">0</div>
+                        <div class="stat-label">280 million people</div>
+                        <div class="stat-description">globally affected by depression</div>
+                        <div class="stat-source">Source: WHO</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Why Mental Health Matters -->
+        <section class="section" id="why-mental-health-matters">
+            <div class="container">
+                <div class="grid grid-cols-2 gap-xl">
+                    <div class="content">
+                        <h2>Why Mental Health Matters</h2>
+                        <p>Mental health is just as important as physical health. It affects how we think, feel, and act in daily life. It also helps determine how we handle stress, relate to others, and make choices.</p>
+                        <p>Mental health conditions are common, treatable, and nothing to be ashamed of. By understanding mental health and learning coping strategies, we can build resilience, improve our relationships, and live more fulfilling lives.</p>
+                        <p>Breaking the stigma around mental health starts with education and understanding. Everyone deserves access to quality mental health resources and support.</p>
+                        <a href="about.html" class="btn btn-primary">Learn More About Mental Health</a>
+                    </div>
+                    <div class="illustration">
+                        <div class="illustration-placeholder">
+                            <svg width="400" height="300" viewBox="0 0 400 300" fill="none">
+                                <circle cx="200" cy="150" r="100" fill="var(--accent-primary)" opacity="0.1"/>
+                                <circle cx="200" cy="150" r="80" fill="var(--accent-secondary)" opacity="0.1"/>
+                                <circle cx="200" cy="150" r="60" fill="var(--accent-warm)" opacity="0.1"/>
+                                <text x="200" y="160" text-anchor="middle" fill="var(--text-primary)" font-size="16" font-weight="600">Mental Wellness</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Coping Techniques Preview -->
+        <section class="techniques section" id="coping-techniques">
+            <div class="container">
+                <h2 class="text-center">Evidence-Based Techniques for Inner Peace</h2>
+                <div class="techniques-grid">
+                    <div class="technique-card">
+                        <div class="technique-icon">🧘</div>
+                        <h3 class="technique-title">Meditation & Mindfulness</h3>
+                        <p class="technique-description">Reduce stress and anxiety through guided meditation. Studies show regular practice decreases cortisol levels by up to 31%.</p>
+                        <ul class="technique-benefits">
+                            <li>Reduces anxiety</li>
+                            <li>Improves focus</li>
+                            <li>Better sleep</li>
+                        </ul>
+                        <a href="meditation.html" class="btn btn-primary">Start Meditating</a>
+                    </div>
+                    
+                    <div class="technique-card">
+                        <div class="technique-icon">🧘‍♀️</div>
+                        <h3 class="technique-title">Yoga for Mental Wellness</h3>
+                        <p class="technique-description">Combine physical postures with breath work. Research indicates yoga reduces depression symptoms in 60% of practitioners.</p>
+                        <ul class="technique-benefits">
+                            <li>Releases tension</li>
+                            <li>Boosts mood</li>
+                            <li>Builds resilience</li>
+                        </ul>
+                        <a href="yoga.html" class="btn btn-primary">Explore Yoga Poses</a>
+                    </div>
+                    
+                    <div class="technique-card">
+                        <div class="technique-icon">🫁</div>
+                        <h3 class="technique-title">Breathwork Exercises</h3>
+                        <p class="technique-description">Activate your body's relaxation response. 4-7-8 breathing can calm panic attacks within minutes.</p>
+                        <ul class="technique-benefits">
+                            <li>Immediate relief</li>
+                            <li>Lowers heart rate</li>
+                            <li>Reduces panic</li>
+                        </ul>
+                        <a href="breathing.html" class="btn btn-primary">Try Breathing Exercises</a>
+                    </div>
+                    
+                    <div class="technique-card">
+                        <div class="technique-icon">🧠</div>
+                        <h3 class="technique-title">Mindfulness Practices</h3>
+                        <p class="technique-description">Stay present and reduce rumination. Mindfulness-based therapy is clinically proven to prevent depression relapse.</p>
+                        <ul class="technique-benefits">
+                            <li>Reduces worry</li>
+                            <li>Enhances awareness</li>
+                            <li>Improves relationships</li>
+                        </ul>
+                        <a href="mindfulness.html" class="btn btn-primary">Practice Mindfulness</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- How It Works / Your Wellness Journey -->
+        <section class="section bg-secondary" id="wellness-journey">
+            <div class="container">
+                <h2 class="text-center">Your Wellness Journey</h2>
+                <div class="journey-timeline">
+                    <div class="journey-step">
+                        <div class="journey-step-number">1</div>
+                        <div class="journey-step-content">
+                            <span class="journey-step-title">Recognize:</span> <span class="journey-step-desc">Acknowledge your feelings and mental state without judgment</span>
+                        </div>
+                    </div>
+                    <div class="journey-step">
+                        <div class="journey-step-number">2</div>
+                        <div class="journey-step-content">
+                            <span class="journey-step-title">Learn:</span> <span class="journey-step-desc">Understand mental health basics and evidence-based techniques</span>
+                        </div>
+                    </div>
+                    <div class="journey-step">
+                        <div class="journey-step-number">3</div>
+                        <div class="journey-step-content">
+                            <span class="journey-step-title">Practice:</span> <span class="journey-step-desc">Try meditation, breathing exercises, and mindfulness techniques</span>
+                        </div>
+                    </div>
+                    <div class="journey-step">
+                        <div class="journey-step-number">4</div>
+                        <div class="journey-step-content">
+                            <span class="journey-step-title">Track:</span> <span class="journey-step-desc">Monitor your progress and celebrate small victories</span>
+                        </div>
+                    </div>
+                    <div class="journey-step">
+                        <div class="journey-step-number">5</div>
+                        <div class="journey-step-content">
+                            <span class="journey-step-title">Thrive:</span> <span class="journey-step-desc">Build lasting wellness habits and maintain your mental health</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Featured Wellness Products -->
+        <section class="products section" id="wellness-products">
+            <div class="container">
+                <h2 class="text-center">Tools to Support Your Journey</h2>
+                <p class="text-center text-secondary">Carefully curated, research-backed wellness products</p>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="product-placeholder">📚</div>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">The Body Keeps the Score</h3>
+                            <div class="product-price">₹489</div>
+                            <div class="product-rating">
+                                <div class="product-rating-stars">★★★★★</div>
+                                <span class="product-rating-text">4.36/5 (266,000+ reviews)</span>
+                            </div>
+                            <p class="product-description">Groundbreaking book on trauma and healing by Bessel van der Kolk</p>
+                            <a href="https://www.amazon.in/dp/0141978619/?tag=curiouspulsea-21" class="btn btn-primary" target="_blank" rel="noopener">View on Amazon</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="product-placeholder">🧘</div>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Meditation Cushion (Zafu)</h3>
+                            <div class="product-price">₹1,399</div>
+                            <div class="product-rating">
+                                <div class="product-rating-stars">★★★★★</div>
+                                <span class="product-rating-text">4.5/5</span>
+                            </div>
+                            <p class="product-description">Ergonomic meditation cushion with buckwheat fill for comfortable practice</p>
+                            <a href="https://www.amazon.in/dp/B08617VNGN/?tag=curiouspulsea-21" class="btn btn-primary" target="_blank" rel="noopener">View on Amazon</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="product-placeholder">🌿</div>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Essential Oil Diffuser</h3>
+                            <div class="product-price">₹999</div>
+                            <div class="product-rating">
+                                <div class="product-rating-stars">★★★★☆</div>
+                                <span class="product-rating-text">4.4/5</span>
+                            </div>
+                            <p class="product-description">Aromatherapy diffuser for stress relief and relaxation</p>
+                            <a href="https://www.amazon.in/dp/B0DT6XMM8R/?tag=curiouspulsea-21" class="btn btn-primary" target="_blank" rel="noopener">View on Amazon</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="product-placeholder">🛏️</div>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Weighted Blanket (15-20 lbs)</h3>
+                            <div class="product-price">₹3,999</div>
+                            <div class="product-rating">
+                                <div class="product-rating-stars">★★★★★</div>
+                                <span class="product-rating-text">4.6/5</span>
+                            </div>
+                            <p class="product-description">Deep pressure therapy for better sleep and anxiety relief</p>
+                            <a href="https://www.amazon.in/dp/B09SZBJ3FZ/?tag=curiouspulsea-21" class="btn btn-primary" target="_blank" rel="noopener">View on Amazon</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="products.html" class="btn btn-secondary">See All Wellness Products →</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Latest Resources / Blog Preview -->
+        <section class="blog section bg-secondary" id="latest-resources">
+            <div class="container">
+                <h2 class="text-center">Recent Insights & Guides</h2>
+                <div class="blog-grid">
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <div class="blog-placeholder">📝</div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date">Dec 15, 2024</span>
+                                <span class="blog-read-time">5 min read</span>
+                            </div>
+                            <h3 class="blog-title">Understanding Panic Attacks: Signs, Triggers & Coping Strategies</h3>
+                            <p class="blog-excerpt">Learn to recognize panic attack symptoms and discover evidence-based techniques to manage them effectively...</p>
+                            <a href="blog/panic-attacks-guide.html" class="btn btn-secondary">Read More</a>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <div class="blog-placeholder">🧘</div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date">Dec 12, 2024</span>
+                                <span class="blog-read-time">3 min read</span>
+                            </div>
+                            <h3 class="blog-title">5-Minute Meditation Guide for Beginners</h3>
+                            <p class="blog-excerpt">Start your meditation journey with this simple, step-by-step guide designed for complete beginners...</p>
+                            <a href="blog/meditation-beginners.html" class="btn btn-secondary">Read More</a>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <div class="blog-placeholder">❤️</div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date">Dec 10, 2024</span>
+                                <span class="blog-read-time">7 min read</span>
+                            </div>
+                            <h3 class="blog-title">How to Support a Loved One with Depression</h3>
+                            <p class="blog-excerpt">Practical advice for family and friends on how to provide meaningful support to someone struggling with depression...</p>
+                            <a href="blog/supporting-depression.html" class="btn btn-secondary">Read More</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Newsletter Signup -->
+        <section class="newsletter section" id="newsletter">
+            <div class="container">
+                <h2 class="text-center">Weekly Wellness in Your Inbox</h2>
+                <p class="text-center text-secondary">Evidence-based mental health tips, guided exercises, and resources. No spam, unsubscribe anytime.</p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="email" name="email" class="form-input newsletter-input" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+                <p class="newsletter-privacy">
+                    We respect your privacy. Read our <a href="privacy.html">Privacy Policy</a>.
+                </p>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About</h3>
+                    <p>Providing free, evidence-based mental health resources to help you on your wellness journey.</p>
+                    <p>Built with care for mental wellness.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Mental Health</a></li>
+                        <li><a href="meditation.html">Meditation</a></li>
+                        <li><a href="breathing.html">Breathing</a></li>
+                        <li><a href="yoga.html">Yoga</a></li>
+                        <li><a href="mindfulness.html">Mindfulness</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="tel:988">Crisis Hotlines</a></li>
+                        <li><a href="https://nami.org" target="_blank" rel="noopener">Mental Health Organizations</a></li>
+                        <li><a href="contact.html">Professional Help</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="https://instagram.com/tranquilmindquest" target="_blank" rel="noopener" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="https://youtube.com/tranquilmindquest" target="_blank" rel="noopener" aria-label="YouTube">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                        <a href="https://facebook.com/tranquilmindquest" target="_blank" rel="noopener" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/tranquilmindquest" target="_blank" rel="noopener" aria-label="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <p>contact@tranquilmindquest.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Tranquil Mind Quest. All rights reserved.</p>
+                <p class="footer-disclaimer">
+                    <strong>Disclaimer:</strong> This website provides educational information about mental health and wellness only. We are not mental health professionals, therapists, or medical experts. This content is for informational purposes only and should not be considered as professional medical advice, diagnosis, or treatment. Always seek the advice of qualified mental health professionals or other qualified healthcare providers with any questions you may have regarding a medical condition or mental health concern. If you are experiencing a mental health emergency, please contact your local emergency services or a mental health crisis hotline.
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript Files -->
+    <script src="./js/main.js"></script>
+    <script src="./js/smooth-scroll.js"></script>
+    <script src="./js/animations.js"></script>
+</body>
+</html>

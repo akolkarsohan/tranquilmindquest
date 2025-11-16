@@ -1,0 +1,90 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PublicReadGetObject",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::YOUR-BUCKET-NAME/*",
+      "Comment": "Allow public read access to all objects in the bucket for static website hosting"
+    },
+    {
+      "Sid": "CloudFrontServicePrincipal",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "cloudfront.amazonaws.com"
+      },
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::YOUR-BUCKET-NAME/*",
+      "Condition": {
+        "StringEquals": {
+          "AWS:SourceArn": "arn:aws:cloudfront::YOUR-AWS-ACCOUNT-ID:distribution/YOUR-CLOUDFRONT-DISTRIBUTION-ID"
+        }
+      },
+      "Comment": "Allow CloudFront distribution to access S3 objects (for Origin Access Control)"
+    },
+    {
+      "Sid": "DenyInsecureConnections",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:*",
+      "Resource": [
+        "arn:aws:s3:::YOUR-BUCKET-NAME",
+        "arn:aws:s3:::YOUR-BUCKET-NAME/*"
+      ],
+      "Condition": {
+        "Bool": {
+          "aws:SecureTransport": "false"
+        }
+      },
+      "Comment": "Deny all requests that do not use HTTPS (security best practice)"
+    }
+  ]
+}
+
+/*
+INSTRUCTIONS FOR USE:
+
+1. Replace placeholders:
+   - YOUR-BUCKET-NAME: Replace with your actual S3 bucket name (e.g., tranquilmindquest.com)
+   - YOUR-AWS-ACCOUNT-ID: Replace with your AWS account ID (12-digit number)
+   - YOUR-CLOUDFRONT-DISTRIBUTION-ID: Replace with your CloudFront distribution ID
+
+2. How to apply this policy:
+   a) Go to AWS S3 Console
+   b) Select your bucket
+   c) Go to Permissions tab
+   d) Scroll to Bucket policy section
+   e) Click Edit
+   f) Copy and paste this JSON (with your replacements)
+   g) Click Save changes
+
+3. Policy explanations:
+   - PublicReadGetObject: Allows anyone to read files from your bucket (required for static website hosting)
+   - CloudFrontServicePrincipal: Allows CloudFront to access your S3 bucket (for better security than public access)
+   - DenyInsecureConnections: Prevents HTTP access, forcing HTTPS only (security best practice)
+
+4. Security notes:
+   - This policy enables public read access, which is required for static website hosting
+   - The CloudFront condition ensures only your specific CloudFront distribution can access the bucket
+   - HTTPS-only policy prevents insecure connections
+
+5. Alternative approach (more secure):
+   If you want to use Origin Access Control (OAC) instead of public access:
+   - Remove the PublicReadGetObject statement
+   - Keep only the CloudFrontServicePrincipal statement
+   - Configure CloudFront with Origin Access Control
+   - This is more secure but requires CloudFront to be set up first
+
+6. Troubleshooting:
+   - If you get "Access Denied" errors, check that the bucket name matches exactly
+   - Ensure CloudFront distribution ID is correct if using OAC
+   - Verify AWS account ID is correct (found in AWS Console top-right corner)
+*/
+
+
+
+
+
+

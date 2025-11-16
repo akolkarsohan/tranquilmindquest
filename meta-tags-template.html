@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ===== SEO META TAGS TEMPLATE ===== -->
+    <!-- TranquilMindQuest - Mental Health Website SEO Template -->
+    <!-- Copy and customize these meta tags for each page -->
+    
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ===== PAGE-SPECIFIC META TAGS ===== -->
+    <!-- Replace placeholders with actual content for each page -->
+    
+    <!-- Primary Meta Tags -->
+    <title>{{PAGE_TITLE}} | TranquilMindQuest</title>
+    <meta name="title" content="{{PAGE_TITLE}} | TranquilMindQuest">
+    <meta name="description" content="{{META_DESCRIPTION}}">
+    <meta name="keywords" content="{{KEYWORDS}}">
+    <meta name="author" content="TranquilMindQuest">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Canonical URL (Prevents duplicate content) -->
+    <link rel="canonical" href="{{CANONICAL_URL}}">
+    
+    <!-- ===== OPEN GRAPH / FACEBOOK ===== -->
+    <meta property="og:type" content="{{OG_TYPE}}">
+    <meta property="og:url" content="{{CANONICAL_URL}}">
+    <meta property="og:title" content="{{PAGE_TITLE}} | TranquilMindQuest">
+    <meta property="og:description" content="{{META_DESCRIPTION}}">
+    <meta property="og:image" content="{{OG_IMAGE}}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="{{IMAGE_ALT_TEXT}}">
+    <meta property="og:site_name" content="TranquilMindQuest">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- ===== TWITTER CARD ===== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{CANONICAL_URL}}">
+    <meta name="twitter:title" content="{{PAGE_TITLE}} | TranquilMindQuest">
+    <meta name="twitter:description" content="{{META_DESCRIPTION}}">
+    <meta name="twitter:image" content="{{OG_IMAGE}}">
+    <meta name="twitter:image:alt" content="{{IMAGE_ALT_TEXT}}">
+    <meta name="twitter:site" content="@tranquilmindquest">
+    <meta name="twitter:creator" content="@tranquilmindquest">
+    
+    <!-- ===== ADDITIONAL SEO META TAGS ===== -->
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="msapplication-TileColor" content="#1a1a2e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="TranquilMindQuest">
+    
+    <!-- ===== STRUCTURED DATA (JSON-LD) ===== -->
+    <!-- Replace {{SCHEMA_TYPE}} with appropriate schema type -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "{{SCHEMA_TYPE}}",
+        {{SCHEMA_CONTENT}}
+    }
+    </script>
+    
+    <!-- ===== FAVICON AND APP ICONS ===== -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- ===== PRELOAD CRITICAL RESOURCES ===== -->
+    <link rel="preload" href="/css/main.css" as="style">
+    <link rel="preload" href="/css/dark-theme.css" as="style">
+    <link rel="preload" href="/js/main.js" as="script">
+    
+    <!-- ===== DNS PREFETCH FOR EXTERNAL RESOURCES ===== -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    
+    <!-- ===== CSS FILES ===== -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/dark-theme.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    {{PAGE_SPECIFIC_CSS}}
+    
+    <!-- ===== GOOGLE ANALYTICS 4 ===== -->
+    <!-- Replace GA_MEASUREMENT_ID with your actual Google Analytics ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{GA_MEASUREMENT_ID}}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{GA_MEASUREMENT_ID}}', {
+            page_title: '{{PAGE_TITLE}}',
+            page_location: '{{CANONICAL_URL}}'
+        });
+    </script>
+    
+    <!-- ===== GOOGLE SEARCH CONSOLE VERIFICATION ===== -->
+    <!-- Replace with your actual verification code -->
+    <meta name="google-site-verification" content="{{GOOGLE_VERIFICATION_CODE}}">
+    
+    <!-- ===== BING WEBMASTER VERIFICATION ===== -->
+    <meta name="msvalidate.01" content="{{BING_VERIFICATION_CODE}}">
+    
+    <!-- ===== YANDEX VERIFICATION ===== -->
+    <meta name="yandex-verification" content="{{YANDEX_VERIFICATION_CODE}}">
+    
+    <!-- ===== ADDITIONAL META TAGS FOR MENTAL HEALTH NICHE ===== -->
+    <meta name="subject" content="Mental Health, Wellness, Meditation, Mindfulness">
+    <meta name="classification" content="Health, Wellness, Mental Health">
+    <meta name="category" content="Health and Wellness">
+    <meta name="coverage" content="Worldwide">
+    <meta name="distribution" content="Global">
+    <meta name="rating" content="General">
+    <meta name="target" content="all">
+    
+    <!-- ===== ACCESSIBILITY META TAGS ===== -->
+    <meta name="accessibility" content="WCAG 2.1 AA compliant">
+    <meta name="accessibility-feature" content="high-contrast, large-text, keyboard-navigation">
+    
+    <!-- ===== CONTENT SECURITY POLICY ===== -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com;">
+    
+    <!-- ===== PAGE-SPECIFIC PLACEHOLDERS ===== -->
+    <!-- 
+    REPLACE THESE PLACEHOLDERS FOR EACH PAGE:
+    
+    {{PAGE_TITLE}} - Main page title (60 characters max)
+    {{META_DESCRIPTION}} - Page description (155-160 characters)
+    {{KEYWORDS}} - Comma-separated keywords
+    {{CANONICAL_URL}} - Full URL of the page
+    {{OG_TYPE}} - website, article, product, etc.
+    {{OG_IMAGE}} - Social sharing image URL (1200x630px)
+    {{IMAGE_ALT_TEXT}} - Descriptive alt text for image
+    {{SCHEMA_TYPE}} - Organization, Article, FAQPage, HowTo, etc.
+    {{SCHEMA_CONTENT}} - JSON-LD structured data content
+    {{PAGE_SPECIFIC_CSS}} - Additional CSS files for specific pages
+    {{GA_MEASUREMENT_ID}} - Google Analytics measurement ID
+    {{GOOGLE_VERIFICATION_CODE}} - Google Search Console verification
+    {{BING_VERIFICATION_CODE}} - Bing Webmaster verification
+    {{YANDEX_VERIFICATION_CODE}} - Yandex verification code
+    -->
+</head>
+<body>
+    <!-- ===== PAGE CONTENT STARTS HERE ===== -->
+    <!-- Remember to include proper heading structure: -->
+    <!-- H1: Main page title (only one per page) -->
+    <!-- H2: Main sections -->
+    <!-- H3: Subsections -->
+    <!-- etc. -->
+    
+    <!-- ===== IMPLEMENTATION NOTES ===== -->
+    <!-- 
+    1. COPY THIS TEMPLATE FOR EACH PAGE
+    2. REPLACE ALL PLACEHOLDERS WITH ACTUAL CONTENT
+    3. ENSURE UNIQUE TITLES AND DESCRIPTIONS FOR EACH PAGE
+    4. USE RELEVANT KEYWORDS NATURALLY
+    5. INCLUDE APPROPRIATE SCHEMA MARKUP
+    6. TEST WITH GOOGLE'S RICH RESULTS TEST
+    7. VALIDATE WITH GOOGLE SEARCH CONSOLE
+    8. MONITOR PERFORMANCE WITH ANALYTICS
+    -->
+</body>
+</html>
+
+<!-- ===== PAGE-SPECIFIC EXAMPLES ===== -->
+
+<!-- HOMEPAGE EXAMPLE -->
+<!--
+<title>TranquilMindQuest - Your Guide to Mental Wellness & Peace | Meditation, Mindfulness, Anxiety Relief</title>
+<meta name="description" content="Discover tranquility through expert mental health resources, guided meditations, and proven coping techniques. Free support for anxiety, stress, and depression. Start your wellness journey today.">
+<meta name="keywords" content="mental health, anxiety relief, meditation guide, mindfulness, stress management, mental wellness, depression support, coping techniques">
+-->
+
+<!-- ABOUT PAGE EXAMPLE -->
+<!--
+<title>Understanding Mental Health - Education & Resources | TranquilMindQuest</title>
+<meta name="description" content="Learn about mental health, common challenges, and breaking stigma. Comprehensive, compassionate guide to understanding anxiety, depression, and more.">
+<meta name="keywords" content="mental health education, anxiety information, depression facts, mental health stigma, mental wellness resources">
+-->
+
+<!-- MEDITATION PAGE EXAMPLE -->
+<!--
+<title>Meditation for Beginners - Free Guided Meditations | TranquilMindQuest</title>
+<meta name="description" content="Learn meditation techniques for anxiety relief and mental clarity. Free guided meditations, breathing exercises, and mindfulness practices for beginners.">
+<meta name="keywords" content="meditation for beginners, guided meditation, anxiety meditation, mindfulness meditation, meditation techniques">
+-->
+
+<!-- BLOG PAGE EXAMPLE -->
+<!--
+<title>Mental Wellness Blog - Tips, Stories & Expert Advice | TranquilMindQuest</title>
+<meta name="description" content="Read expert mental health advice, personal stories, and practical wellness tips. Evidence-based articles on anxiety, depression, and mental wellness.">
+<meta name="keywords" content="mental health blog, wellness tips, anxiety advice, depression support, mental health articles">
+-->
+
+<!-- PRODUCTS PAGE EXAMPLE -->
+<!--
+<title>Mental Health Products - Recommended Wellness Tools | TranquilMindQuest</title>
+<meta name="description" content="Discover carefully curated mental health products and wellness tools. Meditation cushions, essential oils, weighted blankets, and more for your wellness journey.">
+<meta name="keywords" content="mental health products, wellness tools, meditation supplies, anxiety relief products, mental wellness equipment">
+-->
+
+<!-- CONTACT PAGE EXAMPLE -->
+<!--
+<title>Contact Us - Mental Health Support & AI Chatbot | TranquilMindQuest</title>
+<meta name="description" content="Get instant mental health support from our AI chatbot or reach out directly. 24/7 assistance for anxiety, stress, and mental wellness questions.">
+<meta name="keywords" content="mental health support, AI chatbot, mental health contact, wellness assistance, crisis support">
+-->
+
+
+
+
+
+

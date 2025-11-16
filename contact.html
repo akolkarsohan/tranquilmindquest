@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Tranquil Mind Quest</title>
+    <meta name="description" content="Get instant help from our AI guide or reach out directly. We're here to support your mental wellness journey with 24/7 assistance.">
+    <meta name="keywords" content="mental health support, AI chatbot, contact form, mental wellness assistance, wellness resources">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tranquilmindquest.com/contact.html">
+    <meta property="og:title" content="Contact Us - Tranquil Mind Quest">
+    <meta property="og:description" content="Get instant help from our AI guide or reach out directly. We're here to support your mental wellness journey.">
+    <meta property="og:image" content="https://tranquilmindquest.com/images/og-contact.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://tranquilmindquest.com/contact.html">
+    <meta property="twitter:title" content="Contact Us - Tranquil Mind Quest">
+    <meta property="twitter:description" content="Get instant help from our AI guide or reach out directly. We're here to support your mental wellness journey.">
+    <meta property="twitter:image" content="https://tranquilmindquest.com/images/og-contact.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tranquilmindquest.com/contact.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/dark-theme.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="./css/contact.css">
+    
+    <!-- Navigation Dropdown Styles -->
+    <style>
+        .nav-dropdown {
+            position: relative;
+        }
+        
+        .dropdown-toggle {
+            cursor: pointer;
+        }
+        
+        .dropdown-toggle::after {
+            content: '▼';
+            font-size: 10px;
+            margin-left: 5px;
+            transition: transform var(--transition-fast);
+        }
+        
+        .nav-dropdown:hover .dropdown-toggle::after {
+            transform: rotate(180deg);
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            min-width: 180px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all var(--transition-fast);
+            z-index: var(--z-dropdown);
+        }
+        
+        .nav-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-menu {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .dropdown-menu li {
+            margin: 0;
+            list-style: none;
+        }
+        
+        .dropdown-link {
+            display: block;
+            padding: var(--space-sm) var(--space-md);
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all var(--transition-fast);
+            border-radius: var(--radius-sm);
+            margin: var(--space-xs);
+        }
+        
+        .dropdown-link:hover {
+            background: var(--bg-tertiary);
+            color: var(--accent-primary);
+        }
+    </style>
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact Us - Tranquil Mind Quest",
+        "description": "Get instant help from our AI guide or reach out directly for mental wellness support.",
+        "url": "https://tranquilmindquest.com/contact.html",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "Tranquil Mind Quest",
+            "email": "contact@tranquilmindquest.com",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "email": "contact@tranquilmindquest.com",
+                "contactType": "customer support",
+                "availableLanguage": "English"
+            }
+        }
+    }
+    </script>
+</head>
+<body class="contact-page">
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav-brand">
+                    <img src="images/placeholders/tmq-icon-mindfulness.jpg" alt="Tranquil Mind Quest Logo" class="nav-brand-icon">
+                Tranquil Mind Quest
+            </a>
+                
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="wellness-dropdown">Wellness</a>
+                    <ul class="dropdown-menu" id="wellness-menu">
+                            <li><a href="meditation.html" class="dropdown-link">Meditation</a></li>
+                            <li><a href="breathing.html" class="dropdown-link">Breathing</a></li>
+                            <li><a href="yoga.html" class="dropdown-link">Yoga</a></li>
+                            <li><a href="mindfulness.html" class="dropdown-link">Mindfulness</a></li>
+                        </ul>
+                    </li>
+                <li><a href="resources.html" class="nav-link">Resources</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="nav-search" aria-label="Search">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+        </div>
+    </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero contact-hero section">
+            <div class="hero-background">
+                <div class="hero-particles"></div>
+            </div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">We're Here to Support You</h1>
+                    <p class="hero-subtitle">Get instant help from our AI guide or reach out directly</p>
+                    <div class="hero-options">
+                        <button class="btn btn-primary btn-lg" id="chat-toggle">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                            Chat with AI
+                        </button>
+                        <a href="#contact-form" class="btn btn-secondary btn-lg">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            Contact Form
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Two-Column Layout -->
+        <div class="contact-page-layout">
+            <!-- Left Column: Content Sections -->
+            <div class="contact-left-column">
+                <!-- Contact Form -->
+                <section class="contact-form-section" id="contact-form">
+                    <div class="container">
+                        <div class="form-container">
+                            <div class="form-header">
+                                <h2>Prefer Email? Send Us a Message</h2>
+                                <p>We'll get back to you within 24-48 hours</p>
+                            </div>
+                            
+                            <form class="contact-form" id="contact-form-element">
+                        <div class="form-group">
+                            <label for="contact-name">Name *</label>
+                            <input type="text" id="contact-name" name="name" required aria-describedby="name-error">
+                            <div class="error-message" id="name-error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-email">Email *</label>
+                            <input type="email" id="contact-email" name="email" required aria-describedby="email-error">
+                            <div class="error-message" id="email-error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-subject">Subject *</label>
+                            <select id="contact-subject" name="subject" required aria-describedby="subject-error">
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="partnership">Partnership</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="technical">Technical Issue</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <div class="error-message" id="subject-error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-message">Message *</label>
+                            <textarea id="contact-message" name="message" rows="6" required aria-describedby="message-error" placeholder="Tell us how we can help you..."></textarea>
+                            <div class="error-message" id="message-error"></div>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter-signup" name="newsletter">
+                                <span class="checkmark"></span>
+                                I'd like to receive wellness tips via email
+                            </label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="captcha-placeholder">
+                                <p>CAPTCHA verification will be added here</p>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22,2 15,22 11,13 2,9 22,2"></polygon>
+                            </svg>
+                            Send Message
+                        </button>
+                    </form>
+                    
+                    <div class="form-success" id="form-success" style="display: none;">
+                        <div class="success-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22,4 12,14.01 9,11.01"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Message Sent Successfully!</h3>
+                        <p>Thank you for reaching out. We'll get back to you within 24-48 hours.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Alternative Contact Methods -->
+        <section class="alternative-contact">
+            <div class="container">
+                <h2 class="section-title">Other Ways to Connect</h2>
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Email Us</h3>
+                        <p>For general inquiries and support</p>
+                        <a href="mailto:contact@tranquilmindquest.com" class="contact-link">contact@tranquilmindquest.com</a>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </div>
+                        <h3>Social Media</h3>
+                        <p>Follow us for daily wellness tips</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Facebook">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="Twitter">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="Instagram">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Join Newsletter</h3>
+                        <p>Get weekly wellness tips delivered to your inbox</p>
+                        <form class="newsletter-form" id="newsletter-form">
+                            <div class="newsletter-input-group">
+                                <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+                                <button type="submit" class="newsletter-btn">Subscribe</button>
+                            </div>
+                        </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title">Before You Reach Out</h2>
+                <p class="section-subtitle">Check our frequently asked questions first</p>
+                
+                <div class="faq-accordion">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>How quickly do you respond to messages?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We typically respond to all messages within 24-48 hours. Please note that we provide educational resources only and are not a replacement for professional medical care.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Is the AI chatbot a replacement for professional therapy?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No, TranquilBot is designed to provide general wellness information and support. It's not a replacement for professional mental health care. For personalized treatment, please consult with a qualified mental health professional.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Is my conversation with the AI chatbot private?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, your conversations are private and confidential. We don't store personal information, and conversations are not shared with third parties. However, we may use anonymized data to improve our services.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Can I get a transcript of my chatbot conversation?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, you can request a transcript of your conversation by clicking the "Email Transcript" button in the chatbot interface. This will send a copy of your conversation to your email address.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>What if I need immediate help?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>This website provides educational information and resources only. We are not mental health professionals and cannot provide crisis support or emergency services. If you're experiencing a mental health emergency, please contact your local emergency services or a qualified mental health professional immediately.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>How do I report a technical issue?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Please use the contact form above and select "Technical Issue" as your subject. Include details about the problem you're experiencing, your device/browser information, and any error messages you've seen.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Can I suggest new features for the website?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely! We welcome feedback and suggestions. Please use the contact form and select "Feedback" as your subject. We review all suggestions and consider them for future updates.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Do you offer partnerships or collaborations?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, we're open to partnerships with mental health professionals, wellness brands, and organizations that align with our mission. Please contact us using the "Partnership" subject in the contact form.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Is TranquilMindQuest free to use?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, all our mental wellness resources, tools, and the AI chatbot are completely free to use. We believe mental health support should be accessible to everyone.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>How can I unsubscribe from emails?</span>
+                            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>You can unsubscribe from our emails at any time by clicking the unsubscribe link at the bottom of any email we send you, or by contacting us directly.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-footer">
+                    <p>Don't see your question? <a href="#contact-form">Send us a message</a> and we'll be happy to help!</p>
+            </div>
+        </section>
+
+        <!-- Response Time Expectations -->
+        <section class="response-time">
+            <div class="container">
+                <div class="response-card">
+                    <h2>What to Expect</h2>
+                    <div class="response-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12,6 12,12 16,14"></polyline>
+                                </svg>
+                            </div>
+                            <div class="timeline-content">
+                                <h3>AI Chatbot</h3>
+                                <p>Instant responses 24/7</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div class="timeline-content">
+                                <h3>Email Response</h3>
+                                <p>Within 24-48 hours</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                </svg>
+                            </div>
+                            <div class="timeline-content">
+                                <h3>Educational Resources</h3>
+                                <p>Free wellness content available</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="urgent-notice">
+                        <p><strong>Important Note:</strong> We provide educational information and wellness resources only. We are not mental health professionals or emergency services. For urgent mental health needs, please contact qualified mental health professionals or emergency services in your area.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Global Support Map -->
+        <section class="global-support">
+            <div class="container">
+                <div class="support-map">
+                    <div class="map-content">
+                        <h2>Supporting Wellness Globally</h2>
+                        <p>While we're based online, our mental wellness resources are available worldwide. Our AI chatbot can provide support in multiple languages, and we're continuously expanding our global reach.</p>
+                        
+                        <div class="global-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">50+</div>
+                                <div class="stat-label">Countries Reached</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">24/7</div>
+                                <div class="stat-label">AI Support Available</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label">Free Resources</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="map-visual">
+                        <svg width="400" height="300" viewBox="0 0 400 300" fill="none">
+                            <circle cx="200" cy="150" r="120" fill="var(--accent-primary)" opacity="0.1"/>
+                            <circle cx="200" cy="150" r="80" fill="var(--accent-secondary)" opacity="0.1"/>
+                            <circle cx="200" cy="150" r="40" fill="var(--accent-warm)" opacity="0.1"/>
+                            <text x="200" y="160" text-anchor="middle" fill="var(--text-primary)" font-size="16" font-weight="600">Global Support</text>
+                        </svg>
+                    </div>
+                </div>
+                </section>
+            </div>
+
+            <!-- Right Column: Chatbot Only -->
+            <div class="contact-right-column">
+                <section class="chatbot-section" id="chatbot-section">
+                    <div class="chatbot-container">
+                        <div class="chatbot-header">
+                            <div class="chatbot-title">
+                                <div class="chatbot-avatar">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                                    </svg>
+                                </div>
+                                <div class="chatbot-info">
+                                    <h2>TranquilBot - Your Mental Wellness Guide</h2>
+                                    <p>Available 24/7 to answer your questions</p>
+                                </div>
+                            </div>
+                            <div class="chatbot-controls">
+                                <button class="chatbot-minimize" id="chatbot-minimize" aria-label="Minimize chat">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                </button>
+                                <button class="chatbot-sound" id="chatbot-sound" aria-label="Toggle sound">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="chatbot-body" id="chatbot-body">
+                            <div class="chat-messages" id="chat-messages">
+                                <!-- Messages will be dynamically added here -->
+                            </div>
+                            
+                            <div class="chat-input-container">
+                                <div class="suggested-questions" id="suggested-questions">
+                                    <div class="question-pills-wrapper">
+                                        <div class="question-pills">
+                                            <button class="question-pill" data-question="How can I manage anxiety?">How can I manage anxiety?</button>
+                                            <button class="question-pill" data-question="What is meditation?">What is meditation?</button>
+                                            <button class="question-pill" data-question="I'm feeling stressed, what should I do?">I'm feeling stressed, what should I do?</button>
+                                            <button class="question-pill" data-question="Tell me about deep breathing">Tell me about deep breathing</button>
+                                            <!-- Duplicate for seamless loop -->
+                                            <button class="question-pill" data-question="How can I manage anxiety?">How can I manage anxiety?</button>
+                                            <button class="question-pill" data-question="What is meditation?">What is meditation?</button>
+                                            <button class="question-pill" data-question="I'm feeling stressed, what should I do?">I'm feeling stressed, what should I do?</button>
+                                            <button class="question-pill" data-question="Tell me about deep breathing">Tell me about deep breathing</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="chat-input-group">
+                                    <input type="text" id="chat-input" placeholder="Type your message..." aria-label="Type your message">
+                                    <button id="chat-send" aria-label="Send message">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                                            <polygon points="22,2 15,22 11,13 2,9 22,2"></polygon>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="chatbot-footer">
+                            <div class="chatbot-actions">
+                                <button class="chatbot-action" id="new-conversation">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                        <polyline points="14,2 14,8 20,8"></polyline>
+                                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                                        <polyline points="10,9 9,9 8,9"></polyline>
+                                    </svg>
+                                    New Chat
+                                </button>
+                                <button class="chatbot-action" id="email-transcript">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                    Email Transcript
+                                </button>
+                            </div>
+                            <div class="chatbot-disclaimer">
+                                <p><strong>Powered by AI</strong> • Private & Confidential • For personalized support, consider speaking with a professional</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Mobile Chat Button -->
+    <div class="mobile-chat-button" id="mobile-chat-button">
+        <button class="chat-toggle-mobile" aria-label="Open chat">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="images/placeholders/tmq-icon-mindfulness.jpg" alt="Tranquil Mind Quest Logo" class="footer-logo">
+                        <h3>Tranquil Mind Quest</h3>
+                    </div>
+                    <p>Your trusted companion on the journey to mental wellness. We provide evidence-based resources, tools, and support to help you build resilience, manage stress, and cultivate inner peace.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="meditation.html">Meditation</a></li>
+                        <li><a href="breathing.html">Breathing</a></li>
+                        <li><a href="yoga.html">Yoga</a></li>
+                        <li><a href="mindfulness.html">Mindfulness</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="products.html">Wellness Products</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">Mental Health Resources</a></li>
+                        <li><a href="about.html#professional-resources">Professional Help</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-disclaimer">
+                    <p><strong>Disclaimer:</strong> TranquilMindQuest provides educational content and wellness resources. We are not mental health professionals, therapists, or medical experts. This content is for informational purposes only and should not be considered as professional medical advice, diagnosis, or treatment. Always seek the advice of qualified mental health professionals or other qualified healthcare providers with any questions you may have regarding a medical condition or mental health concern.</p>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2024 Tranquil Mind Quest. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="./js/main.js"></script>
+    <script src="./js/smooth-scroll.js"></script>
+    <script src="./js/animations.js"></script>
+    <script src="./js/contact.js"></script>
+</body>
+</html>
+
+
+

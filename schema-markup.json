@@ -1,0 +1,560 @@
+{
+  "organization": {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TranquilMindQuest",
+    "alternateName": "TMQ",
+    "url": "https://tranquilmindquest.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://tranquilmindquest.com/images/logo.png",
+      "width": 200,
+      "height": 60
+    },
+    "description": "TranquilMindQuest is a comprehensive mental health and wellness platform providing free resources, guided meditations, and proven coping techniques for anxiety, stress, and depression.",
+    "foundingDate": "2024",
+    "founder": {
+      "@type": "Person",
+      "name": "TranquilMindQuest Team"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "US"
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "contactType": "Customer Support",
+        "email": "contact@tranquilmindquest.com",
+        "availableLanguage": "English"
+      },
+      {
+        "@type": "ContactPoint",
+        "contactType": "Crisis Support",
+        "telephone": "+1-800-273-8255",
+        "availableLanguage": "English"
+      }
+    ],
+    "sameAs": [
+      "https://instagram.com/tranquilmindquest",
+      "https://youtube.com/tranquilmindquest",
+      "https://facebook.com/tranquilmindquest",
+      "https://twitter.com/tranquilmindquest"
+    ],
+    "knowsAbout": [
+      "Mental Health",
+      "Anxiety Relief",
+      "Meditation",
+      "Mindfulness",
+      "Stress Management",
+      "Depression Support",
+      "Yoga for Mental Health",
+      "Breathing Exercises",
+      "Mental Wellness"
+    ],
+    "serviceArea": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.8283,
+        "longitude": -98.5795
+      },
+      "geoRadius": "20000000"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Mental Health Resources",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Free Mental Health Resources",
+            "description": "Comprehensive mental health education and support materials"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Guided Meditation Sessions",
+            "description": "Free guided meditations for anxiety relief and mental clarity"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "AI Mental Health Chatbot",
+            "description": "24/7 AI-powered mental health support and guidance"
+          }
+        }
+      ]
+    }
+  },
+
+  "website": {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "TranquilMindQuest",
+    "url": "https://tranquilmindquest.com",
+    "description": "Your comprehensive guide to mental wellness, offering free resources, guided meditations, and proven techniques for anxiety relief, stress management, and mental health support.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "TranquilMindQuest",
+      "url": "https://tranquilmindquest.com"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://tranquilmindquest.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": "Mental Health Resources",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Meditation Guide",
+          "url": "https://tranquilmindquest.com/meditation.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Breathing Exercises",
+          "url": "https://tranquilmindquest.com/breathing.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Yoga for Mental Health",
+          "url": "https://tranquilmindquest.com/yoga.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Mindfulness Practices",
+          "url": "https://tranquilmindquest.com/mindfulness.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Mental Health Blog",
+          "url": "https://tranquilmindquest.com/blog.html"
+        }
+      ]
+    }
+  },
+
+  "article": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{ARTICLE_TITLE}}",
+    "description": "{{ARTICLE_DESCRIPTION}}",
+    "image": {
+      "@type": "ImageObject",
+      "url": "{{ARTICLE_IMAGE}}",
+      "width": 1200,
+      "height": 630
+    },
+    "author": {
+      "@type": "Person",
+      "name": "TranquilMindQuest Team",
+      "url": "https://tranquilmindquest.com/about.html"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "TranquilMindQuest",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://tranquilmindquest.com/images/logo.png",
+        "width": 200,
+        "height": 60
+      }
+    },
+    "datePublished": "{{PUBLISH_DATE}}",
+    "dateModified": "{{MODIFIED_DATE}}",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ARTICLE_URL}}"
+    },
+    "articleSection": "Mental Health",
+    "keywords": "{{ARTICLE_KEYWORDS}}",
+    "wordCount": "{{WORD_COUNT}}",
+    "timeRequired": "PT{{READING_TIME}}M",
+    "inLanguage": "en-US",
+    "isAccessibleForFree": true,
+    "mentions": [
+      {
+        "@type": "Thing",
+        "name": "Mental Health"
+      },
+      {
+        "@type": "Thing",
+        "name": "Anxiety Relief"
+      },
+      {
+        "@type": "Thing",
+        "name": "Wellness"
+      }
+    ]
+  },
+
+  "faqPage": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is TranquilMindQuest?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TranquilMindQuest is a comprehensive mental health and wellness platform that provides free resources, guided meditations, breathing exercises, and proven coping techniques to help people manage anxiety, stress, and depression."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is TranquilMindQuest free to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, all our mental wellness resources, tools, and the AI chatbot are completely free to use. We believe mental health support should be accessible to everyone."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How quickly do you respond to messages?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We typically respond to all messages within 24-48 hours. For urgent mental health concerns, please contact crisis resources immediately."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the AI chatbot a replacement for professional therapy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, TranquilBot is designed to provide general wellness information and support. It's not a replacement for professional mental health care. For personalized treatment, please consult with a qualified mental health professional."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my conversation with the AI chatbot private?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, your conversations are private and confidential. We don't store personal information, and conversations are not shared with third parties. However, we may use anonymized data to improve our services."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if I need immediate help?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If you're experiencing a mental health crisis, please contact emergency services immediately. You can call 988 (Suicide & Crisis Lifeline), text HOME to 741741 (Crisis Text Line), or contact your local emergency services."
+        }
+      }
+    ]
+  },
+
+  "howTo": {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "{{HOWTO_TITLE}}",
+    "description": "{{HOWTO_DESCRIPTION}}",
+    "image": {
+      "@type": "ImageObject",
+      "url": "{{HOWTO_IMAGE}}",
+      "width": 1200,
+      "height": 630
+    },
+    "totalTime": "PT{{TOTAL_TIME}}M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": "0"
+    },
+    "supply": [
+      {
+        "@type": "HowToSupply",
+        "name": "Quiet space"
+      },
+      {
+        "@type": "HowToSupply",
+        "name": "Comfortable seating"
+      }
+    ],
+    "tool": [
+      {
+        "@type": "HowToTool",
+        "name": "Timer or meditation app"
+      }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "{{STEP_1_NAME}}",
+        "text": "{{STEP_1_TEXT}}",
+        "image": "{{STEP_1_IMAGE}}"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "{{STEP_2_NAME}}",
+        "text": "{{STEP_2_TEXT}}",
+        "image": "{{STEP_2_IMAGE}}"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "{{STEP_3_NAME}}",
+        "text": "{{STEP_3_TEXT}}",
+        "image": "{{STEP_3_IMAGE}}"
+      }
+    ]
+  },
+
+  "breadcrumbList": {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://tranquilmindquest.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "{{PARENT_PAGE}}",
+        "item": "https://tranquilmindquest.com/{{PARENT_PAGE_URL}}"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "{{CURRENT_PAGE}}",
+        "item": "https://tranquilmindquest.com/{{CURRENT_PAGE_URL}}"
+      }
+    ]
+  },
+
+  "product": {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "{{PRODUCT_NAME}}",
+    "description": "{{PRODUCT_DESCRIPTION}}",
+    "image": "{{PRODUCT_IMAGE}}",
+    "brand": {
+      "@type": "Brand",
+      "name": "{{PRODUCT_BRAND}}"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "{{PRODUCT_URL}}",
+      "priceCurrency": "INR",
+      "price": "{{PRODUCT_PRICE}}",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Amazon"
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "{{PRODUCT_RATING}}",
+      "reviewCount": "{{PRODUCT_REVIEWS}}"
+    },
+    "category": "Mental Health Products"
+  },
+
+  "videoObject": {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "{{VIDEO_TITLE}}",
+    "description": "{{VIDEO_DESCRIPTION}}",
+    "thumbnailUrl": "{{VIDEO_THUMBNAIL}}",
+    "uploadDate": "{{VIDEO_UPLOAD_DATE}}",
+    "duration": "PT{{VIDEO_DURATION}}M",
+    "contentUrl": "{{VIDEO_URL}}",
+    "embedUrl": "{{VIDEO_EMBED_URL}}",
+    "publisher": {
+      "@type": "Organization",
+      "name": "TranquilMindQuest",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://tranquilmindquest.com/images/logo.png"
+      }
+    }
+  },
+
+  "localBusiness": {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "TranquilMindQuest",
+    "description": "Online mental health and wellness platform providing free resources and support",
+    "url": "https://tranquilmindquest.com",
+    "telephone": "contact@tranquilmindquest.com",
+    "email": "contact@tranquilmindquest.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "US"
+    },
+    "openingHours": "Mo-Su 00:00-23:59",
+    "priceRange": "Free",
+    "paymentAccepted": "Free Service",
+    "currenciesAccepted": "USD",
+    "areaServed": "Worldwide",
+    "serviceArea": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.8283,
+        "longitude": -98.5795
+      },
+      "geoRadius": "20000000"
+    }
+  },
+
+  "medicalWebPage": {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "name": "{{MEDICAL_PAGE_TITLE}}",
+    "description": "{{MEDICAL_PAGE_DESCRIPTION}}",
+    "url": "{{MEDICAL_PAGE_URL}}",
+    "mainEntity": {
+      "@type": "MedicalCondition",
+      "name": "{{CONDITION_NAME}}",
+      "description": "{{CONDITION_DESCRIPTION}}"
+    },
+    "about": {
+      "@type": "MedicalCondition",
+      "name": "{{CONDITION_NAME}}"
+    },
+    "audience": {
+      "@type": "MedicalAudience",
+      "audienceType": "Patient"
+    },
+    "lastReviewed": "{{LAST_REVIEWED_DATE}}",
+    "reviewedBy": {
+      "@type": "Organization",
+      "name": "TranquilMindQuest"
+    }
+  },
+
+  "event": {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "{{EVENT_NAME}}",
+    "description": "{{EVENT_DESCRIPTION}}",
+    "startDate": "{{EVENT_START_DATE}}",
+    "endDate": "{{EVENT_END_DATE}}",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+    "location": {
+      "@type": "VirtualLocation",
+      "url": "{{EVENT_URL}}"
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "TranquilMindQuest",
+      "url": "https://tranquilmindquest.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+}
+
+/*
+SCHEMA MARKUP IMPLEMENTATION GUIDE:
+
+1. ORGANIZATION SCHEMA:
+   - Use on homepage and about page
+   - Provides business information to search engines
+   - Helps with Knowledge Panel creation
+   - Includes contact information and social profiles
+
+2. WEBSITE SCHEMA:
+   - Use on homepage
+   - Enables site search functionality
+   - Provides site-wide information
+   - Helps with sitelinks in search results
+
+3. ARTICLE SCHEMA:
+   - Use on all blog posts
+   - Replace placeholders with actual content
+   - Helps with rich snippets in search results
+   - Improves click-through rates
+
+4. FAQ SCHEMA:
+   - Use on FAQ pages and sections
+   - Enables FAQ rich snippets
+   - Improves visibility in search results
+   - Helps with voice search optimization
+
+5. HOWTO SCHEMA:
+   - Use on technique pages (meditation, breathing, yoga)
+   - Enables step-by-step rich snippets
+   - Great for "how to" searches
+   - Improves user engagement
+
+6. BREADCRUMB SCHEMA:
+   - Use on all pages with breadcrumbs
+   - Shows navigation path in search results
+   - Improves user experience
+   - Helps with site structure understanding
+
+7. PRODUCT SCHEMA:
+   - Use on product pages
+   - Enables product rich snippets
+   - Shows price, rating, and availability
+   - Improves e-commerce visibility
+
+8. VIDEO SCHEMA:
+   - Use on pages with embedded videos
+   - Enables video rich snippets
+   - Improves video discoverability
+   - Better video search results
+
+9. LOCAL BUSINESS SCHEMA:
+   - Use if serving local areas
+   - Helps with local search results
+   - Provides business information
+   - Improves local SEO
+
+10. MEDICAL WEB PAGE SCHEMA:
+    - Use on mental health information pages
+    - Provides medical context
+    - Helps with health-related searches
+    - Improves medical content visibility
+
+IMPLEMENTATION STEPS:
+
+1. Copy the relevant schema for each page type
+2. Replace all placeholders with actual content
+3. Validate with Google's Rich Results Test
+4. Test with Schema.org validator
+5. Monitor in Google Search Console
+6. Update as needed based on performance
+
+VALIDATION TOOLS:
+
+- Google Rich Results Test: https://search.google.com/test/rich-results
+- Schema.org Validator: https://validator.schema.org/
+- Google Search Console: Monitor rich results performance
+
+BEST PRACTICES:
+
+- Use only relevant schema types
+- Keep schema markup accurate and up-to-date
+- Don't use schema for content that doesn't exist
+- Monitor performance and adjust as needed
+- Follow Google's guidelines for structured data
+*/
+
+
+
+
+
+

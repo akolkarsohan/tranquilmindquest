@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn evidence-based meditation techniques to reduce stress, improve focus, and enhance well-being. Interactive meditation timer and guided practices included.">
+    <meta name="keywords" content="meditation, mindfulness, stress relief, anxiety, focus, mental wellness, guided meditation">
+    <title>Meditation: Your Path to Inner Peace - TranquilMindQuest</title>
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/dark-theme.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tranquilmindquest.com/meditation.html">
+    
+    <!-- Additional styles for meditation page -->
+    <style>
+        .breadcrumb {
+            margin-bottom: var(--space-lg);
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+        }
+        
+        .breadcrumb a {
+            color: var(--accent-primary);
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .read-time {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .toc {
+            position: sticky;
+            top: 0px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin-bottom: var(--space-xl);
+            max-height: calc(100vh - 20px);
+            overflow-y: auto;
+            z-index: var(--z-sticky);
+            width: 100%;
+        }
+        
+        .toc h3 {
+            margin-bottom: var(--space-md);
+            color: var(--text-primary);
+        }
+        
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .toc li {
+            margin-bottom: var(--space-sm);
+        }
+        
+        .toc a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: var(--font-size-sm);
+            transition: color var(--transition-fast);
+        }
+        
+        .toc a:hover {
+            color: var(--accent-primary);
+        }
+        
+        .toc a.active {
+            color: var(--accent-primary);
+            font-weight: var(--font-weight-medium);
+            background: var(--bg-tertiary);
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--radius-sm);
+        }
+        
+        .content-area {
+            width: 100%;
+            max-width: none;
+        }
+        
+        .grid.grid-cols-3 {
+            grid-template-columns: 1fr 2fr;
+            gap: var(--space-xl);
+        }
+        
+        /* Navigation Dropdown Styles */
+        .nav-dropdown {
+            position: relative;
+        }
+        
+        .dropdown-toggle {
+            cursor: pointer;
+        }
+        
+        .dropdown-toggle::after {
+            content: '▼';
+            font-size: 10px;
+            margin-left: 5px;
+            transition: transform var(--transition-fast);
+        }
+        
+        .nav-dropdown:hover .dropdown-toggle::after {
+            transform: rotate(180deg);
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            min-width: 180px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all var(--transition-fast);
+            z-index: var(--z-dropdown);
+        }
+        
+        .nav-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-menu {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .dropdown-menu li {
+            margin: 0;
+            list-style: none;
+        }
+        
+        .dropdown-link {
+            display: block;
+            padding: var(--space-sm) var(--space-md);
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all var(--transition-fast);
+            border-radius: var(--radius-sm);
+            margin: var(--space-xs);
+        }
+        
+        .dropdown-link:hover,
+        .dropdown-link.active {
+            background: var(--bg-tertiary);
+            color: var(--accent-primary);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-md);
+            margin-top: var(--space-xl);
+        }
+        
+        .benefit-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
+            text-align: center;
+            transition: all var(--transition-normal);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-primary);
+        }
+        
+        .benefit-icon {
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .benefit-title {
+            font-size: var(--font-size-base);
+            font-weight: var(--font-weight-semibold);
+            color: var(--text-primary);
+            margin-bottom: var(--space-xs);
+        }
+        
+        .benefit-description {
+            color: var(--text-secondary);
+            font-size: var(--font-size-sm);
+            margin-bottom: var(--space-xs);
+            line-height: 1.4;
+        }
+        
+        .benefit-source {
+            font-size: var(--font-size-xs);
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-top: auto;
+        }
+        
+        .meditation-type {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin-bottom: var(--space-lg);
+            cursor: pointer;
+            transition: all var(--transition-normal);
+        }
+        
+        .meditation-type:hover {
+            background: var(--bg-tertiary);
+        }
+        
+        .meditation-type.active {
+            border-color: var(--accent-primary);
+        }
+        
+        .meditation-type-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-md);
+        }
+        
+        .meditation-type-title {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            color: var(--text-primary);
+        }
+        
+        .meditation-type-icon {
+            transition: transform var(--transition-normal);
+        }
+        
+        .meditation-type.active .meditation-type-icon {
+            transform: rotate(180deg);
+        }
+        
+        .meditation-type-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height var(--transition-normal);
+        }
+        
+        .meditation-type.active .meditation-type-content {
+            max-height: 1000px;
+        }
+        
+        .meditation-timer {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            text-align: center;
+            margin: var(--space-xl) 0;
+        }
+        
+        .timer-display {
+            font-size: var(--font-size-4xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--accent-primary);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .timer-controls {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .timer-button {
+            padding: var(--space-sm) var(--space-lg);
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+            border: none;
+            border-radius: var(--radius-md);
+            font-weight: var(--font-weight-medium);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        
+        .timer-button:hover {
+            background: var(--accent-secondary);
+        }
+        
+        .timer-button:disabled {
+            background: var(--text-secondary);
+            cursor: not-allowed;
+        }
+        
+        .timer-settings {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
+        }
+        
+        .timer-setting {
+            text-align: center;
+        }
+        
+        .timer-setting label {
+            display: block;
+            margin-bottom: var(--space-sm);
+            color: var(--text-secondary);
+        }
+        
+        .timer-setting input {
+            width: 100%;
+            padding: var(--space-sm);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+        
+        .ambient-sounds {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: var(--space-sm);
+            margin-top: var(--space-lg);
+        }
+        
+        .sound-option {
+            padding: var(--space-sm);
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            text-align: center;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        
+        .sound-option:hover {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+        }
+        
+        .sound-option.active {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+        }
+        
+        .video-embed {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            margin: var(--space-lg) 0;
+        }
+        
+        .video-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: var(--radius-md);
+        }
+        
+        .product-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            text-align: center;
+            transition: all var(--transition-normal);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+        }
+        
+        .product-title {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            color: var(--text-primary);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .product-price {
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--accent-primary);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .product-rating {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: var(--space-xs);
+            margin-bottom: var(--space-md);
+        }
+        
+        .product-button {
+            display: inline-block;
+            padding: var(--space-sm) var(--space-lg);
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            font-weight: var(--font-weight-medium);
+            transition: all var(--transition-fast);
+        }
+        
+        .product-button:hover {
+            background: var(--accent-secondary);
+        }
+        
+        .faq-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-md);
+        }
+        
+        .faq-question {
+            padding: var(--space-lg);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color var(--transition-fast);
+        }
+        
+        .faq-question:hover {
+            background: var(--bg-tertiary);
+        }
+        
+        .faq-question.active {
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height var(--transition-normal);
+        }
+        
+        .faq-answer.active {
+            max-height: 500px;
+        }
+        
+        .faq-answer-content {
+            padding: var(--space-lg);
+            color: var(--text-secondary);
+        }
+        
+        .progress-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--bg-secondary);
+            z-index: var(--z-fixed);
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: var(--gradient-accent);
+            width: 0%;
+            transition: width var(--transition-normal);
+        }
+        
+        .share-buttons {
+            display: flex;
+            gap: var(--space-sm);
+            margin: var(--space-lg) 0;
+        }
+        
+        .share-button {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            padding: var(--space-sm) var(--space-md);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: var(--font-size-sm);
+            transition: all var(--transition-fast);
+        }
+        
+        .share-button:hover {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+            border-color: var(--accent-primary);
+        }
+        
+        @media (max-width: 768px) {
+            .toc {
+                position: static;
+                margin-bottom: var(--space-lg);
+            }
+            
+            .grid-cols-3 {
+                grid-template-columns: 1fr;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: var(--space-sm);
+            }
+            
+            .benefit-card {
+                padding: var(--space-sm);
+            }
+            
+            .timer-controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .timer-settings {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Progress indicator -->
+    <div class="progress-indicator">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav-brand">
+                <img src="images/placeholders/tmq-icon-mindfulness.jpg" alt="Tranquil Mind Quest Logo" class="nav-brand-icon">
+                Tranquil Mind Quest
+            </a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="wellness-dropdown">Wellness</a>
+                    <ul class="dropdown-menu" id="wellness-menu">
+                        <li><a href="meditation.html" class="dropdown-link active">Meditation</a></li>
+                        <li><a href="breathing.html" class="dropdown-link">Breathing</a></li>
+                        <li><a href="yoga.html" class="dropdown-link">Yoga</a></li>
+                        <li><a href="mindfulness.html" class="dropdown-link">Mindfulness</a></li>
+                    </ul>
+                </li>
+                <li><a href="resources.html" class="nav-link">Resources</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="nav-search" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero section" id="hero">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a> > <a href="meditation.html">Meditation</a>
+                </div>
+                
+                <div class="read-time">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12,6 12,12 16,14"></polyline>
+                    </svg>
+                    Estimated read time: 20 minutes
+                </div>
+                
+                <h1>Meditation: Your Path to Inner Peace</h1>
+                <p class="hero-subtitle">Evidence-based meditation techniques to reduce stress, improve focus, and enhance well-being</p>
+                
+                <div class="share-buttons">
+                    <a href="#" class="share-button" onclick="shareOnTwitter()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                        </svg>
+                        Share
+                    </a>
+                    <a href="#" class="share-button" onclick="shareOnFacebook()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                        Share
+                    </a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M7 13l3 3 3-3M7 6l3 3 3-3"></path>
+                </svg>
+            </div>
+        </section>
+        
+        <!-- Main Content -->
+        <section class="section">
+            <div class="container">
+                <div class="content-area">
+                        <!-- What is Meditation -->
+                        <section id="what-is-meditation" class="section">
+                            <h2>What is Meditation?</h2>
+                            <p>Meditation is a practice where an individual uses a technique to train attention and awareness, achieving a mentally clear and emotionally calm state. It's one of the oldest practices for mental wellness, with roots in ancient traditions and modern scientific validation.</p>
+                            
+                            <div class="grid grid-cols-2 gap-xl">
+                                <div class="content">
+                                    <h3>How Meditation Works on the Brain</h3>
+                                    <p>Meditation creates measurable changes in brain structure and function through neuroplasticity. Regular practice:</p>
+                                    <ul>
+                                        <li><strong>Strengthens the prefrontal cortex:</strong> Improves executive function and decision-making</li>
+                                        <li><strong>Reduces amygdala activity:</strong> Decreases fear and stress responses</li>
+                                        <li><strong>Increases gray matter:</strong> Particularly in areas associated with learning and memory</li>
+                                        <li><strong>Enhances connectivity:</strong> Between different brain regions</li>
+                                    </ul>
+                                </div>
+                                <div class="illustration">
+                                    <div class="illustration-placeholder">
+                                        <svg width="400" height="300" viewBox="0 0 400 300" fill="none">
+                                            <circle cx="200" cy="150" r="80" fill="var(--accent-primary)" opacity="0.1"/>
+                                            <circle cx="200" cy="150" r="60" fill="var(--accent-secondary)" opacity="0.1"/>
+                                            <circle cx="200" cy="150" r="40" fill="var(--accent-warm)" opacity="0.1"/>
+                                            <text x="200" y="160" text-anchor="middle" fill="var(--text-primary)" font-size="16" font-weight="600">Meditation</text>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <!-- Science-Backed Benefits -->
+                        <section id="benefits" class="section bg-secondary">
+                            <h2 class="text-center">Science-Backed Benefits</h2>
+                            <p class="text-center text-secondary">Research-proven benefits of regular meditation practice</p>
+                            
+                            <div class="benefits-grid">
+                                <div class="benefit-card">
+                                    <div class="benefit-icon">🧠</div>
+                                    <div class="benefit-title">Reduces Anxiety</div>
+                                    <div class="benefit-description">Reduces anxiety symptoms by up to 60%</div>
+                                    <div class="benefit-source">Source: JAMA Internal Medicine</div>
+                                </div>
+                                
+                                <div class="benefit-card">
+                                    <div class="benefit-icon">💤</div>
+                                    <div class="benefit-title">Improves Sleep</div>
+                                    <div class="benefit-description">Enhances sleep quality and duration</div>
+                                    <div class="benefit-source">Source: Sleep Medicine Reviews</div>
+                                </div>
+                                
+                                <div class="benefit-card">
+                                    <div class="benefit-icon">❤️</div>
+                                    <div class="benefit-title">Lowers Blood Pressure</div>
+                                    <div class="benefit-description">Reduces systolic blood pressure by 5-10 mmHg</div>
+                                    <div class="benefit-source">Source: American Heart Association</div>
+                                </div>
+                                
+                                <div class="benefit-card">
+                                    <div class="benefit-icon">🎯</div>
+                                    <div class="benefit-title">Enhances Focus</div>
+                                    <div class="benefit-description">Improves attention span and concentration</div>
+                                    <div class="benefit-source">Source: Psychological Science</div>
+                                </div>
+                                
+                                <div class="benefit-card">
+                                    <div class="benefit-icon">😌</div>
+                                    <div class="benefit-title">Reduces Stress</div>
+                                    <div class="benefit-description">Lowers cortisol levels by 31% on average</div>
+                                    <div class="benefit-source">Source: Health Psychology</div>
+                                </div>
+                                
+                                <div class="benefit-card">
+                                    <div class="benefit-icon">🧘</div>
+                                    <div class="benefit-title">Emotional Regulation</div>
+                                    <div class="benefit-description">Improves emotional stability and resilience</div>
+                                    <div class="benefit-source">Source: Emotion</div>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <!-- Types of Meditation -->
+                        <section id="types" class="section">
+                            <h2 class="text-center">Types of Meditation</h2>
+                            <p class="text-center text-secondary">Explore different meditation techniques to find what works best for you</p>
+                            
+                            <div class="meditation-types">
+                                <div class="meditation-type" onclick="toggleMeditationType(this)">
+                                    <div class="meditation-type-header">
+                                        <h3 class="meditation-type-title">Mindfulness Meditation</h3>
+                                        <svg class="meditation-type-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="6,9 12,15 18,9"></polyline>
+                                        </svg>
+                                    </div>
+                                    <div class="meditation-type-content">
+                                        <p><strong>Description:</strong> Focus on present moment, observe thoughts without judgment</p>
+                                        <p><strong>Best for:</strong> Beginners, anxiety, stress</p>
+                                        <p><strong>Duration:</strong> 5-45 minutes</p>
+                                        <p><strong>How to practice:</strong></p>
+                                        <ol>
+                                            <li>Sit comfortably with eyes closed</li>
+                                            <li>Focus on your breath</li>
+                                            <li>When mind wanders, gently return to breath</li>
+                                            <li>Practice non-judgmental awareness</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                                
+                                <div class="meditation-type" onclick="toggleMeditationType(this)">
+                                    <div class="meditation-type-header">
+                                        <h3 class="meditation-type-title">Body Scan Meditation</h3>
+                                        <svg class="meditation-type-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="6,9 12,15 18,9"></polyline>
+                                        </svg>
+                                    </div>
+                                    <div class="meditation-type-content">
+                                        <p><strong>Description:</strong> Progressive attention to body parts from head to toe</p>
+                                        <p><strong>Best for:</strong> Stress relief, before sleep, pain management</p>
+                                        <p><strong>Duration:</strong> 10-30 minutes</p>
+                                        <p><strong>How to practice:</strong></p>
+                                        <ol>
+                                            <li>Lie down comfortably</li>
+                                            <li>Start at the top of your head</li>
+                                            <li>Slowly move attention down your body</li>
+                                            <li>Notice sensations without judgment</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                                
+                                <div class="meditation-type" onclick="toggleMeditationType(this)">
+                                    <div class="meditation-type-header">
+                                        <h3 class="meditation-type-title">Loving-Kindness (Metta) Meditation</h3>
+                                        <svg class="meditation-type-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="6,9 12,15 18,9"></polyline>
+                                        </svg>
+                                    </div>
+                                    <div class="meditation-type-content">
+                                        <p><strong>Description:</strong> Cultivating compassion for self and others</p>
+                                        <p><strong>Best for:</strong> Depression, self-criticism, improving relationships</p>
+                                        <p><strong>Duration:</strong> 10-20 minutes</p>
+                                        <p><strong>Script example:</strong></p>
+                                        <ul>
+                                            <li>"May I be safe and protected"</li>
+                                            <li>"May I be happy and content"</li>
+                                            <li>"May I be healthy and strong"</li>
+                                            <li>"May I live with ease"</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="meditation-type" onclick="toggleMeditationType(this)">
+                                    <div class="meditation-type-header">
+                                        <h3 class="meditation-type-title">Breath Awareness Meditation</h3>
+                                        <svg class="meditation-type-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="6,9 12,15 18,9"></polyline>
+                                        </svg>
+                                    </div>
+                                    <div class="meditation-type-content">
+                                        <p><strong>Description:</strong> Focusing solely on breath</p>
+                                        <p><strong>Best for:</strong> Anxiety, present-moment awareness</p>
+                                        <p><strong>Duration:</strong> 5-20 minutes</p>
+                                        <p><strong>Instructions:</strong></p>
+                                        <ol>
+                                            <li>Sit with spine straight</li>
+                                            <li>Close eyes and focus on breath</li>
+                                            <li>Count breaths 1-10, then repeat</li>
+                                            <li>Return to breath when mind wanders</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <!-- Getting Started -->
+                        <section id="getting-started" class="section bg-secondary">
+                            <h2 class="text-center">Getting Started: Beginner's Guide</h2>
+                            
+                            <div class="getting-started-steps">
+                                <div class="step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h3>Find Your Space</h3>
+                                        <ul>
+                                            <li>Quiet location with minimal distractions</li>
+                                            <li>Comfortable temperature</li>
+                                            <li>Can be indoors or outdoors</li>
+                                            <li>Dedicated space if possible</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h3>Choose Your Position</h3>
+                                        <ul>
+                                            <li>Sitting (chair, cushion, or floor)</li>
+                                            <li>Lying down (if not falling asleep)</li>
+                                            <li>Walking meditation option</li>
+                                            <li>Maintain comfortable posture</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h3>Start Small</h3>
+                                        <ul>
+                                            <li>Begin with just 2-5 minutes</li>
+                                            <li>Gradually increase duration</li>
+                                            <li>Consistency over length</li>
+                                            <li>Best times: Morning or before bed</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="step">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">
+                                        <h3>Focus on Your Breath</h3>
+                                        <ul>
+                                            <li>Natural breathing pattern</li>
+                                            <li>Notice inhale and exhale</li>
+                                            <li>Count breaths if helpful</li>
+                                            <li>Return attention when mind wanders</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="step">
+                                    <div class="step-number">5</div>
+                                    <div class="step-content">
+                                        <h3>Be Kind to Yourself</h3>
+                                        <ul>
+                                            <li>Mind wandering is normal</li>
+                                            <li>No "perfect" meditation</li>
+                                            <li>Practice without judgment</li>
+                                            <li>Celebrate showing up</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <!-- Interactive Meditation Timer -->
+                        <section id="meditation-timer" class="section">
+                            <h2 class="text-center">Interactive Meditation Timer</h2>
+                            
+                            <div class="meditation-timer">
+                                <div class="timer-display" id="timer-display">00:00</div>
+                                
+                                <div class="timer-controls">
+                                    <button class="timer-button" id="start-btn" onclick="startTimer()">Start</button>
+                                    <button class="timer-button" id="pause-btn" onclick="pauseTimer()" disabled>Pause</button>
+                                    <button class="timer-button" id="reset-btn" onclick="resetTimer()">Reset</button>
+                                </div>
+                                
+                                <div class="timer-settings">
+                                    <div class="timer-setting">
+                                        <label for="duration">Duration (minutes)</label>
+                                        <input type="number" id="duration" value="10" min="1" max="60">
+                                    </div>
+                                    <div class="timer-setting">
+                                        <label for="interval">Interval Bell (minutes)</label>
+                                        <input type="number" id="interval" value="5" min="1" max="30">
+                                    </div>
+                                </div>
+                                
+                                <div class="ambient-sounds">
+                                    <div class="sound-option" onclick="selectSound(this, 'silence')">Silence</div>
+                                    <div class="sound-option" onclick="selectSound(this, 'rain')">Rain</div>
+                                    <div class="sound-option" onclick="selectSound(this, 'forest')">Forest</div>
+                                    <div class="sound-option" onclick="selectSound(this, 'ocean')">Ocean</div>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <!-- Guided Practices -->
+                        <section id="guided-practices" class="section bg-secondary">
+                            <h2 class="text-center">Guided Meditation Videos</h2>
+                            <p class="text-center text-secondary">Follow along with these guided meditation sessions</p>
+                            
+                            <div class="video-embeds">
+                                <div class="video-embed">
+                                    <iframe src="https://www.youtube.com/embed/O-6f5wQXSu8" title="Guided Meditation for Anxiety and Stress - Michael Sealey (English)" allowfullscreen></iframe>
+                                </div>
+                                
+                                <div class="video-embed">
+                                    <iframe src="https://www.youtube.com/embed/inpok4MKVLM" title="Deep Sleep Meditation - The Honest Guys (English)" allowfullscreen></iframe>
+                                </div>
+                                
+                                <div class="video-embed">
+                                    <iframe src="https://www.youtube.com/embed/6p_yaNFSYao" title="10-Minute Guided Meditation for Mindfulness and Focus - English" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <!-- Common Challenges -->
+                        <section id="challenges" class="section">
+                            <h2 class="text-center">Common Challenges & Solutions</h2>
+                            
+                            <div class="faq-section">
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleFAQ(this)">
+                                        <span>My mind won't stop racing</span>
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="6,9 12,15 18,9"></polyline>
+                                        </svg>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <div class="faq-answer-content">
+                                            <p>This is completely normal! Try these approaches:</p>
+                                            <ul>
+                                                <li>Use a mantra or counting technique</li>
+                                                <li>Focus on physical sensations</li>
+                                                <li>Start with shorter sessions (2-3 minutes)</li>
+                                                <li>Remember: the goal isn't to stop thoughts, but to notice them</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleFAQ(this)">
+                                        <span>I keep falling asleep</span>
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="6,9 12,15 18,9"></polyline>
+                                        </svg>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <div class="faq-answer-content">
+                                            <p>Try these adjustments:</p>
+                                            <ul>
+                                                <li>Sit upright instead of lying down</li>
+                                                <li>Meditate earlier in the day</li>
+                                                <li>Use walking meditation</li>
+                                                <li>Keep your eyes slightly open</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleFAQ(this)">
+                                        <span>I don't have time</span>
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="6,9 12,15 18,9"></polyline>
+                                        </svg>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <div class="faq-answer-content">
+                                            <p>Even 2-3 minutes counts! Try:</p>
+                                            <ul>
+                                                <li>Meditate while waiting (in line, at traffic lights)</li>
+                                                <li>Take mindful breaths throughout the day</li>
+                                                <li>Use meditation apps with short sessions</li>
+                                                <li>Combine with other activities (walking, showering)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <div class="faq-question" onclick="toggleFAQ(this)">
+                                        <span>I feel like I'm doing it wrong</span>
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="6,9 12,15 18,9"></polyline>
+                                        </svg>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <div class="faq-answer-content">
+                                            <p>There's no "wrong" way to meditate! Remember:</p>
+                                            <ul>
+                                                <li>Every meditation session is beneficial</li>
+                                                <li>Progress is gradual and subtle</li>
+                                                <li>Consistency matters more than perfection</li>
+                                                <li>Be patient and kind with yourself</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <!-- Scientific Research -->
+                        <section id="research" class="section bg-secondary">
+                            <h2 class="text-center">Scientific Research</h2>
+                            
+                            <div class="research-content">
+                                <h3>Neuroscience Findings</h3>
+                                <p>Brain imaging studies show that regular meditation practice leads to:</p>
+                                <ul>
+                                    <li><strong>Increased gray matter density</strong> in the hippocampus (memory) and prefrontal cortex (executive function)</li>
+                                    <li><strong>Reduced amygdala activity</strong> (fear and stress response center)</li>
+                                    <li><strong>Enhanced connectivity</strong> between different brain regions</li>
+                                    <li><strong>Improved attention networks</strong> and cognitive control</li>
+                                </ul>
+                                
+                                <h3>Long-term Studies</h3>
+                                <p>Research on long-term practitioners shows:</p>
+                                <ul>
+                                    <li>Slower age-related brain atrophy</li>
+                                    <li>Better emotional regulation</li>
+                                    <li>Improved immune function</li>
+                                    <li>Enhanced well-being and life satisfaction</li>
+                                </ul>
+                                
+                                <div class="research-links">
+                                    <h3>Further Reading</h3>
+                                    <ul>
+                                        <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3004979/" target="_blank" rel="noopener">Mindfulness-Based Stress Reduction and Health Benefits</a></li>
+                                        <li><a href="https://www.nature.com/articles/s41598-019-47470-4" target="_blank" rel="noopener">Meditation and Brain Plasticity</a></li>
+                                        <li><a href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/1809754" target="_blank" rel="noopener">Meditation Programs for Psychological Stress and Well-being</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <!-- Recommended Products -->
+                        <section id="products" class="section">
+                            <h2 class="text-center">Recommended Products</h2>
+                            <p class="text-center text-secondary">Essential items to enhance your meditation practice</p>
+                            
+                            <div class="products-grid">
+                                <div class="product-card">
+                                    <div class="product-image">🧘 Meditation Cushion</div>
+                                    <div class="product-title">Buckwheat Meditation Cushion (Zafu)</div>
+                                    <div class="product-price">₹1,299</div>
+                                    <div class="product-rating">⭐⭐⭐⭐⭐ 4.4★</div>
+                                    <a href="https://www.amazon.in/dp/B08N5WRWNW/?tag=curiouspulsea-21" class="product-button" target="_blank" rel="noopener">View on Amazon</a>
+                                </div>
+                                
+                                <div class="product-card">
+                                    <div class="product-image">🧘‍♀️ Meditation Mat</div>
+                                    <div class="product-title">Premium Yoga & Meditation Mat</div>
+                                    <div class="product-price">₹899</div>
+                                    <div class="product-rating">⭐⭐⭐⭐⭐ 4.3★</div>
+                                    <a href="https://www.amazon.in/dp/B07XQQLXZQ/?tag=curiouspulsea-21" class="product-button" target="_blank" rel="noopener">View on Amazon</a>
+                                </div>
+                                
+                                <div class="product-card">
+                                    <div class="product-image">🔔 Singing Bowl</div>
+                                    <div class="product-title">Tibetan Singing Bowl Set</div>
+                                    <div class="product-price">₹599</div>
+                                    <div class="product-rating">⭐⭐⭐⭐⭐ 4.5★</div>
+                                    <a href="https://www.amazon.in/dp/B08HZ8D9T5/?tag=curiouspulsea-21" class="product-button" target="_blank" rel="noopener">View on Amazon</a>
+                                </div>
+                                
+                                <div class="product-card">
+                                    <div class="product-image">📚 Book</div>
+                                    <div class="product-title">The Power of Now by Eckhart Tolle</div>
+                                    <div class="product-price">₹299</div>
+                                    <div class="product-rating">⭐⭐⭐⭐⭐ 4.6★</div>
+                                    <a href="https://www.amazon.in/dp/8179920622/?tag=curiouspulsea-21" class="product-button" target="_blank" rel="noopener">View on Amazon</a>
+                                </div>
+                                
+                                <div class="product-card">
+                                    <div class="product-image">🕯️ Incense</div>
+                                    <div class="product-title">Premium Meditation Incense Sticks</div>
+                                    <div class="product-price">₹249</div>
+                                    <div class="product-rating">⭐⭐⭐⭐⭐ 4.2★</div>
+                                    <a href="https://www.amazon.in/dp/B07GJXQYQC/?tag=curiouspulsea-21" class="product-button" target="_blank" rel="noopener">View on Amazon</a>
+                                </div>
+                                
+                                <div class="product-card">
+                                    <div class="product-image">📱 Timer App</div>
+                                    <div class="product-title">Insight Timer (Free App)</div>
+                                    <div class="product-price">Free</div>
+                                    <div class="product-rating">⭐⭐⭐⭐⭐ 4.8★</div>
+                                    <a href="https://insighttimer.com" class="product-button" target="_blank" rel="noopener">Download App</a>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <span class="footer-brand-icon">🧘</span>
+                        <span class="footer-brand-text">TranquilMindQuest</span>
+                    </div>
+                    <p class="footer-mission">Your journey to mental wellness begins with understanding. We provide evidence-based resources to help you navigate life's challenges with resilience and hope.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Mental Health</a></li>
+                        <li><a href="meditation.html">Meditation</a></li>
+                        <li><a href="breathing.html">Breathing</a></li>
+                        <li><a href="yoga.html">Yoga</a></li>
+                        <li><a href="mindfulness.html">Mindfulness</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="breathing.html">Breathing Exercises</a></li>
+                        <li><a href="yoga.html">Yoga for Wellness</a></li>
+                        <li><a href="mindfulness.html">Mindfulness</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="YouTube">📺</a>
+                    </div>
+                    <p>contact@tranquilmindquest.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Tranquil Mind Quest. All rights reserved.</p>
+                <p class="footer-disclaimer">
+                    <strong>Disclaimer:</strong> This website provides educational information about mental health and wellness only. We are not mental health professionals, therapists, or medical experts. This content is for informational purposes only and should not be considered as professional medical advice, diagnosis, or treatment. Always seek the advice of qualified mental health professionals or other qualified healthcare providers with any questions you may have regarding a medical condition or mental health concern. If you are experiencing a mental health emergency, please contact your local emergency services or a mental health crisis hotline.
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript Files -->
+    <script src="./js/main.js"></script>
+    <script src="./js/smooth-scroll.js"></script>
+    <script src="./js/animations.js"></script>
+    
+    <!-- Meditation Page Specific JavaScript -->
+    <script>
+        let timerInterval;
+        let isRunning = false;
+        let timeLeft = 0;
+        let totalTime = 0;
+        let selectedSound = 'silence';
+        
+        // Meditation timer functionality
+        function startTimer() {
+            if (!isRunning) {
+                const duration = parseInt(document.getElementById('duration').value) * 60; // Convert to seconds
+                const interval = parseInt(document.getElementById('interval').value) * 60;
+                
+                totalTime = duration;
+                timeLeft = duration;
+                
+                isRunning = true;
+                document.getElementById('start-btn').disabled = true;
+                document.getElementById('pause-btn').disabled = false;
+                
+                timerInterval = setInterval(updateTimer, 1000);
+            }
+        }
+        
+        function pauseTimer() {
+            if (isRunning) {
+                clearInterval(timerInterval);
+                isRunning = false;
+                document.getElementById('start-btn').disabled = false;
+                document.getElementById('pause-btn').disabled = true;
+            }
+        }
+        
+        function resetTimer() {
+            clearInterval(timerInterval);
+            isRunning = false;
+            timeLeft = 0;
+            document.getElementById('start-btn').disabled = false;
+            document.getElementById('pause-btn').disabled = true;
+            document.getElementById('timer-display').textContent = '00:00';
+        }
+        
+        function updateTimer() {
+            timeLeft--;
+            
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            document.getElementById('timer-display').textContent = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (timeLeft <= 0) {
+                resetTimer();
+                // Play completion sound or show notification
+                alert('Meditation session complete!');
+            }
+        }
+        
+        function selectSound(element, sound) {
+            document.querySelectorAll('.sound-option').forEach(option => {
+                option.classList.remove('active');
+            });
+            element.classList.add('active');
+            selectedSound = sound;
+        }
+        
+        // Meditation type accordion
+        function toggleMeditationType(element) {
+            const isActive = element.classList.contains('active');
+            
+            // Close all other types
+            document.querySelectorAll('.meditation-type').forEach(type => {
+                type.classList.remove('active');
+            });
+            
+            // Toggle current type
+            if (!isActive) {
+                element.classList.add('active');
+            }
+        }
+        
+        // FAQ accordion
+        function toggleFAQ(element) {
+            const isActive = element.classList.contains('active');
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.classList.remove('active');
+                question.nextElementSibling.classList.remove('active');
+            });
+            
+            // Toggle current FAQ
+            if (!isActive) {
+                element.classList.add('active');
+                element.nextElementSibling.classList.add('active');
+            }
+        }
+        
+        // Progress indicator
+        function updateProgress() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progress-bar').style.width = scrolled + '%';
+        }
+        
+        // Share functions
+        function shareOnTwitter() {
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent('Meditation: Your Path to Inner Peace - TranquilMindQuest');
+            window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank');
+        }
+        
+        function shareOnFacebook() {
+            const url = encodeURIComponent(window.location.href);
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+        }
+        
+        // Update TOC active state based on scroll position
+        function updateTOCActiveState() {
+            const sections = document.querySelectorAll('section[id]');
+            const tocLinks = document.querySelectorAll('.toc a');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 0 && rect.bottom >= 0) {
+                    currentSection = section.id;
+                }
+            });
+            
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for table of contents
+            document.querySelectorAll('.toc a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Initialize progress tracking and TOC highlighting
+            window.addEventListener('scroll', function() {
+                updateProgress();
+                updateTOCActiveState();
+            });
+            
+            // Initial TOC state
+            updateTOCActiveState();
+            
+            // Initialize keyboard navigation
+            document.querySelectorAll('.meditation-type').forEach(type => {
+                type.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        toggleMeditationType(this);
+                    }
+                });
+                type.setAttribute('tabindex', '0');
+                type.setAttribute('role', 'button');
+            });
+            
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        toggleFAQ(this);
+                    }
+                });
+                question.setAttribute('tabindex', '0');
+                question.setAttribute('role', 'button');
+            });
+        });
+    </script>
+</body>
+</html>
