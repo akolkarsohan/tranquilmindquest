@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Support a Loved One with Depression - Tranquil Mind Quest</title>
+    <meta name="description" content="Practical advice for family and friends on how to provide meaningful support to someone struggling with depression. Learn what helps and what doesn't.">
+    <meta name="keywords" content="depression, support, mental health, helping someone with depression, family support, mental wellness">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://tranquilmindquest.com/blog/supporting-depression.html">
+    <meta property="og:title" content="How to Support a Loved One with Depression">
+    <meta property="og:description" content="Practical advice for family and friends on how to provide meaningful support to someone struggling with depression.">
+    <meta property="og:image" content="https://tranquilmindquest.com/images/blog/supporting-depression-hero.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://tranquilmindquest.com/blog/supporting-depression.html">
+    <meta property="twitter:title" content="How to Support a Loved One with Depression">
+    <meta property="twitter:description" content="Practical advice for family and friends on how to provide meaningful support to someone struggling with depression.">
+    <meta property="twitter:image" content="https://tranquilmindquest.com/images/blog/supporting-depression-hero.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tranquilmindquest.com/blog/supporting-depression.html">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dark-theme.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/blog.css">
+    
+    <!-- Navigation Dropdown Styles -->
+    <style>
+        .nav-dropdown {
+            position: relative;
+        }
+        
+        .dropdown-toggle {
+            cursor: pointer;
+        }
+        
+        .dropdown-toggle::after {
+            content: '▼';
+            font-size: 10px;
+            margin-left: 5px;
+            transition: transform var(--transition-fast);
+        }
+        
+        .nav-dropdown:hover .dropdown-toggle::after {
+            transform: rotate(180deg);
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            min-width: 180px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all var(--transition-fast);
+            z-index: var(--z-dropdown);
+        }
+        
+        .nav-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-menu {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .dropdown-menu li {
+            margin: 0;
+            list-style: none;
+        }
+        
+        .dropdown-link {
+            display: block;
+            padding: var(--space-sm) var(--space-md);
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all var(--transition-fast);
+            border-radius: var(--radius-sm);
+            margin: var(--space-xs);
+        }
+        
+        .dropdown-link:hover {
+            background: var(--bg-tertiary);
+            color: var(--accent-primary);
+        }
+    </style>
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "How to Support a Loved One with Depression",
+        "description": "Practical advice for family and friends on how to provide meaningful support to someone struggling with depression.",
+        "image": "https://tranquilmindquest.com/images/blog/supporting-depression-hero.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "Tranquil Mind Quest"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Tranquil Mind Quest",
+            "url": "https://tranquilmindquest.com"
+        },
+        "datePublished": "2025-01-10",
+        "dateModified": "2025-01-10"
+    }
+    </script>
+</head>
+<body class="blog-post-page">
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="../index.html" class="nav-brand">
+                <img src="../images/placeholders/tmq-icon-mindfulness.jpg" alt="Tranquil Mind Quest Logo" class="nav-brand-icon">
+                Tranquil Mind Quest
+            </a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../about.html" class="nav-link">About</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="wellness-dropdown">Wellness</a>
+                    <ul class="dropdown-menu" id="wellness-menu">
+                        <li><a href="../meditation.html" class="dropdown-link">Meditation</a></li>
+                        <li><a href="../breathing.html" class="dropdown-link">Breathing</a></li>
+                        <li><a href="../yoga.html" class="dropdown-link">Yoga</a></li>
+                        <li><a href="../mindfulness.html" class="dropdown-link">Mindfulness</a></li>
+                    </ul>
+                </li>
+                <li><a href="../resources.html" class="nav-link">Resources</a></li>
+                <li><a href="../contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="nav-search" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Article Header -->
+        <section class="article-header">
+            <div class="container">
+                <!-- Breadcrumb -->
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <ol class="breadcrumb-list">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#latest-resources">Recent Insights</a></li>
+                        <li aria-current="page">Supporting Someone with Depression</li>
+                    </ol>
+                </nav>
+
+                <!-- Category Tag -->
+                <div class="article-category">
+                    <span class="category-tag wellness">Support & Relationships</span>
+                </div>
+
+                <!-- Article Title -->
+                <h1 class="article-title">How to Support a Loved One with Depression</h1>
+
+                <!-- Article Meta -->
+                <div class="article-meta">
+                    <div class="meta-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12,6 12,12 16,14"></polyline>
+                        </svg>
+                        <span>Published January 10, 2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                        </svg>
+                        <span>7 min read</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Image -->
+        <section class="featured-image-section">
+            <div class="container">
+                <div class="featured-image">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Support and connection" loading="lazy">
+                    <div class="image-caption">
+                        <p>Supporting someone with depression requires patience, understanding, and sometimes just being present.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Article Content -->
+        <section class="article-content">
+            <div class="container">
+                <div class="content-layout">
+                    <!-- Main Article -->
+                    <article class="main-article">
+                        <!-- Article Introduction -->
+                        <div class="article-intro" id="introduction">
+                            <p class="lead">When someone you care about starts pulling away, it can be confusing and worrying. They might stop returning texts, cancel plans last minute, and when you do spend time together, they seem like a different person. Quieter. Tired. Like the light has gone out of their eyes.</p>
+                            
+                            <p>It's natural not to know what to do. Many people try to cheer them up—suggest fun activities, try to make them laugh, tell them to "just think positive." But often, none of it works. If anything, it can make things worse. They might get a look on their face, like you just don't get it. And honestly? You might not—yet.</p>
+
+                            <p>When someone finally opens up and tells you they're struggling with depression, it's a moment of clarity. You might realize how unhelpful some of your previous attempts were. You might have thought you were being supportive, but you were actually making them feel more alone. You were trying to fix them, when what they really needed was for you to just be there.</p>
+
+                            <p>If someone you love is dealing with depression, you probably know how helpless it can feel. You want to help, but you don't know how. You're worried about saying the wrong thing. You're frustrated because nothing you do seems to help.</p>
+
+                            <p>This guide is based on evidence-based research and clinical understanding of depression and support strategies. This isn't a guide written by a therapist, but it draws from professional insights and research. It's designed for people who are trying to figure out how to be there for someone they care about. Here's what you should know from the start.</p>
+                        </div>
+
+                        <!-- Understanding Depression -->
+                        <section id="understanding-depression">
+                            <h2>First, Let's Talk About What Depression Actually Is</h2>
+                            
+                            <p>Depression isn't just being sad. It's not something you can snap out of. It's a real medical condition that affects how someone thinks, feels, and functions. Their brain chemistry is different. Their energy levels are different. Their ability to experience pleasure is different.</p>
+                            
+                            <p>People struggling with depression often describe it like this: "It's like having the flu, but instead of your body feeling heavy, it's your emotions. Everything feels like too much effort. Even things I used to love feel pointless."</p>
+
+                            <p>Understanding this is crucial. When you realize that depression is a real illness, not a choice or a character flaw, it changes how you approach supporting someone. You stop trying to fix them and start trying to understand them.</p>
+
+                            <div class="callout-box">
+                                <h4>Important to Remember:</h4>
+                                <p>Depression isn't something someone chooses. They can't just "think positive" or "snap out of it." It's a medical condition that requires treatment, support, and time. Your loved one isn't being difficult on purpose—they're dealing with an illness.</p>
+                            </div>
+                        </section>
+
+                        <!-- What Actually Helps -->
+                        <section id="what-helps">
+                            <h2>What Actually Helps (And What Doesn't)</h2>
+                            
+                            <p>Many people make mistakes early on when trying to support someone with depression. Here's what research and experience have shown:</p>
+
+                            <h3>What Helps:</h3>
+
+                            <p><strong>Just being there:</strong> Sometimes the most helpful thing you can do is just sit with them. You don't need to talk or fix anything. Just be present. Watch a movie together. Sit in silence. Let them know they're not alone.</p>
+
+                            <p><strong>Listening without trying to fix:</strong> When someone tells you how they feel, the instinct is often to offer solutions. "Have you tried exercise?" "Maybe you should see a therapist." But what they really need is for you to listen and validate their feelings. To say "That sounds really hard" instead of "Here's what you should do."</p>
+
+                            <p><strong>Small, practical help:</strong> Depression makes even small tasks feel overwhelming. Offering to help with specific things can be huge. "Can I pick up groceries for you?" "Want me to help you clean your apartment this weekend?" Be specific—don't just say "Let me know if you need anything" because they probably won't ask.</p>
+
+                            <p><strong>Checking in regularly:</strong> Send a text. Make a phone call. Stop by. Even if they don't respond, knowing you're thinking of them matters. Don't take it personally if they don't reply—depression makes communication feel impossible sometimes.</p>
+
+                            <p><strong>Encouraging treatment (gently):</strong> If they're not getting help, you can gently suggest it. But don't push too hard. Frame it as "I've noticed you've been struggling, and I wonder if talking to someone might help" rather than "You need to see a therapist."</p>
+
+                            <h3>What Doesn't Help:</h3>
+
+                            <p><strong>Trying to cheer them up:</strong> "Just think positive!" "It could be worse!" "You have so much to be grateful for!" These well-meaning comments can make someone feel worse. They invalidate their experience and make them feel guilty for feeling bad.</p>
+
+                            <p><strong>Comparing their situation:</strong> "I know someone who had it worse and they're fine." Depression isn't a competition. Their pain is real, regardless of what's happening in other people's lives.</p>
+
+                            <p><strong>Taking it personally:</strong> If they cancel plans or don't respond to messages, it's not about you. Depression makes socializing feel exhausting. They're not avoiding you—they're avoiding everything.</p>
+
+                            <p><strong>Giving unsolicited advice:</strong> Unless they specifically ask, don't offer solutions. They've probably already thought of everything you're going to suggest. What they need is support, not more things to try.</p>
+
+                            <p><strong>Minimizing their experience:</strong> "Everyone gets sad sometimes." "You'll feel better tomorrow." Depression isn't just sadness, and it doesn't just go away. Acknowledging how hard it is for them is more helpful than trying to minimize it.</p>
+                        </section>
+
+                        <!-- How to Talk About It -->
+                        <section id="how-to-talk">
+                            <h2>How to Talk About It (And What to Say)</h2>
+                            
+                            <p>Finding the right words is hard. Here are some things you can say that are actually helpful:</p>
+
+                            <div class="callout-box">
+                                <h4>Helpful Things to Say:</h4>
+                                <ul>
+                                    <li>"I'm here for you, no matter what."</li>
+                                    <li>"You're not alone in this."</li>
+                                    <li>"I can't imagine how hard this must be for you."</li>
+                                    <li>"How are you feeling today?" (And actually listen to the answer)</li>
+                                    <li>"Is there anything I can do to help right now?"</li>
+                                    <li>"You don't have to talk about it if you don't want to, but I'm here if you do."</li>
+                                    <li>"This isn't your fault."</li>
+                                    <li>"You're important to me."</li>
+                                </ul>
+                            </div>
+
+                            <p>And here's what not to say:</p>
+
+                            <div class="callout-box" style="background: rgba(248, 81, 73, 0.1); border-left: 4px solid var(--error-color);">
+                                <h4>Avoid Saying:</h4>
+                                <ul>
+                                    <li>"Just snap out of it."</li>
+                                    <li>"Think positive!"</li>
+                                    <li>"It's all in your head."</li>
+                                    <li>"You have so much to be grateful for."</li>
+                                    <li>"Other people have it worse."</li>
+                                    <li>"You're being selfish."</li>
+                                    <li>"What do you have to be depressed about?"</li>
+                                    <li>"Just exercise/go outside/get more sleep." (As if they haven't thought of that)</li>
+                                </ul>
+                            </div>
+
+                            <p>The key is to validate their experience rather than trying to change it. Acknowledge that what they're going through is real and difficult. Let them know you see them and you care.</p>
+                        </section>
+
+                        <!-- Practical Ways to Help -->
+                        <section id="practical-help">
+                            <h2>Practical Ways to Help (Without Being Overwhelming)</h2>
+                            
+                            <p>Sometimes the best support is concrete and practical. Here are things you can actually do:</p>
+
+                            <h3>Help with Daily Tasks</h3>
+                            <p>Depression makes basic tasks feel impossible. Offer to help with specific things:</p>
+                            <ul>
+                                <li>Pick up groceries or run errands</li>
+                                <li>Help with cleaning or laundry</li>
+                                <li>Cook a meal or bring over food</li>
+                                <li>Take care of their pets if they have any</li>
+                                <li>Help with paperwork or bills if they're behind</li>
+                            </ul>
+
+                            <h3>Be a Gentle Accountability Partner</h3>
+                            <p>If they're in treatment, you can gently help them stick with it. "Want me to drive you to your therapy appointment?" "Did you remember to take your medication today?" But be careful—this can feel nagging if you're not gentle about it.</p>
+
+                            <h3>Create Low-Pressure Social Opportunities</h3>
+                            <p>Instead of "Want to go out?" try "Want to watch a movie at my place? No pressure to talk, we can just hang out." Low-stakes, no-pressure activities are easier for someone with depression to say yes to.</p>
+
+                            <h3>Help Them Find Resources</h3>
+                            <p>If they're open to it, you can help them research therapists, support groups, or treatment options. But don't push. Let them lead on this.</p>
+
+                            <p>Remember: small gestures matter. A text checking in. A coffee dropped off. An offer to help with something specific. These things add up and show you care.</p>
+                        </section>
+
+                        <!-- Taking Care of Yourself -->
+                        <section id="taking-care-of-yourself">
+                            <h2>Don't Forget to Take Care of Yourself</h2>
+                            
+                            <p>This is important, and I wish someone had told me this earlier. Supporting someone with depression can be emotionally draining. You can't pour from an empty cup.</p>
+
+                            <p>It's okay to set boundaries. It's okay to need breaks. It's okay to feel frustrated or helpless sometimes. You're human, and this is hard for you too.</p>
+
+                            <p>Make sure you're taking care of your own mental health. Talk to someone about what you're going through—maybe a therapist, a support group for family members, or a trusted friend. You don't have to do this alone.</p>
+
+                            <p>And remember: you can't fix someone else's depression. You can support them, you can be there for them, but you can't make them better. That's not your job, and it's not something you have the power to do. Your job is to be a supportive presence, not a cure.</p>
+
+                            <div class="callout-box">
+                                <h4>Support for Supporters:</h4>
+                                <p>If you're supporting someone with depression, you might benefit from talking to someone yourself. NAMI (National Alliance on Mental Illness) has support groups specifically for family members and friends. You're not alone in this either.</p>
+                            </div>
+                        </section>
+
+                        <!-- When to Worry -->
+                        <section id="when-to-worry">
+                            <h2>When to Worry: Recognizing Crisis Situations</h2>
+                            
+                            <p>Sometimes depression can lead to thoughts of self-harm or suicide. This is serious, and it's important to know what to look for and what to do.</p>
+
+                            <p><strong>Warning signs include:</strong></p>
+                            <ul>
+                                <li>Talking about wanting to die or kill themselves</li>
+                                <li>Looking for ways to harm themselves (searching online, getting pills, etc.)</li>
+                                <li>Talking about feeling hopeless or having no reason to live</li>
+                                <li>Giving away possessions or saying goodbye</li>
+                                <li>Sudden mood changes (especially from very depressed to suddenly calm)</li>
+                                <li>Increased substance use</li>
+                                <li>Withdrawing even more than usual</li>
+                            </ul>
+
+                            <p><strong>If you're concerned:</strong></p>
+                            <ul>
+                                <li>Ask directly: "Are you thinking about hurting yourself?" It's a myth that asking will put the idea in their head. Ask directly and listen to the answer.</li>
+                                <li>If they say yes, don't leave them alone. Stay with them or make sure someone else is with them.</li>
+                                <li>Call a crisis hotline (988 in the US) or take them to the emergency room.</li>
+                                <li>Remove any means of self-harm if it's safe to do so.</li>
+                            </ul>
+
+                            <p>This is scary, I know. But taking action could save their life. Don't worry about overreacting—it's better to be safe.</p>
+                        </section>
+
+                        <!-- Long-Term Support -->
+                        <section id="long-term-support">
+                            <h2>Supporting Them Long-Term</h2>
+                            
+                            <p>Depression isn't something that just goes away. Even with treatment, there are good days and bad days. Your support needs to be consistent, not just when things are at their worst.</p>
+
+                            <p>Keep checking in, even when they seem better. Recovery isn't linear—there will be setbacks. Your continued presence matters, even (especially) when they're doing well.</p>
+
+                            <p>Celebrate small wins with them. Got out of bed? That's a win. Showered? Win. Went to therapy? Big win. Acknowledge these things. They matter.</p>
+
+                            <p>And remember: you're not responsible for their recovery. You can support them, but you can't make them better. That's between them and their treatment team. Your job is to be a steady, supportive presence in their life.</p>
+                        </section>
+
+                        <!-- Final Thoughts -->
+                        <section id="final-thoughts">
+                            <h2>A Final Note</h2>
+                            
+                            <p>Supporting someone with depression is hard. There's no perfect way to do it, and you'll probably make mistakes along the way. That's okay. What matters is that you're trying, that you care, and that you're showing up.</p>
+
+                            <p>Supporting someone through depression can actually deepen your relationship. Going through difficult times together, even though it's hard, can strengthen bonds. They'll know you're there for them, no matter what. And you'll learn so much about what real support looks like.</p>
+
+                            <p>If you're reading this because someone you love is struggling, know this: you're doing a good thing by trying to understand and help. Even if you don't always get it right, your care matters. Your presence matters. Keep showing up.</p>
+
+                            <div class="callout-box" style="background: var(--bg-tertiary); border-left: 4px solid var(--accent-primary);">
+                                <h4>Remember:</h4>
+                                <p>You don't have to have all the answers. You don't have to fix everything. Sometimes the most powerful thing you can do is just be there, listen, and let them know they're not alone. That's enough. That's more than enough.</p>
+                            </div>
+                        </section>
+
+                        <!-- Tags -->
+                        <div class="article-tags">
+                            <h4>Tags:</h4>
+                            <div class="tag-cloud">
+                                <a href="#" class="tag">depression</a>
+                                <a href="#" class="tag">support</a>
+                                <a href="#" class="tag">mental health</a>
+                                <a href="#" class="tag">relationships</a>
+                                <a href="#" class="tag">wellness</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Sidebar -->
+                    <aside class="article-sidebar">
+                        <!-- Recommended Products -->
+                        <div class="sidebar-widget">
+                            <h3 class="widget-title">Recommended Products</h3>
+                            <div class="sidebar-products">
+                                <article class="sidebar-product">
+                                    <a href="https://www.amazon.in/dp/0141978619/?tag=curiouspulsea-21" target="_blank" rel="noopener noreferrer" class="product-link">
+                                        <img src="https://m.media-amazon.com/images/I/71BCCd79xgL._SL1500_.jpg" alt="The Body Keeps the Score" class="product-image" loading="lazy">
+                                        <div class="product-info">
+                                            <h4>The Body Keeps the Score</h4>
+                                            <p class="product-price">₹489</p>
+                                            <span class="product-rating">⭐ 4.7</span>
+                                        </div>
+                                    </a>
+                                </article>
+                                
+                                <article class="sidebar-product">
+                                    <a href="https://www.amazon.in/dp/B09SZBJ3FZ/?tag=curiouspulsea-21" target="_blank" rel="noopener noreferrer" class="product-link">
+                                        <img src="https://m.media-amazon.com/images/I/61bvBm8WvdL._SL1500_.jpg" alt="Weighted Blanket" class="product-image" loading="lazy">
+                                        <div class="product-info">
+                                            <h4>Weighted Blanket</h4>
+                                            <p class="product-price">₹3,999</p>
+                                            <span class="product-rating">⭐ 4.6</span>
+                                        </div>
+                                    </a>
+                                </article>
+                                
+                                <article class="sidebar-product">
+                                    <a href="https://www.amazon.in/dp/0752265601/?tag=curiouspulsea-21" target="_blank" rel="noopener noreferrer" class="product-link" data-asin="0752265601">
+                                        <img src="https://m.media-amazon.com/images/I/71BCCd79xgL._SL1500_.jpg" alt="The Mindfulness Journal" class="product-image" loading="lazy" data-asin="0752265601">
+                                        <div class="product-info">
+                                            <h4>The Mindfulness Journal</h4>
+                                            <p class="product-price">₹169</p>
+                                            <span class="product-rating">⭐ 4.5</span>
+                                        </div>
+                                    </a>
+                                </article>
+                            </div>
+                            <a href="../products.html" class="view-all-products">View All Products →</a>
+                        </div>
+
+                        <!-- Citations & References -->
+                        <div class="sidebar-widget">
+                            <h3 class="widget-title">References & Citations</h3>
+                            <div class="references-list">
+                                <div class="reference-item">
+                                    <a href="https://www.nimh.nih.gov/health/topics/depression" target="_blank" rel="noopener noreferrer" class="reference-link">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                        <span>NIMH: Depression Information</span>
+                                    </a>
+                                </div>
+                                <div class="reference-item">
+                                    <a href="https://www.apa.org/topics/depression" target="_blank" rel="noopener noreferrer" class="reference-link">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                        <span>APA: Supporting Depression</span>
+                                    </a>
+                                </div>
+                                <div class="reference-item">
+                                    <a href="https://www.mayoclinic.org/diseases-conditions/depression/symptoms-causes/syc-20356007" target="_blank" rel="noopener noreferrer" class="reference-link">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                        <span>Mayo Clinic: Depression Guide</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Learn More -->
+                        <div class="sidebar-widget">
+                            <h3 class="widget-title">Learn More</h3>
+                            <div class="learn-more-links">
+                                <a href="../resources.html" class="learn-more-link">
+                                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Mental health resources">
+                                    <div>
+                                        <h4>Mental Health Resources</h4>
+                                        <p>Find professional support</p>
+                                    </div>
+                                </a>
+                                <a href="panic-attacks-guide.html" class="learn-more-link">
+                                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Panic attacks guide">
+                                    <div>
+                                        <h4>Understanding Panic Attacks</h4>
+                                        <p>Learn about anxiety disorders</p>
+                                    </div>
+                                </a>
+                                <a href="../meditation.html" class="learn-more-link">
+                                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Meditation guide">
+                                    <div>
+                                        <h4>Meditation for Wellness</h4>
+                                        <p>Support mental health</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Posts -->
+        <section class="related-posts">
+            <div class="container">
+                <h2>You Might Also Like</h2>
+                <div class="related-grid">
+                    <article class="related-post">
+                        <div class="related-content">
+                            <span class="related-category">Mental Health</span>
+                            <h3><a href="panic-attacks-guide.html">Understanding Panic Attacks: Signs, Triggers & Coping Strategies</a></h3>
+                            <p>Learn to recognize panic attack symptoms and discover evidence-based techniques to manage them effectively.</p>
+                            <div class="related-meta">
+                                <span class="related-date">Jan 15, 2025</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="related-post">
+                        <div class="related-content">
+                            <span class="related-category">Beginners Guide</span>
+                            <h3><a href="meditation-beginners.html">5-Minute Meditation Guide for Beginners</a></h3>
+                            <p>Start your meditation journey with this simple, step-by-step guide designed for complete beginners.</p>
+                            <div class="related-meta">
+                                <span class="related-date">Jan 12, 2025</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Signup -->
+        <section class="newsletter-signup">
+            <div class="container">
+                <div class="newsletter-card">
+                    <h2>Don't Miss Future Posts</h2>
+                    <p>Get the latest mental wellness insights, practical tips, and exclusive content delivered to your inbox every week.</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <div class="newsletter-input-group">
+                            <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+                            <button type="submit" class="newsletter-btn">Subscribe</button>
+                        </div>
+                        <p class="newsletter-privacy">We respect your privacy. Unsubscribe at any time.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="../images/placeholders/tmq-icon-mindfulness.jpg" alt="Tranquil Mind Quest Logo" class="footer-logo">
+                        <h3>Tranquil Mind Quest</h3>
+                    </div>
+                    <p>Your trusted companion on the journey to mental wellness. We provide evidence-based resources, tools, and support to help you build resilience, manage stress, and cultivate inner peace.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../meditation.html">Meditation</a></li>
+                        <li><a href="../breathing.html">Breathing</a></li>
+                        <li><a href="../yoga.html">Yoga</a></li>
+                        <li><a href="../mindfulness.html">Mindfulness</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="../products.html">Wellness Products</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="../resources.html">References</a></li>
+                        <li><a href="../about.html#professional-resources">Professional Help</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-disclaimer">
+                    <p><strong>Disclaimer:</strong> TranquilMindQuest provides educational content and wellness resources. We are not mental health professionals, therapists, or medical experts. This content is for informational purposes only and should not be considered as professional medical advice, diagnosis, or treatment. Always seek the advice of qualified mental health professionals or other qualified healthcare providers with any questions you may have regarding a medical condition or mental health concern.</p>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 Tranquil Mind Quest. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="../js/main.js"></script>
+    <script src="../js/smooth-scroll.js"></script>
+    <script src="../js/animations.js"></script>
+    <script src="../js/blog.js"></script>
+    
+    <!-- Reading Progress Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const progressBar = document.getElementById('progress-bar');
+            const progressText = document.getElementById('progress-text');
+            
+            function updateProgress() {
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
+                
+                if (progressBar) {
+                    progressBar.style.width = Math.min(scrollPercent, 100) + '%';
+                }
+                if (progressText) {
+                    progressText.textContent = Math.min(Math.round(scrollPercent), 100) + '%';
+                }
+            }
+            
+            // Load Amazon product images dynamically using ASIN
+            function loadAmazonProductImages() {
+                const productImages = document.querySelectorAll('.product-image[data-asin]');
+                
+                // Map of ASINs to working Amazon image URLs
+                const imageMap = {
+                    '1462546161': 'https://m.media-amazon.com/images/I/41EAUzC-35L._SY445_SX342_ControlCacheEqualizer_.jpg', // Anxiety Workbook
+                    'B09SZBJ3FZ': 'https://m.media-amazon.com/images/I/61bvBm8WvdL._SL1500_.jpg', // Weighted Blanket - confirmed working
+                    'B0FLYF99SB': 'https://m.media-amazon.com/images/I/61Je32GGpsL._SL1500_.jpg', // Candles
+                    'B08617VNGN': 'https://m.media-amazon.com/images/I/51nLTuFjUQL._SL1500_.jpg', // Meditation Cushion - confirmed working
+                    'B0D5LVMJCC': 'https://m.media-amazon.com/images/I/61Je32GGpsL._SL1500_.jpg', // Yoga Mat
+                    '0752265601': 'https://images-na.ssl-images-amazon.com/images/I/81vqJqJqJqL._SL1500_.jpg', // Mindfulness Journal
+                    '0141978619': 'https://m.media-amazon.com/images/I/71BCCd79xgL._SL1500_.jpg'  // Body Keeps the Score - confirmed working
+                };
+                
+                productImages.forEach(function(img) {
+                    const asin = img.getAttribute('data-asin');
+                    const link = img.closest('a');
+                    
+                    if (asin && imageMap[asin]) {
+                        // Use mapped image URL
+                        img.src = imageMap[asin];
+                    } else if (asin && link) {
+                        // Try to extract image from Amazon product page using ASIN
+                        const amazonUrl = link.href;
+                        const asinMatch = amazonUrl.match(/\/dp\/([A-Z0-9]+)/);
+                        if (asinMatch) {
+                            const extractedAsin = asinMatch[1];
+                            img.src = `https://images-na.ssl-images-amazon.com/images/I/${extractedAsin}._AC_SL1500_.jpg`;
+                        }
+                    }
+                    
+                    // Fallback if image fails to load
+                    img.onerror = function() {
+                        if (this.src && !this.src.includes('placeholder')) {
+                            const asin = this.getAttribute('data-asin');
+                            if (asin) {
+                                this.src = `https://images-na.ssl-images-amazon.com/images/I/${asin}._SX342_SY445_.jpg`;
+                            } else {
+                                this.src = 'https://via.placeholder.com/150x150/1a1a2e/58a6ff?text=Product';
+                            }
+                        }
+                    };
+                });
+            }
+            
+            window.addEventListener('scroll', updateProgress);
+            updateProgress();
+            loadAmazonProductImages();
+        });
+    </script>
+</body>
+</html>
+
+
+

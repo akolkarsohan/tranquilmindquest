@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter API Test - TranquilMindQuest</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .test-container {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        input[type="email"] {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input[type="email"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            flex: 1;
+            min-width: 120px;
+        }
+        
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .btn-primary:hover:not(:disabled) {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #333;
+        }
+        
+        .btn-secondary:hover:not(:disabled) {
+            background: #e0e0e0;
+        }
+        
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .status-box {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            display: none;
+        }
+        
+        .status-box.show {
+            display: block;
+        }
+        
+        .status-box.success {
+            background: #d4edda;
+            border: 2px solid #c3e6cb;
+            color: #155724;
+        }
+        
+        .status-box.error {
+            background: #f8d7da;
+            border: 2px solid #f5c6cb;
+            color: #721c24;
+        }
+        
+        .status-box.info {
+            background: #d1ecf1;
+            border: 2px solid #bee5eb;
+            color: #0c5460;
+        }
+        
+        .status-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .status-content {
+            font-size: 14px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        
+        .config-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 13px;
+            color: #495057;
+        }
+        
+        .config-info strong {
+            color: #333;
+        }
+        
+        .loading {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #fff;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🧪 Newsletter API Test</h1>
+        <p class="subtitle">Test your newsletter subscription endpoint</p>
+        
+        <div class="config-info">
+            <strong>API Endpoint:</strong><br>
+            <span id="endpoint-display">Loading...</span>
+        </div>
+        
+        <form id="test-form">
+            <div class="form-group">
+                <label for="test-email">Test Email Address:</label>
+                <input 
+                    type="email" 
+                    id="test-email" 
+                    placeholder="your-email@example.com" 
+                    required
+                    value=""
+                >
+            </div>
+            
+            <div class="button-group">
+                <button type="submit" class="btn-primary" id="submit-btn">
+                    Test Subscription
+                </button>
+                <button type="button" class="btn-secondary" id="check-config-btn">
+                    Check Config
+                </button>
+            </div>
+        </form>
+        
+        <div id="status-box" class="status-box"></div>
+    </div>
+    
+    <script>
+        // Get API endpoint from config.js if available, otherwise use default
+        const API_ENDPOINT = (typeof window !== 'undefined' && window.NEWSLETTER_CONFIG) 
+            ? window.NEWSLETTER_CONFIG.API_ENDPOINT 
+            : 'https://uv48rxi4gf.execute-api.ap-south-1.amazonaws.com/prod/subscribe';
+        
+        // Display endpoint
+        document.getElementById('endpoint-display').textContent = API_ENDPOINT;
+        
+        const form = document.getElementById('test-form');
+        const statusBox = document.getElementById('status-box');
+        const submitBtn = document.getElementById('submit-btn');
+        const checkConfigBtn = document.getElementById('check-config-btn');
+        
+        function showStatus(type, title, content) {
+            statusBox.className = `status-box show ${type}`;
+            statusBox.innerHTML = `
+                <div class="status-title">${title}</div>
+                <div class="status-content">${content}</div>
+            `;
+            statusBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        
+        function setLoading(loading) {
+            submitBtn.disabled = loading;
+            if (loading) {
+                submitBtn.innerHTML = '<span class="loading"></span>Testing...';
+            } else {
+                submitBtn.textContent = 'Test Subscription';
+            }
+        }
+        
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const emailInput = document.getElementById('test-email');
+            const email = emailInput.value.trim();
+            
+            if (!email) {
+                showStatus('error', '❌ Error', 'Please enter an email address');
+                return;
+            }
+            
+            // Basic email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showStatus('error', '❌ Error', 'Please enter a valid email address');
+                return;
+            }
+            
+            setLoading(true);
+            showStatus('info', '⏳ Testing...', `Sending subscription request to:\n${API_ENDPOINT}\n\nEmail: ${email}`);
+            
+            try {
+                const startTime = Date.now();
+                
+                const response = await fetch(API_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email: email })
+                });
+                
+                const responseTime = Date.now() - startTime;
+                const data = await response.json();
+                
+                if (response.ok && data.success) {
+                    showStatus('success', '✅ Success!', 
+                        `Subscription successful!\n\n` +
+                        `Response Time: ${responseTime}ms\n` +
+                        `Status Code: ${response.status}\n\n` +
+                        `Message: ${data.message || 'No message provided'}\n\n` +
+                        `Please check your email inbox (and spam folder) for the welcome email.`
+                    );
+                } else {
+                    showStatus('error', '❌ Error', 
+                        `Subscription failed!\n\n` +
+                        `Status Code: ${response.status}\n` +
+                        `Response Time: ${responseTime}ms\n\n` +
+                        `Error: ${data.error || data.message || 'Unknown error'}\n\n` +
+                        `Full Response:\n${JSON.stringify(data, null, 2)}`
+                    );
+                }
+            } catch (error) {
+                showStatus('error', '❌ Network Error', 
+                    `Failed to connect to the API endpoint.\n\n` +
+                    `Error: ${error.message}\n\n` +
+                    `Possible causes:\n` +
+                    `• CORS configuration issue\n` +
+                    `• API endpoint is incorrect\n` +
+                    `• Network connectivity problem\n` +
+                    `• API Gateway is not deployed\n\n` +
+                    `Check the browser console (F12) for more details.`
+                );
+                console.error('API Test Error:', error);
+            } finally {
+                setLoading(false);
+            }
+        });
+        
+        checkConfigBtn.addEventListener('click', () => {
+            const config = typeof window !== 'undefined' && window.NEWSLETTER_CONFIG 
+                ? window.NEWSLETTER_CONFIG 
+                : { error: 'NEWSLETTER_CONFIG not found' };
+            
+            showStatus('info', 'ℹ️ Configuration Check', 
+                `Current Configuration:\n\n` +
+                `${JSON.stringify(config, null, 2)}\n\n` +
+                `Endpoint: ${API_ENDPOINT}`
+            );
+        });
+    </script>
+</body>
+</html>
+

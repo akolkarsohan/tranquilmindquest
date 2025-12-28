@@ -1,0 +1,601 @@
+{
+  "botName": "TranquilMindQuest-SupportBot",
+  "description": "Mental health support chatbot for TranquilMindQuest",
+  "locale": "en_US",
+  "childDirected": false,
+  "idleSessionTTLInSeconds": 300,
+  "voiceId": "Joanna",
+  "enableModelImprovements": true,
+  "detectSentiment": true,
+  "intents": [
+    {
+      "intentName": "GreetingIntent",
+      "description": "Handles user greetings and initial contact",
+      "sampleUtterances": [
+        "hello",
+        "hi",
+        "hey",
+        "good morning",
+        "good afternoon",
+        "good evening",
+        "start",
+        "begin",
+        "help me",
+        "I need help",
+        "can you help me",
+        "I'm here for support",
+        "what can you do",
+        "how are you",
+        "good day"
+      ],
+      "intentConfirmationSetting": {
+        "promptSpecification": {
+          "messageGroups": [
+            {
+              "message": {
+                "plainTextMessage": {
+                  "value": "I understand you're greeting me. Is that correct?"
+                }
+              }
+            }
+          ],
+          "maxRetries": 2,
+          "allowInterrupt": true
+        },
+        "declinationResponse": {
+          "messageGroups": [
+            {
+              "message": {
+                "plainTextMessage": {
+                  "value": "No problem. How else can I help you today?"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "fulfillmentCodeHook": {
+        "enabled": true,
+        "postFulfillmentStatusSpecification": {
+          "successResponse": {
+            "messageGroups": [
+              {
+                "message": {
+                  "plainTextMessage": {
+                    "value": "I'm here to help with your mental wellness journey."
+                  }
+                }
+              }
+            ]
+          },
+          "failureResponse": {
+            "messageGroups": [
+              {
+                "message": {
+                  "plainTextMessage": {
+                    "value": "I'm having trouble processing that. Please try again."
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "intentName": "AnxietyHelpIntent",
+      "description": "Provides support and resources for anxiety-related concerns",
+      "sampleUtterances": [
+        "I'm anxious",
+        "help with anxiety",
+        "feeling anxious",
+        "panic attack",
+        "worried",
+        "nervous",
+        "scared",
+        "overwhelmed",
+        "can't calm down",
+        "racing thoughts",
+        "anxiety symptoms",
+        "feeling panicky",
+        "anxiety attack",
+        "worried about everything",
+        "can't stop worrying",
+        "feeling on edge",
+        "restless",
+        "trouble concentrating",
+        "muscle tension",
+        "sleep problems from anxiety"
+      ],
+      "intentConfirmationSetting": {
+        "promptSpecification": {
+          "messageGroups": [
+            {
+              "message": {
+                "plainTextMessage": {
+                  "value": "I understand you're experiencing anxiety. Would you like me to help you with some calming techniques?"
+                }
+              }
+            }
+          ],
+          "maxRetries": 2,
+          "allowInterrupt": true
+        }
+      },
+      "fulfillmentCodeHook": {
+        "enabled": true
+      }
+    },
+    {
+      "intentName": "MeditationInfoIntent",
+      "description": "Provides information about meditation and mindfulness practices",
+      "sampleUtterances": [
+        "what is meditation",
+        "how to meditate",
+        "meditation help",
+        "teach me meditation",
+        "meditation guide",
+        "learn meditation",
+        "meditation techniques",
+        "mindfulness meditation",
+        "how to start meditating",
+        "meditation for beginners",
+        "guided meditation",
+        "meditation benefits",
+        "mindfulness practices",
+        "meditation tips",
+        "meditation instructions"
+      ],
+      "fulfillmentCodeHook": {
+        "enabled": true
+      }
+    },
+    {
+      "intentName": "BreathingExerciseIntent",
+      "description": "Provides breathing exercises and relaxation techniques",
+      "sampleUtterances": [
+        "breathing exercise",
+        "how to breathe",
+        "calm down",
+        "relaxation technique",
+        "breathing techniques",
+        "deep breathing",
+        "breathing help",
+        "box breathing",
+        "breathing for anxiety",
+        "relaxation breathing",
+        "breathing to relax",
+        "calming breath",
+        "breathing meditation",
+        "breathing practice",
+        "breathing to sleep"
+      ],
+      "fulfillmentCodeHook": {
+        "enabled": true
+      }
+    },
+    {
+      "intentName": "StressManagementIntent",
+      "description": "Provides stress management techniques and resources",
+      "sampleUtterances": [
+        "I'm stressed",
+        "manage stress",
+        "feeling overwhelmed",
+        "too much pressure",
+        "work stress",
+        "stress relief",
+        "burnout",
+        "exhausted",
+        "stressed out",
+        "can't handle stress",
+        "stress management",
+        "dealing with stress",
+        "stress symptoms",
+        "work life balance",
+        "feeling pressured"
+      ],
+      "fulfillmentCodeHook": {
+        "enabled": true
+      }
+    },
+    {
+      "intentName": "DepressionSupportIntent",
+      "description": "Provides support and resources for depression-related concerns",
+      "sampleUtterances": [
+        "I'm depressed",
+        "feeling sad",
+        "need help",
+        "feeling down",
+        "hopeless",
+        "empty",
+        "no motivation",
+        "can't get out of bed",
+        "feeling worthless",
+        "depression symptoms",
+        "feeling blue",
+        "sad all the time",
+        "no energy",
+        "can't enjoy anything",
+        "feeling numb"
+      ],
+      "fulfillmentCodeHook": {
+        "enabled": true
+      }
+    },
+    {
+      "intentName": "ResourcesIntent",
+      "description": "Provides information about available mental health resources",
+      "sampleUtterances": [
+        "show resources",
+        "where can I find help",
+        "I need information",
+        "mental health resources",
+        "helpful links",
+        "support groups",
+        "professional help",
+        "therapy resources",
+        "mental health services",
+        "where to get help",
+        "counseling resources",
+        "mental health support",
+        "available resources",
+        "help options",
+        "support services"
+      ],
+      "fulfillmentCodeHook": {
+        "enabled": true
+      }
+    },
+    {
+      "intentName": "CrisisIntent",
+      "description": "HIGH PRIORITY - Handles crisis situations and suicidal ideation",
+      "sampleUtterances": [
+        "I want to die",
+        "suicide",
+        "kill myself",
+        "end it all",
+        "harm myself",
+        "not worth living",
+        "better off dead",
+        "want to disappear",
+        "thinking about suicide",
+        "suicidal thoughts",
+        "want to hurt myself",
+        "life isn't worth it",
+        "no point in living",
+        "want to end my life",
+        "thinking of ending it"
+      ],
+      "intentConfirmationSetting": {
+        "promptSpecification": {
+          "messageGroups": [
+            {
+              "message": {
+                "plainTextMessage": {
+                  "value": "I'm concerned about what you're saying. Are you having thoughts of hurting yourself?"
+                }
+              }
+            }
+          ],
+          "maxRetries": 1,
+          "allowInterrupt": true
+        }
+      },
+      "fulfillmentCodeHook": {
+        "enabled": true
+      }
+    },
+    {
+      "intentName": "ProductRecommendationIntent",
+      "description": "Provides product recommendations for mental wellness",
+      "sampleUtterances": [
+        "recommend products",
+        "what should I buy",
+        "help with shopping",
+        "wellness products",
+        "meditation supplies",
+        "anxiety tools",
+        "mental health products",
+        "what products help",
+        "recommendations",
+        "shopping help",
+        "wellness tools",
+        "meditation equipment",
+        "anxiety relief products",
+        "stress relief tools",
+        "mental wellness products"
+      ],
+      "fulfillmentCodeHook": {
+        "enabled": true
+      }
+    },
+    {
+      "intentName": "FallbackIntent",
+      "description": "Handles unrecognized or unclear user inputs",
+      "sampleUtterances": [
+        "I don't understand",
+        "what do you mean",
+        "can you help",
+        "not sure",
+        "confused",
+        "I don't know",
+        "unclear",
+        "what",
+        "huh",
+        "pardon",
+        "excuse me",
+        "repeat that",
+        "say again",
+        "I'm lost",
+        "help"
+      ],
+      "fulfillmentCodeHook": {
+        "enabled": true
+      }
+    }
+  ],
+  "slotTypes": [
+    {
+      "slotTypeName": "EmotionType",
+      "description": "Types of emotions users might express",
+      "slotTypeValues": [
+        {
+          "sampleValue": {
+            "value": "anxious"
+          }
+        },
+        {
+          "sampleValue": {
+            "value": "sad"
+          }
+        },
+        {
+          "sampleValue": {
+            "value": "stressed"
+          }
+        },
+        {
+          "sampleValue": {
+            "value": "angry"
+          }
+        },
+        {
+          "sampleValue": {
+            "value": "frustrated"
+          }
+        },
+        {
+          "sampleValue": {
+            "value": "overwhelmed"
+          }
+        },
+        {
+          "sampleValue": {
+            "value": "lonely"
+          }
+        },
+        {
+          "sampleValue": {
+            "value": "hopeless"
+          }
+        }
+      ]
+    },
+    {
+      "slotTypeName": "TimeFrame",
+      "description": "Time references for when users experience symptoms",
+      "slotTypeValues": [
+        {
+          "sampleValue": {
+            "value": "today"
+          }
+        },
+        {
+          "sampleValue": {
+            "value": "this week"
+          }
+        },
+        {
+          "sampleValue": {
+            "value": "recently"
+          }
+        },
+        {
+          "sampleValue": {
+            "value": "for a while"
+          }
+        },
+        {
+          "sampleValue": {
+            "value": "always"
+          }
+        },
+        {
+          "sampleValue": {
+            "value": "sometimes"
+          }
+        },
+        {
+          "sampleValue": {
+            "value": "often"
+          }
+        }
+      ]
+    }
+  ],
+  "botAliases": [
+    {
+      "botAliasName": "production",
+      "description": "Production alias for TranquilMindQuest chatbot",
+      "botVersion": "1",
+      "conversationLogSettings": {
+        "textLogSettings": {
+          "enabled": true,
+          "destination": {
+            "cloudWatch": {
+              "cloudWatchLogGroupArn": "arn:aws:logs:us-east-1:ACCOUNT_ID:log-group:/aws/lex/TranquilMindQuest-SupportBot",
+              "logPrefix": "conversation-logs"
+            }
+          }
+        }
+      }
+    },
+    {
+      "botAliasName": "development",
+      "description": "Development alias for testing",
+      "botVersion": "1",
+      "conversationLogSettings": {
+        "textLogSettings": {
+          "enabled": true,
+          "destination": {
+            "cloudWatch": {
+              "cloudWatchLogGroupArn": "arn:aws:logs:us-east-1:ACCOUNT_ID:log-group:/aws/lex/TranquilMindQuest-SupportBot-dev",
+              "logPrefix": "dev-conversation-logs"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "conversationLogSettings": {
+    "textLogSettings": {
+      "enabled": true,
+      "destination": {
+        "cloudWatch": {
+          "cloudWatchLogGroupArn": "arn:aws:logs:us-east-1:ACCOUNT_ID:log-group:/aws/lex/TranquilMindQuest-SupportBot",
+          "logPrefix": "conversation-logs"
+        }
+      }
+    }
+  },
+  "sentimentAnalysisSettings": {
+    "detectSentiment": true
+  },
+  "botTags": {
+    "Environment": "production",
+    "Project": "TranquilMindQuest",
+    "Service": "chatbot",
+    "Owner": "TranquilMindQuest Team"
+  }
+}
+
+/*
+LEX BOT CONFIGURATION IMPLEMENTATION GUIDE:
+
+1. IMPORTING THIS CONFIGURATION:
+   - Use AWS CLI to import this configuration
+   - Or manually create each intent in Lex console
+   - Ensure all sample utterances are added
+
+2. INTENT PRIORITIES:
+   - CrisisIntent: HIGHEST priority (crisis detection)
+   - GreetingIntent: High priority (first interaction)
+   - AnxietyHelpIntent: High priority (common concern)
+   - FallbackIntent: Medium priority (catch-all)
+
+3. SAMPLE UTTERANCES BEST PRACTICES:
+   - Include variations of common phrases
+   - Add misspellings and informal language
+   - Include different ways to express the same intent
+   - Test with real user conversations
+
+4. SLOT TYPES:
+   - EmotionType: Captures emotional states
+   - TimeFrame: Captures temporal references
+   - Can be extended based on user needs
+
+5. CONVERSATION LOGGING:
+   - Enabled for monitoring and improvement
+   - Logs stored in CloudWatch
+   - 30-day retention policy
+   - No PII storage
+
+6. SENTIMENT ANALYSIS:
+   - Enabled to detect emotional tone
+   - Helps with appropriate responses
+   - Can trigger crisis protocols
+
+7. TESTING RECOMMENDATIONS:
+   - Test each intent individually
+   - Test with various utterance patterns
+   - Verify crisis detection works
+   - Test fallback scenarios
+
+8. MONITORING:
+   - Track intent recognition accuracy
+   - Monitor fallback rate
+   - Analyze conversation logs
+   - Update utterances based on real usage
+
+9. SECURITY CONSIDERATIONS:
+   - No sensitive data in utterances
+   - Crisis conversations flagged
+   - Regular log review
+   - Access controls on logs
+
+10. COMPLIANCE:
+    - Not HIPAA compliant
+    - Crisis intervention protocols
+    - Professional disclaimers
+    - Privacy policy compliance
+
+IMPORT COMMANDS:
+
+# Import bot configuration
+aws lex-models-v2 create-bot \
+  --bot-name TranquilMindQuest-SupportBot \
+  --description "Mental health support chatbot" \
+  --role-arn arn:aws:iam::ACCOUNT_ID:role/LexBotRole \
+  --data-privacy '{ "childDirected": false }' \
+  --idle-session-ttl-in-seconds 300
+
+# Create intents (example for GreetingIntent)
+aws lex-models-v2 create-intent \
+  --bot-id BOT_ID \
+  --bot-version DRAFT \
+  --locale-id en_US \
+  --intent-name GreetingIntent \
+  --description "Handles user greetings"
+
+# Add sample utterances
+aws lex-models-v2 create-slot \
+  --bot-id BOT_ID \
+  --bot-version DRAFT \
+  --locale-id en_US \
+  --intent-name GreetingIntent \
+  --slot-name SampleUtterance \
+  --slot-type-name AMAZON.AlphaNumeric
+
+MANUAL SETUP STEPS:
+
+1. Create bot in Lex console
+2. Add each intent with sample utterances
+3. Configure fulfillment to Lambda function
+4. Set up conversation logging
+5. Enable sentiment analysis
+6. Test all intents
+7. Deploy to production alias
+8. Monitor and optimize
+
+TROUBLESHOOTING:
+
+- Intent not recognized: Add more sample utterances
+- Low confidence scores: Improve utterance variety
+- Crisis not detected: Review crisis utterances
+- High fallback rate: Analyze unrecognized inputs
+- Lambda errors: Check function permissions and code
+
+MAINTENANCE:
+
+- Weekly: Review conversation logs
+- Monthly: Update sample utterances
+- Quarterly: Analyze intent performance
+- Annually: Comprehensive bot review
+*/
+
+
+
+
+
+
+

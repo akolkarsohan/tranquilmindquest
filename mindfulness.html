@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reduce worry, enhance awareness, and find peace in the now. Mindfulness exercises and techniques for present-moment awareness.">
+    <meta name="keywords" content="mindfulness, present moment, awareness, meditation, stress relief, anxiety, depression, mental wellness">
+    <title>Mindfulness: Living in the Present Moment - TranquilMindQuest</title>
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/dark-theme.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tranquilmindquest.com/mindfulness.html">
+    
+    <!-- Additional styles for mindfulness page -->
+    <style>
+        .breadcrumb {
+            margin-bottom: var(--space-lg);
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+        }
+        
+        .breadcrumb a {
+            color: var(--accent-primary);
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .read-time {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .toc {
+            position: sticky;
+            top: 0px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin-bottom: var(--space-xl);
+            max-height: calc(100vh - 20px);
+            overflow-y: auto;
+            z-index: var(--z-sticky);
+            width: 100%;
+        }
+        
+        .toc h3 {
+            margin-bottom: var(--space-md);
+            color: var(--text-primary);
+        }
+        
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .toc li {
+            margin-bottom: var(--space-sm);
+        }
+        
+        .toc a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: var(--font-size-sm);
+            transition: color var(--transition-fast);
+        }
+        
+        .toc a:hover {
+            color: var(--accent-primary);
+        }
+        
+        .toc a.active {
+            color: var(--accent-primary);
+            font-weight: var(--font-weight-medium);
+            background: var(--bg-tertiary);
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--radius-sm);
+        }
+        
+        .content-area {
+            width: 100%;
+            max-width: none;
+        }
+        
+        .grid.grid-cols-3 {
+            grid-template-columns: 1fr 2fr;
+            gap: var(--space-xl);
+        }
+        
+        /* Navigation Dropdown Styles */
+        .nav-dropdown {
+            position: relative;
+        }
+        
+        .dropdown-toggle {
+            cursor: pointer;
+        }
+        
+        .dropdown-toggle::after {
+            content: '▼';
+            font-size: 10px;
+            margin-left: 5px;
+            transition: transform var(--transition-fast);
+        }
+        
+        .nav-dropdown:hover .dropdown-toggle::after {
+            transform: rotate(180deg);
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            min-width: 180px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all var(--transition-fast);
+            z-index: var(--z-dropdown);
+        }
+        
+        .nav-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-menu {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .dropdown-menu li {
+            margin: 0;
+            list-style: none;
+        }
+        
+        .dropdown-link {
+            display: block;
+            padding: var(--space-sm) var(--space-md);
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all var(--transition-fast);
+            border-radius: var(--radius-sm);
+            margin: var(--space-xs);
+        }
+        
+        .dropdown-link:hover,
+        .dropdown-link.active {
+            background: var(--bg-tertiary);
+            color: var(--accent-primary);
+        }
+        
+        .exercise-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin-bottom: var(--space-lg);
+            transition: all var(--transition-normal);
+        }
+        
+        .exercise-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .exercise-title {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            color: var(--text-primary);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .exercise-description {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-md);
+        }
+        
+        .exercise-steps {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .exercise-steps li {
+            margin-bottom: var(--space-sm);
+            padding-left: var(--space-md);
+            position: relative;
+        }
+        
+        .exercise-steps li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+        }
+        
+        .exercise-benefits {
+            color: var(--accent-primary);
+            font-weight: var(--font-weight-medium);
+            margin-top: var(--space-md);
+        }
+        
+        .grounding-exercise {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin: var(--space-xl) 0;
+            text-align: center;
+        }
+        
+        .grounding-step {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            margin: var(--space-md) 0;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        
+        .grounding-step:hover {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+        }
+        
+        .grounding-step.completed {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+        }
+        
+        .grounding-step input[type="checkbox"] {
+            margin-right: var(--space-sm);
+            accent-color: var(--accent-primary);
+        }
+        
+        .mindful-activity {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin-bottom: var(--space-md);
+            transition: all var(--transition-normal);
+        }
+        
+        .mindful-activity:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .activity-title {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            color: var(--text-primary);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .activity-description {
+            color: var(--text-secondary);
+        }
+        
+        .challenge-section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin: var(--space-xl) 0;
+        }
+        
+        .challenge-title {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            color: var(--text-primary);
+            margin-bottom: var(--space-md);
+        }
+        
+        .challenge-description {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .challenge-tips {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .challenge-tips li {
+            margin-bottom: var(--space-sm);
+            padding-left: var(--space-md);
+            position: relative;
+        }
+        
+        .challenge-tips li::before {
+            content: '💡';
+            position: absolute;
+            left: 0;
+        }
+        
+        .app-review {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .app-name {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            color: var(--text-primary);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .app-rating {
+            color: var(--accent-primary);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .app-description {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-md);
+        }
+        
+        .app-features {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .app-features li {
+            margin-bottom: var(--space-xs);
+            padding-left: var(--space-md);
+            position: relative;
+        }
+        
+        .app-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+        }
+        
+        .product-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            text-align: center;
+            transition: all var(--transition-normal);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+        }
+        
+        .product-title {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            color: var(--text-primary);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .product-price {
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--accent-primary);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .product-rating {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: var(--space-xs);
+            margin-bottom: var(--space-md);
+        }
+        
+        .product-button {
+            display: inline-block;
+            padding: var(--space-sm) var(--space-lg);
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            font-weight: var(--font-weight-medium);
+            transition: all var(--transition-fast);
+        }
+        
+        .product-button:hover {
+            background: var(--accent-secondary);
+        }
+        
+        .progress-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--bg-secondary);
+            z-index: var(--z-fixed);
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: var(--gradient-accent);
+            width: 0%;
+            transition: width var(--transition-normal);
+        }
+        
+        .share-buttons {
+            display: flex;
+            gap: var(--space-sm);
+            margin: var(--space-lg) 0;
+        }
+        
+        .share-button {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            padding: var(--space-sm) var(--space-md);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: var(--font-size-sm);
+            transition: all var(--transition-fast);
+        }
+        
+        .share-button:hover {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+            border-color: var(--accent-primary);
+        }
+        
+        @media (max-width: 768px) {
+            .toc {
+                position: static;
+                margin-bottom: var(--space-lg);
+            }
+            
+            .grid-cols-3 {
+                grid-template-columns: 1fr;
+            }
+            
+            .exercise-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .mindful-activities-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .challenges-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Progress indicator -->
+    <div class="progress-indicator">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav-brand">
+                <img src="images/placeholders/tmq-icon-mindfulness.jpg" alt="Tranquil Mind Quest Logo" class="nav-brand-icon">
+                Tranquil Mind Quest
+            </a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="wellness-dropdown">Wellness</a>
+                    <ul class="dropdown-menu" id="wellness-menu">
+                        <li><a href="meditation.html" class="dropdown-link">Meditation</a></li>
+                        <li><a href="breathing.html" class="dropdown-link">Breathing</a></li>
+                        <li><a href="yoga.html" class="dropdown-link">Yoga</a></li>
+                        <li><a href="mindfulness.html" class="dropdown-link active">Mindfulness</a></li>
+                    </ul>
+                </li>
+                <li><a href="resources.html" class="nav-link">Resources</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="nav-search" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero section" id="hero">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a> > <a href="mindfulness.html">Mindfulness</a>
+                </div>
+                
+                <div class="read-time">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12,6 12,12 16,14"></polyline>
+                    </svg>
+                    Estimated read time: 16 minutes
+                </div>
+                
+                <h1>Mindfulness: Living in the Present Moment</h1>
+                <p class="hero-subtitle">Reduce worry, enhance awareness, and find peace in the now</p>
+                
+                <div class="share-buttons">
+                    <a href="#" class="share-button" onclick="shareOnTwitter()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                        </svg>
+                        Share
+                    </a>
+                    <a href="#" class="share-button" onclick="shareOnFacebook()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                        Share
+                    </a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M7 13l3 3 3-3M7 6l3 3 3-3"></path>
+                </svg>
+            </div>
+        </section>
+        
+        <!-- Main Content -->
+        <section class="section">
+            <div class="container">
+                <div class="content-area">
+                        <!-- What is Mindfulness -->
+                        <section id="what-is-mindfulness" class="section">
+                            <h2>What is Mindfulness?</h2>
+                            <p>Mindfulness is the practice of paying attention to the present moment without judgment. It's about being fully aware of where you are and what you're doing, without being overwhelmed by what's happening around you.</p>
+                            
+                            <div class="grid grid-cols-2 gap-xl">
+                                <div class="content">
+                                    <h3>Key Elements of Mindfulness</h3>
+                                    <ul>
+                                        <li><strong>Present-moment awareness:</strong> Focusing on the here and now</li>
+                                        <li><strong>Non-judgmental observation:</strong> Observing thoughts and feelings without criticism</li>
+                                        <li><strong>Acceptance:</strong> Acknowledging reality as it is</li>
+                                        <li><strong>Beginner's mind:</strong> Approaching each moment with fresh perspective</li>
+                                        <li><strong>Patience:</strong> Allowing things to unfold in their own time</li>
+                                    </ul>
+                                </div>
+                                <div class="illustration">
+                                    <div class="illustration-placeholder">
+                                        <svg width="400" height="300" viewBox="0 0 400 300" fill="none">
+                                            <circle cx="200" cy="150" r="80" fill="var(--accent-primary)" opacity="0.1"/>
+                                            <circle cx="200" cy="150" r="60" fill="var(--accent-secondary)" opacity="0.1"/>
+                                            <circle cx="200" cy="150" r="40" fill="var(--accent-warm)" opacity="0.1"/>
+                                            <text x="200" y="160" text-anchor="middle" fill="var(--text-primary)" font-size="16" font-weight="600">Mindfulness</text>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <!-- Science & Benefits -->
+                        <section id="benefits" class="section bg-secondary">
+                            <h2 class="text-center">Science & Benefits</h2>
+                            <p class="text-center text-secondary">Research-backed benefits of mindfulness practice</p>
+                            
+                            <div class="benefits-grid">
+                                <div class="benefit-card">
+                                    <div class="benefit-icon">🧠</div>
+                                    <div class="benefit-title">Reduces Rumination</div>
+                                    <div class="benefit-description">Decreases repetitive negative thinking</div>
+                                </div>
+                                
+                                <div class="benefit-card">
+                                    <div class="benefit-icon">😌</div>
+                                    <div class="benefit-title">Decreases Stress</div>
+                                    <div class="benefit-description">Lowers cortisol and stress hormones</div>
+                                </div>
+                                
+                                <div class="benefit-card">
+                                    <div class="benefit-icon">🎯</div>
+                                    <div class="benefit-title">Improves Focus</div>
+                                    <div class="benefit-description">Enhances attention and concentration</div>
+                                </div>
+                                
+                                <div class="benefit-card">
+                                    <div class="benefit-icon">❤️</div>
+                                    <div class="benefit-title">Better Relationships</div>
+                                    <div class="benefit-description">Improves communication and empathy</div>
+                                </div>
+                                
+                                <div class="benefit-card">
+                                    <div class="benefit-icon">😊</div>
+                                    <div class="benefit-title">Increases Life Satisfaction</div>
+                                    <div class="benefit-description">Enhances overall well-being</div>
+                                </div>
+                                
+                                <div class="benefit-card">
+                                    <div class="benefit-icon">🛡️</div>
+                                    <div class="benefit-title">Prevents Depression Relapse</div>
+                                    <div class="benefit-description">MBCT proven effective</div>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <!-- Mindfulness in Daily Life -->
+                        <section id="daily-life" class="section">
+                            <h2 class="text-center">Mindfulness in Daily Life</h2>
+                            <p class="text-center text-secondary">Simple ways to bring mindfulness into your everyday activities</p>
+                            
+                            <div class="mindful-activities-grid">
+                                <div class="mindful-activity">
+                                    <h3 class="activity-title">Mindful Eating</h3>
+                                    <p class="activity-description">Focus on taste, texture, and smell of your food. Eat slowly and savor each bite.</p>
+                                </div>
+                                
+                                <div class="mindful-activity">
+                                    <h3 class="activity-title">Mindful Walking</h3>
+                                    <p class="activity-description">Notice each step, the ground beneath your feet, and your surroundings.</p>
+                                </div>
+                                
+                                <div class="mindful-activity">
+                                    <h3 class="activity-title">Mindful Listening</h3>
+                                    <p class="activity-description">Be fully present in conversations. Listen without planning your response.</p>
+                                </div>
+                                
+                                <div class="mindful-activity">
+                                    <h3 class="activity-title">Mindful Showering</h3>
+                                    <p class="activity-description">Feel the water, smell the soap, notice the temperature and sensations.</p>
+                                </div>
+                                
+                                <div class="mindful-activity">
+                                    <h3 class="activity-title">Mindful Tea/Coffee</h3>
+                                    <p class="activity-description">Savor the aroma, taste, and warmth. Be present with each sip.</p>
+                                </div>
+                                
+                                <div class="mindful-activity">
+                                    <h3 class="activity-title">Mindful Cleaning</h3>
+                                    <p class="activity-description">Focus on the task at hand. Notice the movements and sensations.</p>
+                                </div>
+                                
+                                <div class="mindful-activity">
+                                    <h3 class="activity-title">Five Senses Exercise</h3>
+                                    <p class="activity-description">Notice 5 things you see, 4 you hear, 3 you touch, 2 you smell, 1 you taste.</p>
+                                </div>
+                                
+                                <div class="mindful-activity">
+                                    <h3 class="activity-title">Gratitude Practice</h3>
+                                    <p class="activity-description">Take time to appreciate the good things in your life, big and small.</p>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <!-- Mindfulness Exercises -->
+                        <section id="exercises" class="section bg-secondary">
+                            <h2 class="text-center">Mindfulness Exercises</h2>
+                            
+                            <div class="exercise-grid">
+                                <div class="exercise-card">
+                                    <h3 class="exercise-title">Body Scan</h3>
+                                    <p class="exercise-description">Progressive attention to different parts of your body</p>
+                                    <ol class="exercise-steps">
+                                        <li>Lie down comfortably or sit in a chair</li>
+                                        <li>Start at the top of your head</li>
+                                        <li>Slowly move attention down your body</li>
+                                        <li>Notice sensations without judgment</li>
+                                        <li>End at your toes</li>
+                                    </ol>
+                                    <p class="exercise-benefits">Best for: Stress relief, sleep preparation, body awareness</p>
+                                </div>
+                                
+                                <div class="exercise-card">
+                                    <h3 class="exercise-title">Mindful Breathing</h3>
+                                    <p class="exercise-description">Focus on your breath as an anchor to the present moment</p>
+                                    <ol class="exercise-steps">
+                                        <li>Sit comfortably with spine straight</li>
+                                        <li>Close eyes and focus on breath</li>
+                                        <li>Count 10 breaths, then repeat</li>
+                                        <li>Notice when mind wanders</li>
+                                        <li>Gently return attention to breath</li>
+                                    </ol>
+                                    <p class="exercise-benefits">Best for: Anxiety, focus, present-moment awareness</p>
+                                </div>
+                                
+                                <div class="exercise-card">
+                                    <h3 class="exercise-title">Loving-Kindness Phrases</h3>
+                                    <p class="exercise-description">Cultivate compassion for yourself and others</p>
+                                    <ol class="exercise-steps">
+                                        <li>Start with yourself: "May I be safe"</li>
+                                        <li>"May I be healthy and happy"</li>
+                                        <li>"May I live with ease"</li>
+                                        <li>Extend to loved ones</li>
+                                        <li>Include difficult people</li>
+                                        <li>Send to all beings</li>
+                                    </ol>
+                                    <p class="exercise-benefits">Best for: Depression, self-criticism, improving relationships</p>
+                                </div>
+                                
+                                <div class="exercise-card">
+                                    <h3 class="exercise-title">Raisin Meditation</h3>
+                                    <p class="exercise-description">Mindful eating exercise using a single raisin</p>
+                                    <ol class="exercise-steps">
+                                        <li>Hold a raisin in your hand</li>
+                                        <li>Examine it with fresh eyes</li>
+                                        <li>Notice texture, color, weight</li>
+                                        <li>Smell it deeply</li>
+                                        <li>Place on tongue without chewing</li>
+                                        <li>Slowly chew and notice taste</li>
+                                    </ol>
+                                    <p class="exercise-benefits">Best for: Teaching mindful eating, present-moment awareness</p>
+                                </div>
+                                
+                                <div class="exercise-card">
+                                    <h3 class="exercise-title">Urge Surfing</h3>
+                                    <p class="exercise-description">Observe cravings or difficult emotions without reacting</p>
+                                    <ol class="exercise-steps">
+                                        <li>Notice the urge or emotion</li>
+                                        <li>Observe it like a wave</li>
+                                        <li>Notice rise and fall</li>
+                                        <li>Don't try to change it</li>
+                                        <li>Ride it out with awareness</li>
+                                    </ol>
+                                    <p class="exercise-benefits">Best for: Cravings, anxiety, anger, difficult emotions</p>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <!-- 5-4-3-2-1 Grounding -->
+                        <section id="grounding" class="section">
+                            <h2 class="text-center">5-4-3-2-1 Grounding Technique</h2>
+                            <p class="text-center text-secondary">A powerful tool for anxiety, panic, and dissociation</p>
+                            
+                            <div class="grounding-exercise">
+                                <h3>Interactive Grounding Exercise</h3>
+                                <p>Click on each step as you complete it:</p>
+                                
+                                <div class="grounding-step" onclick="toggleGroundingStep(this)">
+                                    <input type="checkbox" id="step1">
+                                    <label for="step1">Acknowledge 5 things you can see</label>
+                                </div>
+                                
+                                <div class="grounding-step" onclick="toggleGroundingStep(this)">
+                                    <input type="checkbox" id="step2">
+                                    <label for="step2">Acknowledge 4 things you can touch</label>
+                                </div>
+                                
+                                <div class="grounding-step" onclick="toggleGroundingStep(this)">
+                                    <input type="checkbox" id="step3">
+                                    <label for="step3">Acknowledge 3 things you can hear</label>
+                                </div>
+                                
+                                <div class="grounding-step" onclick="toggleGroundingStep(this)">
+                                    <input type="checkbox" id="step4">
+                                    <label for="step4">Acknowledge 2 things you can smell</label>
+                                </div>
+                                
+                                <div class="grounding-step" onclick="toggleGroundingStep(this)">
+                                    <input type="checkbox" id="step5">
+                                    <label for="step5">Acknowledge 1 thing you can taste</label>
+                                </div>
+                                
+                                <button onclick="resetGrounding()" style="margin-top: var(--space-lg); padding: var(--space-sm) var(--space-lg); background: var(--accent-primary); color: var(--bg-primary); border: none; border-radius: var(--radius-md); cursor: pointer;">Reset Exercise</button>
+                            </div>
+                        </section>
+                        
+                        <!-- Mindfulness for Specific Challenges -->
+                        <section id="challenges" class="section bg-secondary">
+                            <h2 class="text-center">Mindfulness for Specific Challenges</h2>
+                            
+                            <div class="challenges-grid">
+                                <div class="challenge-section">
+                                    <h3 class="challenge-title">Mindfulness for Anxiety</h3>
+                                    <p class="challenge-description">Use mindfulness to observe anxious thoughts without getting caught up in them</p>
+                                    <ul class="challenge-tips">
+                                        <li>Notice anxious thoughts as passing clouds</li>
+                                        <li>Focus on breath as an anchor</li>
+                                        <li>Use body scan to release tension</li>
+                                        <li>Practice 5-4-3-2-1 grounding</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="challenge-section">
+                                    <h3 class="challenge-title">Mindfulness for Depression</h3>
+                                    <p class="challenge-description">Cultivate awareness and self-compassion during difficult times</p>
+                                    <ul class="challenge-tips">
+                                        <li>Practice loving-kindness meditation</li>
+                                        <li>Notice pleasant moments, no matter how small</li>
+                                        <li>Use body scan to connect with physical sensations</li>
+                                        <li>Practice gratitude for simple things</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="challenge-section">
+                                    <h3 class="challenge-title">Mindfulness for Anger</h3>
+                                    <p class="challenge-description">Observe anger without acting on it impulsively</p>
+                                    <ul class="challenge-tips">
+                                        <li>Notice physical sensations of anger</li>
+                                        <li>Take three deep breaths before responding</li>
+                                        <li>Use urge surfing technique</li>
+                                        <li>Practice loving-kindness for difficult people</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="challenge-section">
+                                    <h3 class="challenge-title">Mindfulness for Chronic Pain</h3>
+                                    <p class="challenge-description">Change your relationship with pain through awareness</p>
+                                    <ul class="challenge-tips">
+                                        <li>Observe pain without resistance</li>
+                                        <li>Notice the difference between pain and suffering</li>
+                                        <li>Use body scan to find areas of ease</li>
+                                        <li>Practice self-compassion</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="challenge-section">
+                                    <h3 class="challenge-title">Mindfulness for Insomnia</h3>
+                                    <p class="challenge-description">Use mindfulness to prepare for restful sleep</p>
+                                    <ul class="challenge-tips">
+                                        <li>Practice body scan before bed</li>
+                                        <li>Notice thoughts without engaging with them</li>
+                                        <li>Focus on breath to calm nervous system</li>
+                                        <li>Use loving-kindness phrases</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="challenge-section">
+                                    <h3 class="challenge-title">Mindfulness for Relationships</h3>
+                                    <p class="challenge-description">Improve communication and connection through mindful presence</p>
+                                    <ul class="challenge-tips">
+                                        <li>Listen without planning your response</li>
+                                        <li>Notice your reactions before responding</li>
+                                        <li>Practice loving-kindness for your partner</li>
+                                        <li>Be present during shared activities</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <!-- Mindfulness Apps -->
+                        <section id="apps" class="section">
+                            <h2 class="text-center">Mindfulness Apps & Resources</h2>
+                            
+                            <div class="apps-grid">
+                                <div class="app-review">
+                                    <h3 class="app-name">Headspace</h3>
+                                    <div class="app-rating">⭐⭐⭐⭐⭐ 4.8★</div>
+                                    <p class="app-description">Guided meditations and mindfulness exercises for beginners and advanced practitioners.</p>
+                                    <ul class="app-features">
+                                        <li>Guided meditations</li>
+                                        <li>Sleep stories</li>
+                                        <li>Focus music</li>
+                                        <li>Progress tracking</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="app-review">
+                                    <h3 class="app-name">Calm</h3>
+                                    <div class="app-rating">⭐⭐⭐⭐⭐ 4.7★</div>
+                                    <p class="app-description">Meditation, sleep stories, and relaxation techniques for stress and anxiety.</p>
+                                    <ul class="app-features">
+                                        <li>Daily meditations</li>
+                                        <li>Sleep stories</li>
+                                        <li>Breathing exercises</li>
+                                        <li>Masterclasses</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="app-review">
+                                    <h3 class="app-name">Insight Timer (Free!)</h3>
+                                    <div class="app-rating">⭐⭐⭐⭐⭐ 4.9★</div>
+                                    <p class="app-description">Largest free library of guided meditations from teachers worldwide.</p>
+                                    <ul class="app-features">
+                                        <li>Free guided meditations</li>
+                                        <li>Timer with bells</li>
+                                        <li>Community features</li>
+                                        <li>Teacher profiles</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="app-review">
+                                    <h3 class="app-name">Ten Percent Happier</h3>
+                                    <div class="app-rating">⭐⭐⭐⭐⭐ 4.6★</div>
+                                    <p class="app-description">Practical meditation for skeptics, with courses and live sessions.</p>
+                                    <ul class="app-features">
+                                        <li>Skeptic-friendly approach</li>
+                                        <li>Live sessions</li>
+                                        <li>Courses and series</li>
+                                        <li>Teacher interviews</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="app-review">
+                                    <h3 class="app-name">Waking Up</h3>
+                                    <div class="app-rating">⭐⭐⭐⭐⭐ 4.8★</div>
+                                    <p class="app-description">Philosophical approach to mindfulness and consciousness from Sam Harris.</p>
+                                    <ul class="app-features">
+                                        <li>Philosophical approach</li>
+                                        <li>Theory and practice</li>
+                                        <li>Daily meditations</li>
+                                        <li>Theory lessons</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <!-- Recommended Products -->
+                        <section id="products" class="section bg-secondary">
+                            <h2 class="text-center">Recommended Products</h2>
+                            <p class="text-center text-secondary">Tools to support your mindfulness practice</p>
+                            
+                            <div class="products-grid">
+                                <div class="product-card">
+                                    <div class="product-image">📚 "Wherever You Go, There You Are"</div>
+                                    <div class="product-title">Jon Kabat-Zinn Book</div>
+                                    <div class="product-price">$12.99</div>
+                                    <div class="product-rating">⭐⭐⭐⭐⭐ 4.6★</div>
+                                    <a href="#" class="product-button">View on Amazon</a>
+                                </div>
+                                
+                                <div class="product-card">
+                                    <div class="product-image">📝 Mindfulness Journal</div>
+                                    <div class="product-title">Mindfulness Journal/Planner</div>
+                                    <div class="product-price">$16.99</div>
+                                    <div class="product-rating">⭐⭐⭐⭐⭐ 4.5★</div>
+                                    <a href="#" class="product-button">View on Amazon</a>
+                                </div>
+                                
+                                <div class="product-card">
+                                    <div class="product-image">🃏 Mindfulness Cards</div>
+                                    <div class="product-title">Mindfulness Cards Deck</div>
+                                    <div class="product-price">$14.99</div>
+                                    <div class="product-rating">⭐⭐⭐⭐⭐ 4.4★</div>
+                                    <a href="#" class="product-button">View on Amazon</a>
+                                </div>
+                                
+                                <div class="product-card">
+                                    <div class="product-image">🙏 Gratitude Journal</div>
+                                    <div class="product-title">Gratitude Journal</div>
+                                    <div class="product-price">$12.99</div>
+                                    <div class="product-rating">⭐⭐⭐⭐⭐ 4.7★</div>
+                                    <a href="#" class="product-button">View on Amazon</a>
+                                </div>
+                                
+                                <div class="product-card">
+                                    <div class="product-image">🧘 Meditation Cushion</div>
+                                    <div class="product-title">Meditation Cushion</div>
+                                    <div class="product-price">$39.99</div>
+                                    <div class="product-rating">⭐⭐⭐⭐⭐ 4.5★</div>
+                                    <a href="#" class="product-button">View on Amazon</a>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <span class="footer-brand-icon">🧘</span>
+                        <span class="footer-brand-text">TranquilMindQuest</span>
+                    </div>
+                    <p class="footer-mission">Your journey to mental wellness begins with understanding. We provide evidence-based resources to help you navigate life's challenges with resilience and hope.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Mental Health</a></li>
+                        <li><a href="meditation.html">Meditation</a></li>
+                        <li><a href="breathing.html">Breathing</a></li>
+                        <li><a href="yoga.html">Yoga</a></li>
+                        <li><a href="mindfulness.html">Mindfulness</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="breathing.html">Breathing Exercises</a></li>
+                        <li><a href="yoga.html">Yoga for Wellness</a></li>
+                        <li><a href="mindfulness.html">Mindfulness</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="YouTube">📺</a>
+                    </div>
+                    <p>contact@tranquilmindquest.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tranquil Mind Quest. All rights reserved.</p>
+                <p class="footer-disclaimer">
+                    <strong>Disclaimer:</strong> This website provides educational information about mental health and wellness only. We are not mental health professionals, therapists, or medical experts. This content is for informational purposes only and should not be considered as professional medical advice, diagnosis, or treatment. Always seek the advice of qualified healthcare providers with any questions or concerns. If you are experiencing a mental health emergency, please contact your local emergency services or a mental health crisis hotline.<br><br>
+                    <strong>Please note:</strong> This website content is generated with AI assistance and may contain errors or inaccuracies. However, all content is reviewed and checked by a human to ensure incorrect or vague information is deleted or corrected. We recommend verifying information independently and consulting with qualified healthcare professionals before implementing any wellness practices or techniques, especially if you have concerns or pre-existing medical conditions.
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript Files -->
+    <script src="./js/main.js"></script>
+    <script src="./js/smooth-scroll.js"></script>
+    <script src="./js/animations.js"></script>
+    
+    <!-- Mindfulness Page Specific JavaScript -->
+    <script>
+        // Grounding exercise functionality
+        function toggleGroundingStep(element) {
+            const checkbox = element.querySelector('input[type="checkbox"]');
+            checkbox.checked = !checkbox.checked;
+            
+            if (checkbox.checked) {
+                element.classList.add('completed');
+            } else {
+                element.classList.remove('completed');
+            }
+        }
+        
+        function resetGrounding() {
+            document.querySelectorAll('.grounding-step').forEach(step => {
+                const checkbox = step.querySelector('input[type="checkbox"]');
+                checkbox.checked = false;
+                step.classList.remove('completed');
+            });
+        }
+        
+        // Progress indicator
+        function updateProgress() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progress-bar').style.width = scrolled + '%';
+        }
+        
+        // Share functions
+        function shareOnTwitter() {
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent('Mindfulness: Living in the Present Moment - TranquilMindQuest');
+            window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank');
+        }
+        
+        function shareOnFacebook() {
+            const url = encodeURIComponent(window.location.href);
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+        }
+        
+        // Update TOC active state based on scroll position
+        function updateTOCActiveState() {
+            const sections = document.querySelectorAll('section[id]');
+            const tocLinks = document.querySelectorAll('.toc a');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 0 && rect.bottom >= 0) {
+                    currentSection = section.id;
+                }
+            });
+            
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for table of contents
+            document.querySelectorAll('.toc a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Initialize progress tracking and TOC highlighting
+            window.addEventListener('scroll', function() {
+                updateProgress();
+                updateTOCActiveState();
+            });
+            
+            // Initial TOC state
+            updateTOCActiveState();
+            
+            // Add hover effects to exercise cards
+            document.querySelectorAll('.exercise-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-4px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Add hover effects to mindful activities
+            document.querySelectorAll('.mindful-activity').forEach(activity => {
+                activity.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px)';
+                });
+                
+                activity.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

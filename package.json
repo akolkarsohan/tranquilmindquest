@@ -1,0 +1,30 @@
+{
+  "name": "tranquilmindquest-website",
+  "version": "1.0.0",
+  "description": "TranquilMindQuest - Mental Health & Wellness Platform",
+  "scripts": {
+    "start": "http-server . -p 8000 -o",
+    "serve": "http-server . -p 8000",
+    "dev": "http-server . -p 8000 -o -c-1",
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:report": "playwright show-report",
+    "test:install": "playwright install",
+    "test:analyze": "node tests/analyze-failures.js"
+  },
+  "keywords": [
+    "mental-health",
+    "wellness",
+    "meditation",
+    "mindfulness"
+  ],
+  "author": "TranquilMindQuest",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "http-server": "^14.1.1"
+  }
+}
+

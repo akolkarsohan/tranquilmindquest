@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources & References - Tranquil Mind Quest</title>
+    <meta name="description" content="Explore the research papers, books, videos, and organizations that inspired TranquilMindQuest. Evidence-based mental wellness resources and citations.">
+    <meta name="keywords" content="mental health research, wellness citations, meditation studies, mindfulness research, mental health resources">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tranquilmindquest.com/resources.html">
+    <meta property="og:title" content="Resources & References - Tranquil Mind Quest">
+    <meta property="og:description" content="Explore the research papers, books, videos, and organizations that inspired TranquilMindQuest.">
+    <meta property="og:image" content="https://tranquilmindquest.com/images/og-resources.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://tranquilmindquest.com/resources.html">
+    <meta property="twitter:title" content="Resources & References - Tranquil Mind Quest">
+    <meta property="twitter:description" content="Explore the research papers, books, videos, and organizations that inspired TranquilMindQuest.">
+    <meta property="twitter:image" content="https://tranquilmindquest.com/images/og-resources.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tranquilmindquest.com/resources.html">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/dark-theme.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    
+    <!-- Navigation Dropdown Styles -->
+    <style>
+        .nav-dropdown {
+            position: relative;
+        }
+        
+        .dropdown-toggle {
+            cursor: pointer;
+        }
+        
+        .dropdown-toggle::after {
+            content: '▼';
+            font-size: 10px;
+            margin-left: 5px;
+            transition: transform var(--transition-fast);
+        }
+        
+        .nav-dropdown:hover .dropdown-toggle::after {
+            transform: rotate(180deg);
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            min-width: 180px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all var(--transition-fast);
+            z-index: var(--z-dropdown);
+        }
+        
+        .nav-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-menu {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .dropdown-menu li {
+            margin: 0;
+            list-style: none;
+        }
+        
+        .dropdown-link {
+            display: block;
+            padding: var(--space-sm) var(--space-md);
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all var(--transition-fast);
+            border-radius: var(--radius-sm);
+            margin: var(--space-xs);
+        }
+        
+        .dropdown-link:hover {
+            background: var(--bg-tertiary);
+            color: var(--accent-primary);
+        }
+    </style>
+    
+    <!-- Resources Page Specific Styles -->
+    <style>
+        .resource-hero {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+            padding: var(--space-4xl) 0 var(--space-2xl);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .resource-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="%2358A6FF" opacity="0.1"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .resource-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .resource-hero h1 {
+            font-size: var(--font-size-5xl);
+            margin-bottom: var(--space-md);
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .resource-hero p {
+            font-size: var(--font-size-lg);
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .resource-category {
+            margin-bottom: var(--space-2xl);
+        }
+        
+        .resource-category.section {
+            padding: var(--space-2xl) 0;
+        }
+        
+        .resource-category:first-of-type {
+            padding-top: var(--space-xl);
+        }
+        
+        .category-header {
+            text-align: center;
+            margin-bottom: var(--space-xl);
+        }
+        
+        .category-header h2 {
+            font-size: var(--font-size-3xl);
+            margin-bottom: var(--space-sm);
+            color: var(--text-primary);
+        }
+        
+        .category-header p {
+            color: var(--text-secondary);
+            font-size: var(--font-size-lg);
+        }
+        
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-lg);
+        }
+        
+        .resource-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            transition: all var(--transition-normal);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .resource-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            transform: scaleX(0);
+            transition: transform var(--transition-normal);
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--accent-primary);
+        }
+        
+        .resource-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .resource-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-lg);
+            background: var(--bg-tertiary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: var(--font-size-2xl);
+        }
+        
+        .resource-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+        }
+        
+        .resource-type {
+            display: inline-block;
+            padding: var(--space-xs) var(--space-sm);
+            background: var(--bg-tertiary);
+            color: var(--accent-primary);
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-medium);
+            margin-bottom: var(--space-md);
+        }
+        
+        .resource-title {
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-semibold);
+            color: var(--text-primary);
+            margin-bottom: var(--space-sm);
+            line-height: var(--line-height-tight);
+        }
+        
+        .resource-author {
+            color: var(--text-secondary);
+            font-size: var(--font-size-sm);
+            margin-bottom: var(--space-md);
+        }
+        
+        .resource-description {
+            color: var(--text-secondary);
+            font-size: var(--font-size-base);
+            line-height: var(--line-height-relaxed);
+            margin-bottom: var(--space-lg);
+            flex-grow: 1;
+        }
+        
+        .resource-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-weight: var(--font-weight-medium);
+            transition: all var(--transition-fast);
+            margin-top: auto;
+        }
+        
+        .resource-link:hover {
+            color: var(--accent-secondary);
+            gap: var(--space-md);
+        }
+        
+        .resource-link svg {
+            width: 16px;
+            height: 16px;
+        }
+        
+        .video-embed {
+            width: 100%;
+            height: 200px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            margin-bottom: var(--space-lg);
+        }
+        
+        .video-embed iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .organization-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--radius-md);
+            background: var(--bg-tertiary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--space-md);
+            font-size: var(--font-size-2xl);
+        }
+        
+        .research-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            padding: var(--space-xs) var(--space-sm);
+            background: rgba(88, 166, 255, 0.1);
+            color: var(--accent-primary);
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-xs);
+            margin-top: var(--space-sm);
+        }
+        
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-xl);
+            flex-wrap: wrap;
+        }
+        
+        .filter-tabs.section {
+            padding: var(--space-lg) 0;
+        }
+        
+        .filter-tab {
+            padding: var(--space-sm) var(--space-lg);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            font-weight: var(--font-weight-medium);
+        }
+        
+        .filter-tab:hover,
+        .filter-tab.active {
+            background: var(--accent-primary);
+            color: white;
+            border-color: var(--accent-primary);
+        }
+        
+        @media (max-width: 768px) {
+            .resource-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+            }
+            
+            .resource-hero h1 {
+                font-size: var(--font-size-3xl);
+            }
+            
+            .category-header h2 {
+                font-size: var(--font-size-2xl);
+            }
+        }
+    </style>
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Resources & References - Tranquil Mind Quest",
+        "description": "Research papers, books, videos, and organizations that inspired TranquilMindQuest",
+        "url": "https://tranquilmindquest.com/resources.html"
+    }
+    </script>
+</head>
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav-brand">
+                <img src="images/placeholders/tmq-icon-mindfulness.jpg" alt="Tranquil Mind Quest Logo" class="nav-brand-icon">
+                Tranquil Mind Quest
+            </a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="wellness-dropdown">Wellness</a>
+                    <ul class="dropdown-menu" id="wellness-menu">
+                        <li><a href="meditation.html" class="dropdown-link">Meditation</a></li>
+                        <li><a href="breathing.html" class="dropdown-link">Breathing</a></li>
+                        <li><a href="yoga.html" class="dropdown-link">Yoga</a></li>
+                        <li><a href="mindfulness.html" class="dropdown-link">Mindfulness</a></li>
+                    </ul>
+                </li>
+                <li><a href="resources.html" class="nav-link active">Resources</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="nav-search" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="resource-hero">
+            <div class="container">
+                <div class="resource-hero-content">
+                    <h1>Resources & References</h1>
+                    <p>Explore the research papers, books, videos, and organizations that inspired and informed TranquilMindQuest. All content is evidence-based and sourced from reputable institutions and researchers.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Filter Tabs -->
+        <section class="section">
+            <div class="container">
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all">All Resources</button>
+                    <button class="filter-tab" data-filter="research">Research Papers</button>
+                    <button class="filter-tab" data-filter="books">Books</button>
+                    <button class="filter-tab" data-filter="videos">Videos</button>
+                    <button class="filter-tab" data-filter="organizations">Organizations</button>
+                    <button class="filter-tab" data-filter="tools">Tools & Websites</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Research Papers -->
+        <section class="section resource-category" data-category="research">
+            <div class="container">
+                <div class="category-header">
+                    <h2>📚 Research Papers & Studies</h2>
+                    <p>Peer-reviewed scientific research that forms the foundation of our evidence-based approach</p>
+                </div>
+                
+                <div class="resource-grid">
+                    <div class="resource-card" data-type="research">
+                        <div class="resource-image">
+                            <img src="https://images.unsplash.com/photo-1532619675605-1ede6c2ed2b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Research paper illustration" loading="lazy">
+                        </div>
+                        <span class="resource-type">Research Paper</span>
+                        <h3 class="resource-title">Mindfulness-Based Stress Reduction and Health Benefits</h3>
+                        <p class="resource-author">NCBI / PMC</p>
+                        <p class="resource-description">A comprehensive review of mindfulness-based stress reduction (MBSR) programs and their documented health benefits, including stress reduction, improved mental health, and enhanced well-being.</p>
+                        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3004979/" target="_blank" rel="noopener" class="resource-link">
+                            Read Paper
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                        <span class="research-badge">🔬 Peer-Reviewed</span>
+                    </div>
+                    
+                    <div class="resource-card" data-type="research">
+                        <div class="resource-image">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Brain research illustration" loading="lazy">
+                        </div>
+                        <span class="resource-type">Research Paper</span>
+                        <h3 class="resource-title">Meditation and Brain Plasticity</h3>
+                        <p class="resource-author">Nature Scientific Reports</p>
+                        <p class="resource-description">Scientific evidence showing how meditation practice leads to measurable changes in brain structure and function through neuroplasticity, including increased gray matter density and improved connectivity.</p>
+                        <a href="https://www.nature.com/articles/s41598-019-47470-4" target="_blank" rel="noopener" class="resource-link">
+                            Read Paper
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                        <span class="research-badge">🔬 Peer-Reviewed</span>
+                    </div>
+                    
+                    <div class="resource-card" data-type="research">
+                        <div class="resource-image">
+                            <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Medical research illustration" loading="lazy">
+                        </div>
+                        <span class="resource-type">Research Paper</span>
+                        <h3 class="resource-title">Meditation Programs for Psychological Stress and Well-being</h3>
+                        <p class="resource-author">JAMA Internal Medicine</p>
+                        <p class="resource-description">A systematic review and meta-analysis examining the effectiveness of meditation programs in reducing psychological stress and improving overall well-being, published in a leading medical journal.</p>
+                        <a href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/1809754" target="_blank" rel="noopener" class="resource-link">
+                            Read Paper
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                        <span class="research-badge">🔬 Peer-Reviewed</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Books -->
+        <section class="section resource-category" data-category="books">
+            <div class="container">
+                <div class="category-header">
+                    <h2>📖 Books & Literature</h2>
+                    <p>Influential books that shaped our understanding of mental wellness and mindfulness</p>
+                </div>
+                
+                <div class="resource-grid">
+                    <div class="resource-card" data-type="books">
+                        <div class="resource-image">
+                            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Book cover" loading="lazy">
+                        </div>
+                        <span class="resource-type">Book</span>
+                        <h3 class="resource-title">Full Catastrophe Living</h3>
+                        <p class="resource-author">Jon Kabat-Zinn</p>
+                        <p class="resource-description">The groundbreaking book that introduced Mindfulness-Based Stress Reduction (MBSR) to the world. A comprehensive guide to using mindfulness to cope with stress, pain, and illness.</p>
+                        <a href="https://www.amazon.com/Full-Catastrophe-Living-Revised-Illness/dp/0345536932" target="_blank" rel="noopener" class="resource-link">
+                            View on Amazon
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <div class="resource-card" data-type="books">
+                        <div class="resource-image">
+                            <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Book cover" loading="lazy">
+                        </div>
+                        <span class="resource-type">Book</span>
+                        <h3 class="resource-title">The Mindful Way Through Depression</h3>
+                        <p class="resource-author">Mark Williams, John Teasdale, Zindel Segal, Jon Kabat-Zinn</p>
+                        <p class="resource-description">A practical guide combining mindfulness meditation with cognitive therapy to help break the cycle of chronic unhappiness and depression.</p>
+                        <a href="https://www.amazon.com/Mindful-Way-Through-Depression-Unhappiness/dp/1462507501" target="_blank" rel="noopener" class="resource-link">
+                            View on Amazon
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <div class="resource-card" data-type="books">
+                        <div class="resource-image">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Book cover" loading="lazy">
+                        </div>
+                        <span class="resource-type">Book</span>
+                        <h3 class="resource-title">Wherever You Go, There You Are</h3>
+                        <p class="resource-author">Jon Kabat-Zinn</p>
+                        <p class="resource-description">A practical guide to mindfulness meditation in everyday life, showing how to bring awareness and presence to each moment, reducing stress and enhancing well-being.</p>
+                        <a href="https://www.amazon.com/Wherever-You-Go-There-Are/dp/1401307787" target="_blank" rel="noopener" class="resource-link">
+                            View on Amazon
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Videos -->
+        <section class="section resource-category" data-category="videos">
+            <div class="container">
+                <div class="category-header">
+                    <h2>🎥 Educational Videos</h2>
+                    <p>Informative videos and talks from experts in mental health and wellness</p>
+                </div>
+                
+                <div class="resource-grid">
+                    <div class="resource-card" data-type="videos">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/ZToicYcHIOU" title="How Meditation Can Reshape Our Brains" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <span class="resource-type">TED Talk</span>
+                        <h3 class="resource-title">How Meditation Can Reshape Our Brains</h3>
+                        <p class="resource-author">Sara Lazar - TEDxCambridge</p>
+                        <p class="resource-description">Neuroscientist Sara Lazar discusses her research on how meditation can literally change your brain, showing measurable differences in brain structure after just 8 weeks of practice.</p>
+                        <a href="https://www.youtube.com/watch?v=ZToicYcHIOU" target="_blank" rel="noopener" class="resource-link">
+                            Watch on YouTube
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <div class="resource-card" data-type="videos">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/qzR62JJCMBQ" title="The Science of Mindfulness" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <span class="resource-type">Educational Video</span>
+                        <h3 class="resource-title">The Science of Mindfulness</h3>
+                        <p class="resource-author">Greater Good Science Center</p>
+                        <p class="resource-description">An evidence-based exploration of mindfulness, its benefits, and how it works, featuring insights from leading researchers in the field.</p>
+                        <a href="https://www.youtube.com/watch?v=qzR62JJCMBQ" target="_blank" rel="noopener" class="resource-link">
+                            Watch on YouTube
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <div class="resource-card" data-type="videos">
+                        <div class="video-embed">
+                            <iframe src="https://www.youtube.com/embed/4E1aYI4l6F4" title="Breathing Techniques for Stress Relief" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <span class="resource-type">Educational Video</span>
+                        <h3 class="resource-title">Breathing Techniques for Stress Relief</h3>
+                        <p class="resource-author">Harvard Medical School</p>
+                        <p class="resource-description">Learn evidence-based breathing techniques that can help reduce stress, anxiety, and improve overall mental well-being, presented by medical professionals.</p>
+                        <a href="https://www.youtube.com/watch?v=4E1aYI4l6F4" target="_blank" rel="noopener" class="resource-link">
+                            Watch on YouTube
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Organizations -->
+        <section class="section resource-category" data-category="organizations">
+            <div class="container">
+                <div class="category-header">
+                    <h2>🏛️ Reputable Organizations</h2>
+                    <p>Trusted institutions and organizations providing mental health resources and information</p>
+                </div>
+                
+                <div class="resource-grid">
+                    <div class="resource-card" data-type="organizations">
+                        <div class="organization-logo">🏥</div>
+                        <span class="resource-type">Organization</span>
+                        <h3 class="resource-title">National Alliance on Mental Illness (NAMI)</h3>
+                        <p class="resource-author">United States</p>
+                        <p class="resource-description">The nation's largest grassroots mental health organization dedicated to building better lives for millions of Americans affected by mental illness through advocacy, education, and support.</p>
+                        <a href="https://www.nami.org" target="_blank" rel="noopener" class="resource-link">
+                            Visit Website
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <div class="resource-card" data-type="organizations">
+                        <div class="organization-logo">🔬</div>
+                        <span class="resource-type">Organization</span>
+                        <h3 class="resource-title">National Institute of Mental Health (NIMH)</h3>
+                        <p class="resource-author">United States</p>
+                        <p class="resource-description">The lead federal agency for research on mental disorders, providing authoritative information on mental health conditions, treatments, and research findings.</p>
+                        <a href="https://www.nimh.nih.gov" target="_blank" rel="noopener" class="resource-link">
+                            Visit Website
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <div class="resource-card" data-type="organizations">
+                        <div class="organization-logo">🌍</div>
+                        <span class="resource-type">Organization</span>
+                        <h3 class="resource-title">World Health Organization (WHO)</h3>
+                        <p class="resource-author">Global</p>
+                        <p class="resource-description">The United Nations agency responsible for international public health, providing global leadership on mental health issues, statistics, and evidence-based recommendations.</p>
+                        <a href="https://www.who.int/health-topics/mental-health" target="_blank" rel="noopener" class="resource-link">
+                            Visit Website
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <div class="resource-card" data-type="organizations">
+                        <div class="organization-logo">💚</div>
+                        <span class="resource-type">Organization</span>
+                        <h3 class="resource-title">Mental Health America</h3>
+                        <p class="resource-author">United States</p>
+                        <p class="resource-description">The nation's leading community-based nonprofit dedicated to addressing the needs of those living with mental illness and promoting overall mental health for all Americans.</p>
+                        <a href="https://www.mhanational.org" target="_blank" rel="noopener" class="resource-link">
+                            Visit Website
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <div class="resource-card" data-type="organizations">
+                        <div class="organization-logo">🧠</div>
+                        <span class="resource-type">Organization</span>
+                        <h3 class="resource-title">Anxiety and Depression Association of America (ADAA)</h3>
+                        <p class="resource-author">United States</p>
+                        <p class="resource-description">A leading organization focused on the prevention, treatment, and cure of anxiety, depression, OCD, PTSD, and co-occurring disorders through education, practice, and research.</p>
+                        <a href="https://adaa.org" target="_blank" rel="noopener" class="resource-link">
+                            Visit Website
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Tools & Websites -->
+        <section class="section resource-category" data-category="tools">
+            <div class="container">
+                <div class="category-header">
+                    <h2>🛠️ Tools & Websites</h2>
+                    <p>Useful digital tools and websites for mental wellness and mindfulness practice</p>
+                </div>
+                
+                <div class="resource-grid">
+                    <div class="resource-card" data-type="tools">
+                        <div class="resource-image">
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Meditation app" loading="lazy">
+                        </div>
+                        <span class="resource-type">Mobile App</span>
+                        <h3 class="resource-title">Headspace</h3>
+                        <p class="resource-author">Meditation & Mindfulness App</p>
+                        <p class="resource-description">A popular meditation and mindfulness app offering guided meditations, sleep sounds, and mindfulness exercises designed to reduce stress and improve mental well-being.</p>
+                        <a href="https://www.headspace.com" target="_blank" rel="noopener" class="resource-link">
+                            Visit Website
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <div class="resource-card" data-type="tools">
+                        <div class="resource-image">
+                            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Meditation timer" loading="lazy">
+                        </div>
+                        <span class="resource-type">Mobile App</span>
+                        <h3 class="resource-title">Insight Timer</h3>
+                        <p class="resource-author">Free Meditation App</p>
+                        <p class="resource-description">A free meditation app with thousands of guided meditations, music tracks, and talks from meditation teachers worldwide, plus a customizable meditation timer.</p>
+                        <a href="https://insighttimer.com" target="_blank" rel="noopener" class="resource-link">
+                            Visit Website
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <div class="resource-card" data-type="tools">
+                        <div class="resource-image">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Calm app" loading="lazy">
+                        </div>
+                        <span class="resource-type">Mobile App</span>
+                        <h3 class="resource-title">Calm</h3>
+                        <p class="resource-author">Meditation & Sleep App</p>
+                        <p class="resource-description">A meditation and sleep app featuring guided meditations, sleep stories, breathing programs, and relaxing music to help reduce anxiety and improve sleep quality.</p>
+                        <a href="https://www.calm.com" target="_blank" rel="noopener" class="resource-link">
+                            Visit Website
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Acknowledgments -->
+        <section class="section bg-secondary" style="padding: var(--space-2xl) 0;">
+            <div class="container">
+                <div class="category-header">
+                    <h2>🙏 Acknowledgments</h2>
+                    <p>We are grateful to the researchers, authors, and organizations whose work has informed and inspired TranquilMindQuest</p>
+                </div>
+                
+                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <p style="color: var(--text-secondary); line-height: var(--line-height-relaxed); font-size: var(--font-size-lg);">
+                        TranquilMindQuest is built on the foundation of evidence-based research and the collective wisdom of mental health professionals, researchers, and wellness practitioners worldwide. We strive to make mental wellness resources accessible to everyone, and we acknowledge the important work of all those who have contributed to our understanding of mental health and well-being.
+                    </p>
+                    <p style="color: var(--text-secondary); margin-top: var(--space-lg); font-size: var(--font-size-base);">
+                        If you have suggestions for additional resources or citations that should be included, please <a href="contact.html" style="color: var(--accent-primary);">contact us</a>.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="images/placeholders/tmq-icon-mindfulness.jpg" alt="Tranquil Mind Quest Logo" class="footer-logo">
+                        <h3>Tranquil Mind Quest</h3>
+                    </div>
+                    <p>Your trusted companion on the journey to mental wellness. We provide evidence-based resources, tools, and support to help you build resilience, manage stress, and cultivate inner peace.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="meditation.html">Meditation</a></li>
+                        <li><a href="breathing.html">Breathing</a></li>
+                        <li><a href="yoga.html">Yoga</a></li>
+                        <li><a href="mindfulness.html">Mindfulness</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="products.html">Wellness Products</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="resources.html">References</a></li>
+                        <li><a href="about.html#professional-resources">Professional Help</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-disclaimer">
+                    <p><strong>Disclaimer:</strong> TranquilMindQuest provides educational content and wellness resources. We are not mental health professionals, therapists, or medical experts. This content is for informational purposes only and should not be considered as professional medical advice, diagnosis, or treatment. Always seek the advice of qualified healthcare providers with any questions or concerns. If you are experiencing a mental health emergency, please contact your local emergency services or a mental health crisis hotline.<br><br>
+                    <strong>Please note:</strong> This website content is generated with AI assistance and may contain errors or inaccuracies. However, all content is reviewed and checked by a human to ensure incorrect or vague information is deleted or corrected. We recommend verifying information independently and consulting with qualified healthcare professionals before implementing any wellness practices or techniques, especially if you have concerns or pre-existing medical conditions.</p>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 Tranquil Mind Quest. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript Files -->
+    <script src="./js/main.js"></script>
+    <script src="./js/smooth-scroll.js"></script>
+    <script src="./js/animations.js"></script>
+    
+    <!-- Resources Page Filter Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterTabs = document.querySelectorAll('.filter-tab');
+            const resourceCategories = document.querySelectorAll('.resource-category');
+            
+            filterTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Update active tab
+                    filterTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const filter = this.dataset.filter;
+                    
+                    // Filter resources
+                    resourceCategories.forEach(category => {
+                        if (filter === 'all' || category.dataset.category === filter) {
+                            category.style.display = 'block';
+                            // Smooth scroll to first visible category
+                            setTimeout(() => {
+                                category.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }, 100);
+                        } else {
+                            category.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

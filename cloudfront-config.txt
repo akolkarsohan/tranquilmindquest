@@ -1,0 +1,264 @@
+# CloudFront Distribution Configuration Notes
+# TranquilMindQuest Website - AWS CloudFront Setup
+
+## Distribution Settings
+
+### Origin Configuration
+- **Origin Domain**: tranquilmindquest.com.s3.amazonaws.com
+- **Origin Path**: (leave empty)
+- **Origin Access**: Public (or Origin Access Control for better security)
+- **Origin Protocol Policy**: HTTPS Only
+- **Origin Response Timeout**: 30 seconds
+- **Origin Keep-Alive Timeout**: 5 seconds
+
+### Cache Behavior Settings
+- **Path Pattern**: Default (*)
+- **Viewer Protocol Policy**: Redirect HTTP to HTTPS
+- **Allowed HTTP Methods**: GET, HEAD, OPTIONS, PUT, POST, PATCH, DELETE
+- **Cache Policy**: Managed-CachingOptimized
+- **Origin Request Policy**: Managed-CORS-S3Origin
+- **Response Headers Policy**: Managed-SecurityHeadersPolicy
+
+### Function Associations
+- **Event Type**: Viewer Request
+- **Function Type**: CloudFront Function
+- **Function ARN**: (create custom function for URL rewriting if needed)
+
+## SSL/TLS Configuration
+
+### Certificate Settings
+- **SSL Certificate**: Custom SSL Certificate
+- **Certificate Source**: AWS Certificate Manager
+- **Certificate ARN**: arn:aws:acm:us-east-1:ACCOUNT-ID:certificate/CERTIFICATE-ID
+- **Minimum Protocol Version**: TLSv1.2_2021
+
+### Security Headers
+- **Strict Transport Security**: max-age=31536000; includeSubDomains
+- **Content Security Policy**: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'
+- **X-Frame-Options**: DENY
+- **X-Content-Type-Options**: nosniff
+- **Referrer Policy**: strict-origin-when-cross-origin
+
+## Custom Domain Setup
+
+### Domain Names
+- **Primary Domain**: tranquilmindquest.com
+- **WWW Domain**: www.tranquilmindquest.com
+- **Domain Validation**: DNS validation via Route 53
+
+### Route 53 Configuration
+- **Hosted Zone**: tranquilmindquest.com
+- **Record Type**: A (Alias)
+- **Alias Target**: CloudFront Distribution
+- **Routing Policy**: Simple
+
+## Cache Settings
+
+### Default Cache Behavior
+- **TTL Settings**:
+  - Default TTL: 86400 seconds (24 hours)
+  - Maximum TTL: 31536000 seconds (1 year)
+  - Minimum TTL: 0 seconds
+
+### File-Specific Cache Settings
+- **HTML Files**: 3600 seconds (1 hour)
+- **CSS/JS Files**: 2592000 seconds (30 days)
+- **Images**: 31536000 seconds (1 year)
+- **Fonts**: 31536000 seconds (1 year)
+
+### Cache Invalidation
+- **Manual Invalidation**: Use AWS CLI or Console
+- **Automatic Invalidation**: Set up via Lambda@Edge or CloudWatch Events
+
+## Performance Optimization
+
+### Compression
+- **Compress Objects Automatically**: Yes
+- **Compressible Content Types**: text/html, text/css, text/javascript, application/javascript, application/json
+
+### Edge Locations
+- **Price Class**: Use All Edge Locations (or choose cost-optimized)
+- **Geographic Restrictions**: None (unless required)
+
+### Real-Time Logs
+- **Real-Time Logs**: Enable for monitoring
+- **Log Level**: All
+- **Fields**: Include all standard fields
+
+## Error Handling
+
+### Custom Error Pages
+- **404 Error**: /error.html (HTTP 200)
+- **403 Error**: /error.html (HTTP 200)
+- **500 Error**: /error.html (HTTP 200)
+
+### Error Caching
+- **Error Caching Minimum TTL**: 0 seconds
+- **Error Caching Maximum TTL**: 300 seconds
+
+## Monitoring and Logging
+
+### CloudWatch Metrics
+- **Request Count**: Monitor traffic patterns
+- **Cache Hit Rate**: Optimize cache settings
+- **Origin Latency**: Monitor S3 performance
+- **4xx Error Rate**: Monitor client errors
+- **5xx Error Rate**: Monitor server errors
+
+### Access Logs
+- **Standard Logs**: Enable for detailed analysis
+- **Log Bucket**: Create dedicated S3 bucket for logs
+- **Log Prefix**: cloudfront-logs/
+- **Log Rotation**: Set up lifecycle policy
+
+## Security Configuration
+
+### AWS WAF (Optional)
+- **Web ACL**: Create for DDoS protection
+- **Rate Limiting**: 2000 requests per 5 minutes per IP
+- **Geo Blocking**: Block specific countries if needed
+- **SQL Injection Protection**: Enable managed rules
+
+### Origin Access Control (OAC) - Recommended
+- **OAC Name**: tranquilmindquest-oac
+- **Signing Behavior**: Always
+- **Origin Access Identity**: Disable (use OAC instead)
+
+## Cost Optimization
+
+### Price Class Options
+- **Use All Edge Locations**: Best performance, higher cost
+- **Use Only US, Canada and Europe**: Balanced performance/cost
+- **Use Only US and Europe**: Cost-optimized
+
+### Cache Optimization
+- **Aggressive Caching**: Set longer TTLs for static content
+- **Cache Invalidation**: Minimize manual invalidations
+- **Compression**: Enable for all text content
+
+## Deployment Commands
+
+### Create Distribution (AWS CLI)
+```bash
+aws cloudfront create-distribution \
+  --distribution-config file://cloudfront-config.json
+```
+
+### Update Distribution
+```bash
+aws cloudfront update-distribution \
+  --id DISTRIBUTION-ID \
+  --distribution-config file://cloudfront-config.json \
+  --if-match ETAG
+```
+
+### Invalidate Cache
+```bash
+aws cloudfront create-invalidation \
+  --distribution-id DISTRIBUTION-ID \
+  --paths "/*"
+```
+
+## Troubleshooting
+
+### Common Issues
+1. **SSL Certificate Errors**: Verify certificate is in us-east-1 region
+2. **CORS Issues**: Configure proper CORS policy on S3
+3. **Cache Not Updating**: Check TTL settings and invalidate if needed
+4. **Custom Domain Not Working**: Verify Route 53 records and DNS propagation
+
+### Performance Issues
+1. **Slow Loading**: Check cache hit rate and optimize TTLs
+2. **High Costs**: Review price class and cache settings
+3. **Origin Errors**: Monitor S3 access logs and CloudWatch metrics
+
+## Maintenance Tasks
+
+### Daily
+- Monitor CloudWatch metrics
+- Check error rates
+
+### Weekly
+- Review access logs
+- Check cache hit rates
+- Monitor costs
+
+### Monthly
+- Update SSL certificates (auto-renewal recommended)
+- Review and optimize cache settings
+- Security audit
+
+### Quarterly
+- Performance review
+- Cost optimization analysis
+- Security assessment
+
+## Integration Notes
+
+### S3 Integration
+- Use Origin Access Control for better security
+- Enable S3 server access logging
+- Configure S3 lifecycle policies
+
+### Route 53 Integration
+- Use Alias records for better performance
+- Enable health checks for failover
+- Configure DNS failover if needed
+
+### Certificate Manager Integration
+- Use DNS validation for automatic renewal
+- Request certificates in us-east-1 region
+- Use wildcard certificates for subdomains
+
+## Backup and Recovery
+
+### Distribution Configuration
+- Export distribution configuration
+- Document all settings
+- Version control configuration files
+
+### Disaster Recovery
+- Keep backup of S3 bucket
+- Document recovery procedures
+- Test recovery process regularly
+
+## Compliance and Security
+
+### Data Protection
+- Enable encryption in transit
+- Use HTTPS only
+- Implement proper access controls
+
+### Monitoring
+- Enable CloudTrail for audit logging
+- Set up CloudWatch alarms
+- Monitor for security threats
+
+### Compliance
+- GDPR compliance for EU visitors
+- CCPA compliance for California visitors
+- Industry-specific compliance requirements
+
+## Support and Documentation
+
+### AWS Support
+- Basic Support: Community forums
+- Developer Support: $29/month
+- Business Support: $100/month
+
+### Documentation
+- CloudFront Developer Guide
+- AWS Well-Architected Framework
+- Security Best Practices
+
+### Community Resources
+- AWS Forums
+- Stack Overflow
+- GitHub repositories
+
+
+
+
+
+
+
