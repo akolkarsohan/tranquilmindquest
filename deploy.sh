@@ -13,6 +13,8 @@
 # Options:
 #   --bucket BUCKET_NAME     Specify S3 bucket name
 #   --distribution DIST_ID    Specify CloudFront distribution ID
+#   --profile PROFILE_NAME   Specify AWS CLI profile name
+#   --region REGION          Specify AWS region
 #   --dry-run               Show what would be uploaded without actually doing it
 #   --help                  Show this help message
 
@@ -21,14 +23,22 @@
 
 # Default values (override with command line arguments)
 DEFAULT_BUCKET_NAME="tranquilmindquest.com"
-DEFAULT_DISTRIBUTION_ID=""
+DEFAULT_DISTRIBUTION_ID="d2c5lu5tqwdw11.cloudfront.net"
 DEFAULT_AWS_REGION="us-east-1"
+DEFAULT_AWS_PROFILE="sohan"
 
 # Set variables from command line or use defaults
 BUCKET_NAME="${DEFAULT_BUCKET_NAME}"
 DISTRIBUTION_ID="${DEFAULT_DISTRIBUTION_ID}"
 AWS_REGION="${DEFAULT_AWS_REGION}"
+AWS_PROFILE="${DEFAULT_AWS_PROFILE}"
 DRY_RUN=false
+
+# Build AWS profile argument (empty if no profile specified)
+AWS_PROFILE_ARG=""
+if [ -n "$AWS_PROFILE" ]; then
+    AWS_PROFILE_ARG="--profile $AWS_PROFILE"
+fi
 
 # File exclusions (files/folders to not upload)
 EXCLUDE_PATTERNS=(
@@ -58,6 +68,7 @@ USAGE:
 OPTIONS:
     --bucket BUCKET_NAME       S3 bucket name (default: $DEFAULT_BUCKET_NAME)
     --distribution DIST_ID     CloudFront distribution ID
+    --profile PROFILE_NAME     AWS CLI profile name (optional)
     --region REGION           AWS region (default: $DEFAULT_AWS_REGION)
     --dry-run                 Show what would be uploaded without doing it
     --help                    Show this help message
@@ -65,6 +76,8 @@ OPTIONS:
 EXAMPLES:
     ./deploy.sh
     ./deploy.sh --bucket my-bucket --distribution E1234567890ABC
+    ./deploy.sh --profile sohan
+    ./deploy.sh --profile sohan --bucket my-bucket --distribution E1234567890ABC
     ./deploy.sh --dry-run
 
 PREREQUISITES:
@@ -92,19 +105,35 @@ check_aws_cli() {
 
 # Function to check AWS credentials
 check_aws_credentials() {
-    if ! aws sts get-caller-identity &> /dev/null; then
-        log "ERROR: AWS credentials not configured or invalid."
-        log "Run 'aws configure' to set up your credentials."
-        exit 1
+    if [ -n "$AWS_PROFILE" ]; then
+        if ! aws sts get-caller-identity --profile "$AWS_PROFILE" &> /dev/null; then
+            log "ERROR: AWS credentials not configured or invalid for profile '$AWS_PROFILE'."
+            log "Run 'aws configure --profile $AWS_PROFILE' to set up your credentials."
+            exit 1
+        fi
+    else
+        if ! aws sts get-caller-identity &> /dev/null; then
+            log "ERROR: AWS credentials not configured or invalid."
+            log "Run 'aws configure' to set up your credentials, or use --profile option."
+            exit 1
+        fi
     fi
 }
 
 # Function to check if S3 bucket exists
 check_s3_bucket() {
-    if ! aws s3 ls "s3://$BUCKET_NAME" &> /dev/null; then
-        log "ERROR: S3 bucket '$BUCKET_NAME' does not exist or is not accessible."
-        log "Please create the bucket first or check your permissions."
-        exit 1
+    if [ -n "$AWS_PROFILE" ]; then
+        if ! aws s3 ls "s3://$BUCKET_NAME" --profile "$AWS_PROFILE" &> /dev/null; then
+            log "ERROR: S3 bucket '$BUCKET_NAME' does not exist or is not accessible."
+            log "Please create the bucket first or check your permissions."
+            exit 1
+        fi
+    else
+        if ! aws s3 ls "s3://$BUCKET_NAME" &> /dev/null; then
+            log "ERROR: S3 bucket '$BUCKET_NAME' does not exist or is not accessible."
+            log "Please create the bucket first or check your permissions."
+            exit 1
+        fi
     fi
 }
 
@@ -122,13 +151,24 @@ upload_to_s3() {
     local exclude_string=$(build_exclude_string)
     
     log "Starting upload to S3 bucket: $BUCKET_NAME"
+    if [ -n "$AWS_PROFILE" ]; then
+        log "Using AWS profile: $AWS_PROFILE"
+    fi
     
     if [ "$DRY_RUN" = true ]; then
         log "DRY RUN: Would upload files with exclusions: $exclude_string"
-        aws s3 sync . "s3://$BUCKET_NAME" $exclude_string --dryrun
+        if [ -n "$AWS_PROFILE" ]; then
+            aws s3 sync . "s3://$BUCKET_NAME" $exclude_string --dryrun --profile "$AWS_PROFILE"
+        else
+            aws s3 sync . "s3://$BUCKET_NAME" $exclude_string --dryrun
+        fi
     else
         # Sync files to S3
-        aws s3 sync . "s3://$BUCKET_NAME" $exclude_string
+        if [ -n "$AWS_PROFILE" ]; then
+            aws s3 sync . "s3://$BUCKET_NAME" $exclude_string --profile "$AWS_PROFILE"
+        else
+            aws s3 sync . "s3://$BUCKET_NAME" $exclude_string
+        fi
         
         if [ $? -eq 0 ]; then
             log "✅ Files uploaded successfully to S3"
@@ -149,58 +189,124 @@ set_mime_types() {
     log "Setting proper MIME types..."
     
     # Set MIME type for HTML files
-    aws s3 cp "s3://$BUCKET_NAME" "s3://$BUCKET_NAME" \
-        --recursive \
-        --metadata-directive REPLACE \
-        --content-type "text/html" \
-        --exclude "*" \
-        --include "*.html" \
-        --quiet
+    if [ -n "$AWS_PROFILE" ]; then
+        aws s3 cp "s3://$BUCKET_NAME" "s3://$BUCKET_NAME" \
+            --recursive \
+            --metadata-directive REPLACE \
+            --content-type "text/html" \
+            --exclude "*" \
+            --include "*.html" \
+            --quiet \
+            --profile "$AWS_PROFILE"
+    else
+        aws s3 cp "s3://$BUCKET_NAME" "s3://$BUCKET_NAME" \
+            --recursive \
+            --metadata-directive REPLACE \
+            --content-type "text/html" \
+            --exclude "*" \
+            --include "*.html" \
+            --quiet
+    fi
     
     # Set MIME type for CSS files
-    aws s3 cp "s3://$BUCKET_NAME" "s3://$BUCKET_NAME" \
-        --recursive \
-        --metadata-directive REPLACE \
-        --content-type "text/css" \
-        --exclude "*" \
-        --include "*.css" \
-        --quiet
+    if [ -n "$AWS_PROFILE" ]; then
+        aws s3 cp "s3://$BUCKET_NAME" "s3://$BUCKET_NAME" \
+            --recursive \
+            --metadata-directive REPLACE \
+            --content-type "text/css" \
+            --exclude "*" \
+            --include "*.css" \
+            --quiet \
+            --profile "$AWS_PROFILE"
+    else
+        aws s3 cp "s3://$BUCKET_NAME" "s3://$BUCKET_NAME" \
+            --recursive \
+            --metadata-directive REPLACE \
+            --content-type "text/css" \
+            --exclude "*" \
+            --include "*.css" \
+            --quiet
+    fi
     
     # Set MIME type for JavaScript files
-    aws s3 cp "s3://$BUCKET_NAME" "s3://$BUCKET_NAME" \
-        --recursive \
-        --metadata-directive REPLACE \
-        --content-type "application/javascript" \
-        --exclude "*" \
-        --include "*.js" \
-        --quiet
+    if [ -n "$AWS_PROFILE" ]; then
+        aws s3 cp "s3://$BUCKET_NAME" "s3://$BUCKET_NAME" \
+            --recursive \
+            --metadata-directive REPLACE \
+            --content-type "application/javascript" \
+            --exclude "*" \
+            --include "*.js" \
+            --quiet \
+            --profile "$AWS_PROFILE"
+    else
+        aws s3 cp "s3://$BUCKET_NAME" "s3://$BUCKET_NAME" \
+            --recursive \
+            --metadata-directive REPLACE \
+            --content-type "application/javascript" \
+            --exclude "*" \
+            --include "*.js" \
+            --quiet
+    fi
     
     # Set MIME type for JSON files
-    aws s3 cp "s3://$BUCKET_NAME" "s3://$BUCKET_NAME" \
-        --recursive \
-        --metadata-directive REPLACE \
-        --content-type "application/json" \
-        --exclude "*" \
-        --include "*.json" \
-        --quiet
+    if [ -n "$AWS_PROFILE" ]; then
+        aws s3 cp "s3://$BUCKET_NAME" "s3://$BUCKET_NAME" \
+            --recursive \
+            --metadata-directive REPLACE \
+            --content-type "application/json" \
+            --exclude "*" \
+            --include "*.json" \
+            --quiet \
+            --profile "$AWS_PROFILE"
+    else
+        aws s3 cp "s3://$BUCKET_NAME" "s3://$BUCKET_NAME" \
+            --recursive \
+            --metadata-directive REPLACE \
+            --content-type "application/json" \
+            --exclude "*" \
+            --include "*.json" \
+            --quiet
+    fi
     
     # Set MIME type for XML files
-    aws s3 cp "s3://$BUCKET_NAME" "s3://$BUCKET_NAME" \
-        --recursive \
-        --metadata-directive REPLACE \
-        --content-type "application/xml" \
-        --exclude "*" \
-        --include "*.xml" \
-        --quiet
+    if [ -n "$AWS_PROFILE" ]; then
+        aws s3 cp "s3://$BUCKET_NAME" "s3://$BUCKET_NAME" \
+            --recursive \
+            --metadata-directive REPLACE \
+            --content-type "application/xml" \
+            --exclude "*" \
+            --include "*.xml" \
+            --quiet \
+            --profile "$AWS_PROFILE"
+    else
+        aws s3 cp "s3://$BUCKET_NAME" "s3://$BUCKET_NAME" \
+            --recursive \
+            --metadata-directive REPLACE \
+            --content-type "application/xml" \
+            --exclude "*" \
+            --include "*.xml" \
+            --quiet
+    fi
     
     # Set MIME type for TXT files
-    aws s3 cp "s3://$BUCKET_NAME" "s3://$BUCKET_NAME" \
-        --recursive \
-        --metadata-directive REPLACE \
-        --content-type "text/plain" \
-        --exclude "*" \
-        --include "*.txt" \
-        --quiet
+    if [ -n "$AWS_PROFILE" ]; then
+        aws s3 cp "s3://$BUCKET_NAME" "s3://$BUCKET_NAME" \
+            --recursive \
+            --metadata-directive REPLACE \
+            --content-type "text/plain" \
+            --exclude "*" \
+            --include "*.txt" \
+            --quiet \
+            --profile "$AWS_PROFILE"
+    else
+        aws s3 cp "s3://$BUCKET_NAME" "s3://$BUCKET_NAME" \
+            --recursive \
+            --metadata-directive REPLACE \
+            --content-type "text/plain" \
+            --exclude "*" \
+            --include "*.txt" \
+            --quiet
+    fi
     
     log "✅ MIME types set successfully"
 }
@@ -220,9 +326,16 @@ invalidate_cloudfront() {
     
     log "Invalidating CloudFront cache for distribution: $DISTRIBUTION_ID"
     
-    aws cloudfront create-invalidation \
-        --distribution-id "$DISTRIBUTION_ID" \
-        --paths "/*"
+    if [ -n "$AWS_PROFILE" ]; then
+        aws cloudfront create-invalidation \
+            --distribution-id "$DISTRIBUTION_ID" \
+            --paths "/*" \
+            --profile "$AWS_PROFILE"
+    else
+        aws cloudfront create-invalidation \
+            --distribution-id "$DISTRIBUTION_ID" \
+            --paths "/*"
+    fi
     
     if [ $? -eq 0 ]; then
         log "✅ CloudFront cache invalidation initiated"
@@ -245,25 +358,53 @@ verify_deployment() {
     # Check if key files exist
     local key_files=("index.html" "about.html" "contact.html" "products.html" "blog.html")
     
+    # Build profile argument for AWS CLI
+    local profile_arg=""
+    if [ -n "$AWS_PROFILE" ]; then
+        profile_arg="--profile $AWS_PROFILE"
+    fi
+    
     for file in "${key_files[@]}"; do
-        if aws s3 ls "s3://$BUCKET_NAME/$file" &> /dev/null; then
-            log "✅ $file uploaded successfully"
+        if [ -n "$AWS_PROFILE" ]; then
+            if aws s3 ls "s3://$BUCKET_NAME/$file" --profile "$AWS_PROFILE" &> /dev/null; then
+                log "✅ $file uploaded successfully"
+            else
+                log "❌ $file not found in S3 bucket"
+            fi
         else
-            log "❌ $file not found in S3 bucket"
+            if aws s3 ls "s3://$BUCKET_NAME/$file" &> /dev/null; then
+                log "✅ $file uploaded successfully"
+            else
+                log "❌ $file not found in S3 bucket"
+            fi
         fi
     done
     
     # Check robots.txt and sitemap.xml
-    if aws s3 ls "s3://$BUCKET_NAME/robots.txt" &> /dev/null; then
-        log "✅ robots.txt uploaded successfully"
+    if [ -n "$AWS_PROFILE" ]; then
+        if aws s3 ls "s3://$BUCKET_NAME/robots.txt" --profile "$AWS_PROFILE" &> /dev/null; then
+            log "✅ robots.txt uploaded successfully"
+        else
+            log "❌ robots.txt not found in S3 bucket"
+        fi
+        
+        if aws s3 ls "s3://$BUCKET_NAME/sitemap.xml" --profile "$AWS_PROFILE" &> /dev/null; then
+            log "✅ sitemap.xml uploaded successfully"
+        else
+            log "❌ sitemap.xml not found in S3 bucket"
+        fi
     else
-        log "❌ robots.txt not found in S3 bucket"
-    fi
-    
-    if aws s3 ls "s3://$BUCKET_NAME/sitemap.xml" &> /dev/null; then
-        log "✅ sitemap.xml uploaded successfully"
-    else
-        log "❌ sitemap.xml not found in S3 bucket"
+        if aws s3 ls "s3://$BUCKET_NAME/robots.txt" &> /dev/null; then
+            log "✅ robots.txt uploaded successfully"
+        else
+            log "❌ robots.txt not found in S3 bucket"
+        fi
+        
+        if aws s3 ls "s3://$BUCKET_NAME/sitemap.xml" &> /dev/null; then
+            log "✅ sitemap.xml uploaded successfully"
+        else
+            log "❌ sitemap.xml not found in S3 bucket"
+        fi
     fi
 }
 
@@ -272,6 +413,7 @@ show_summary() {
     log "=== DEPLOYMENT SUMMARY ==="
     log "Bucket: $BUCKET_NAME"
     log "Region: $AWS_REGION"
+    log "Profile: ${AWS_PROFILE:-'Default'}"
     log "Distribution ID: ${DISTRIBUTION_ID:-'Not provided'}"
     log "Dry Run: $DRY_RUN"
     log "=========================="
@@ -291,6 +433,11 @@ parse_arguments() {
                 ;;
             --region)
                 AWS_REGION="$2"
+                shift 2
+                ;;
+            --profile)
+                AWS_PROFILE="$2"
+                AWS_PROFILE_ARG="--profile $AWS_PROFILE"
                 shift 2
                 ;;
             --dry-run)
@@ -382,6 +529,12 @@ fi
 #
 # Deployment with CloudFront invalidation:
 #   ./deploy.sh --distribution E1234567890ABC
+#
+# Deployment with AWS profile:
+#   ./deploy.sh --profile sohan
+#
+# Deployment with profile, bucket, and distribution:
+#   ./deploy.sh --profile sohan --bucket my-bucket --distribution E1234567890ABC
 #
 # Dry run to see what would be uploaded:
 #   ./deploy.sh --dry-run
